@@ -1,246 +1,655 @@
 ---
+import BrandMark from "../components/BrandMark.astro";
+import NetworkMap from "../components/NetworkMap.astro";
 import Layout from "../layouts/Layout.astro";
+import { products, site, sources } from "../config";
 
-const principles = [
+const steps = [
   {
-    title: "Fast by default",
-    body: "Astro ships only the JavaScript your interface needs.",
-    icon: "speed",
+    number: "01",
+    title: "Choose",
+    body: "Match the AirNode model, market, role and current terms to your own risk tolerance.",
+    icon: "sliders",
   },
   {
-    title: "Edge-native",
-    body: "Cloudflare runs the experience close to every visitor.",
-    icon: "globe",
+    number: "02",
+    title: "Purchase & sign",
+    body: "Complete checkout, identity checks where required, and the current Operator agreements.",
+    icon: "document",
   },
   {
-    title: "Built to evolve",
-    body: "Strict TypeScript and a clean foundation keep change easy.",
-    icon: "branch",
+    number: "03",
+    title: "Deploy & activate",
+    body: "Install on-site, or let the approved local operator deploy eligible remote-operation models.",
+    icon: "node",
   },
-];
+  {
+    number: "04",
+    title: "Monitor & claim",
+    body: "Follow allocation, status, usage and rewards from the AirNode platform dashboard.",
+    icon: "chart",
+  },
+] as const;
+
+const risks = [
+  {
+    title: "Demand & traffic",
+    body: "Usage-based rewards depend on verified network demand. Planning benchmarks are not usage commitments.",
+    icon: "trend",
+  },
+  {
+    title: "Activation & uptime",
+    body: "Rewards may not begin until activation and can pause when service, connectivity or a customer location is unavailable.",
+    icon: "clock",
+  },
+  {
+    title: "Counterparty & platform",
+    body: "World Mobile, its market partners and the AirNode platform are central to deployment, measurement and payout.",
+    icon: "shield",
+  },
+  {
+    title: "Hardware & location",
+    body: "Physical equipment can fail, be damaged, become obsolete or require relocation and maintenance.",
+    icon: "pin",
+  },
+  {
+    title: "Regulation & terms",
+    body: "Telecom rules, product terms, reward rates and availability can change by country and over time.",
+    icon: "file",
+  },
+  {
+    title: "Liquidity & capital",
+    body: "Do not assume a resale market or instant exit. Capital may be locked for an uncertain period or lost.",
+    icon: "coins",
+  },
+] as const;
+
+const faqs = [
+  {
+    question: "Do I install the hardware?",
+    answer:
+      "It depends on the model. Some AirNodes can be self-deployed; selected remote-operation products are installed and operated by an approved local partner. Frontier, for example, is installed and maintained in the Philippines by CWC. Check the live product page and agreement before buying.",
+  },
+  {
+    question: "Are rewards fixed?",
+    answer:
+      "Not universally. EmberNode rewards are tied to verified data throughput. Frontier has a fixed monthly base reward while its matched business service is active. Other models have their own terms. Rewards can be lower than illustrations—or zero.",
+  },
+  {
+    question: "Can I deploy an AirNode anywhere?",
+    answer:
+      "No. Products are built for approved markets, network layers and operating partners. A purchase does not grant permission to deploy hardware in an arbitrary country or location.",
+  },
+  {
+    question: "When do rewards begin?",
+    answer:
+      "Only when the applicable product conditions are met. Frontier rewards start after service activation, which World Mobile says may take up to 60 days. EmberNode rewards depend on deployed, operational infrastructure carrying verified traffic.",
+  },
+  {
+    question: "What happens after I continue to World Mobile?",
+    answer:
+      "You leave this independent guide. World Mobile provides the live inventory, eligibility, contracts, checkout and platform account. Airnodes Club does not hold your funds, sell the equipment or determine your rewards.",
+  },
+] as const;
+
+const firstPartySources = [
+  ["AirNodes overview & live metrics", sources.airnodes],
+  ["EmberNode product & economics", sources.ember],
+  ["Frontier Philippines announcement", sources.frontier],
+  ["Frontier launch post on X", sources.frontierSocial],
+  ["New AirNode platform", sources.platform],
+  ["Network scale milestone", sources.scale],
+  ["Affiliate programme launch terms", sources.affiliate],
+] as const;
+
+const contextSources = [
+  ["HexyNodes market context", sources.hexy],
+  ["World Mobile Alliance offers", sources.alliance],
+  ["Legacy infrastructure knowledge base", sources.legacy],
+] as const;
 ---
 
 <Layout
-  title="Airnodes — Infrastructure at the speed of air"
-  description="A modern Astro foundation deployed globally on Cloudflare's edge."
+  title="Airnodes Club — Own infrastructure behind the signal"
+  description="An independent guide to World Mobile AirNodes: understand the hardware, current options, reward models, illustrative economics and risks before you buy."
 >
-  <main>
-    <nav class="nav shell" aria-label="Primary navigation">
-      <a class="brand" href="/" aria-label="Airnodes home">
-        <svg aria-hidden="true" viewBox="0 0 48 48">
-          <path d="m24 3 18 10.5v21L24 45 6 34.5v-21L24 3Z" />
-          <path d="m6 13.5 18 10.3 18-10.3M24 23.8V45" />
-          <circle cx="24" cy="3" r="2.5" />
-          <circle cx="42" cy="13.5" r="2.5" />
-          <circle cx="42" cy="34.5" r="2.5" />
-          <circle cx="24" cy="45" r="2.5" />
-          <circle cx="6" cy="34.5" r="2.5" />
-          <circle cx="6" cy="13.5" r="2.5" />
-        </svg>
-        <span>Airnodes</span>
+  <header class="site-header">
+    <nav class="shell nav" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Airnodes Club home">
+        <BrandMark />
       </a>
-      <a class="nav-link" href="#principles">Principles <span aria-hidden="true">↘</span></a>
-    </nav>
-
-    <section class="hero shell">
-      <div class="hero-copy">
-        <h1>Infrastructure that moves at the speed of air<span>.</span></h1>
-        <p>A modern Astro foundation, deployed globally on Cloudflare’s edge.</p>
-        <div class="actions">
-          <a class="primary" href="#principles">Explore the stack <span aria-hidden="true">→</span></a>
-          <a class="secondary" href="https://github.com/its-me-julien/airnodes.club" rel="noreferrer">View on GitHub <span aria-hidden="true">→</span></a>
-        </div>
+      <div class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#airnodes">AirNodes</a>
+        <a href="#economics">Economics</a>
+        <a href="#risks">Risks</a>
       </div>
+      <a
+        class="button button-small button-primary"
+        href={site.affiliateUrl}
+        target="_blank"
+        rel="sponsored noopener noreferrer"
+      >
+        Explore live AirNodes
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </header>
 
-      <div class="orbit" aria-hidden="true">
-        <div class="ring ring-1"></div>
-        <div class="ring ring-2"></div>
-        <div class="ring ring-3"></div>
-        <div class="ring ring-4"></div>
-        <div class="core">
-          <span></span><span></span><span></span><span></span>
+  <main id="main-content">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="signal-line">
+          <span aria-hidden="true"></span>
+          Independent AirNode ownership guide
+        </p>
+        <h1 id="hero-title">Own the infrastructure behind the signal.</h1>
+        <p class="hero-lede">
+          AirNodes open a new path into telecom ownership: real hardware
+          supporting a live network, with rewards shaped by usage, uptime and
+          product terms.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="button button-primary"
+            href={site.affiliateUrl}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+          >
+            Explore live AirNodes
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button button-secondary" href="#how-it-works">
+            Understand the model
+            <span aria-hidden="true">↓</span>
+          </a>
         </div>
-        <i class="node n1"></i><i class="node n2"></i><i class="node n3"></i>
-        <i class="node n4"></i><i class="node n5"></i><i class="node n6"></i>
+        <p class="micro-disclosure">
+          <span class="info-icon" aria-hidden="true">i</span>
+          Independent affiliate guide · We may earn a commission from qualifying
+          purchases.
+        </p>
+      </div>
+      <NetworkMap />
+    </section>
+
+    <section class="proof-rail" aria-label="World Mobile reported network figures">
+      <div class="shell proof-grid">
+        <p class="proof-source">
+          World Mobile reports
+          <a href={sources.airnodes} target="_blank" rel="noopener noreferrer"
+            >View source ↗</a
+          >
+        </p>
+        <article>
+          <svg aria-hidden="true" viewBox="0 0 48 48">
+            <path d="m24 4 17 10v20L24 44 7 34V14L24 4Z"></path>
+            <circle cx="24" cy="4" r="2"></circle><circle cx="41" cy="14" r="2"
+            ></circle><circle cx="41" cy="34" r="2"></circle><circle
+              cx="24"
+              cy="44"
+              r="2"></circle><circle cx="7" cy="34" r="2"></circle><circle
+              cx="7"
+              cy="14"
+              r="2"></circle>
+          </svg>
+          <div><strong>145,000+</strong><span>AirNodes deployed</span></div>
+        </article>
+        <article>
+          <svg aria-hidden="true" viewBox="0 0 48 48">
+            <path d="M6 40h36M9 35V25M18 35V18M27 35V28M36 35V10"></path>
+            <path d="m7 20 10-8 9 5L40 5M34 5h6v6"></path>
+          </svg>
+          <div><strong>3M+</strong><span>unique users / 24h</span></div>
+        </article>
+        <article>
+          <svg aria-hidden="true" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="19"></circle>
+            <path d="M30 16c-2-2-4-3-7-3-4 0-7 2-7 5 0 8 16 3 16 11 0 4-3 6-8 6-4 0-7-1-9-4M24 8v5M24 35v5"></path>
+          </svg>
+          <div><strong>$2M+</strong><span>rewards paid</span></div>
+        </article>
       </div>
     </section>
 
-    <section class="principles shell" id="principles" aria-label="Technical principles">
-      {
-        principles.map(({ title, body, icon }) => (
-          <article>
-            <div class={`principle-icon ${icon}`} aria-hidden="true">
-              <span></span><span></span><span></span>
+    <section class="section shell how-section" id="how-it-works" aria-labelledby="how-title">
+      <div class="section-intro split-intro">
+        <div>
+          <p class="section-index">01 / The model</p>
+          <h2 id="how-title">Telecom,<br /><span>opened up.</span></h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            An AirNode is physical telecom infrastructure owned by an Operator,
+            deployed in an approved market, and monitored through the AirNode
+            platform.
+          </p>
+          <div class="principle-list">
+            <article>
+              <span class="line-icon hardware" aria-hidden="true"></span>
+              <div>
+                <h3>Real hardware</h3>
+                <p>Physical infrastructure deployed in the real world.</p>
+              </div>
+            </article>
+            <article>
+              <span class="line-icon location" aria-hidden="true"></span>
+              <div>
+                <h3>Market-specific deployment</h3>
+                <p>Placed where approved operations and demand exist.</p>
+              </div>
+            </article>
+            <article>
+              <span class="line-icon rewards" aria-hidden="true"></span>
+              <div>
+                <h3>Model-specific rewards</h3>
+                <p>Defined by the node’s role and current product terms.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer-diagram" aria-labelledby="layer-title">
+        <div class="layer-copy">
+          <p class="section-kicker">One network · different layers</p>
+          <h3 id="layer-title">Infrastructure is not one product.</h3>
+          <p>
+            AirNodes can sit between a carrier backbone and a local network,
+            deliver service at a business edge, extend radio coverage or support
+            enterprise-scale operations.
+          </p>
+        </div>
+        <div class="layer-stack">
+          <div class="layer-row">
+            <span class="layer-node cyan" aria-hidden="true"></span>
+            <div><strong>Backbone</strong><span>High-capacity core connectivity</span></div>
+            <svg aria-hidden="true" viewBox="0 0 280 52"><path d="M4 26h272M30 8v36M100 8v36M170 8v36M240 8v36"></path><circle cx="30" cy="26" r="5"></circle><circle cx="100" cy="26" r="5"></circle><circle cx="170" cy="26" r="5"></circle><circle cx="240" cy="26" r="5"></circle></svg>
+          </div>
+          <div class="layer-row">
+            <span class="layer-node violet" aria-hidden="true"></span>
+            <div><strong>Distribution</strong><span>Ember moves capacity toward the edge</span></div>
+            <svg aria-hidden="true" viewBox="0 0 280 52"><path d="M4 26h272M40 26 82 8l42 36 42-36 42 36 32-18"></path><circle cx="40" cy="26" r="5"></circle><circle cx="124" cy="44" r="5"></circle><circle cx="208" cy="44" r="5"></circle></svg>
+          </div>
+          <div class="layer-row">
+            <span class="layer-node cyan" aria-hidden="true"></span>
+            <div><strong>Customer edge</strong><span>Frontier and Spark connect local users</span></div>
+            <svg aria-hidden="true" viewBox="0 0 280 52"><path d="M4 42h272M52 42V22M44 42h16M49 22l3-12 3 12M40 18a17 17 0 0 1 24 0M130 42V22M122 42h16M127 22l3-12 3 12M118 18a17 17 0 0 1 24 0M208 42V22M200 42h16M205 22l3-12 3 12M196 18a17 17 0 0 1 24 0"></path></svg>
+          </div>
+          <div class="layer-row">
+            <span class="layer-node violet" aria-hidden="true"></span>
+            <div><strong>Wide-area & enterprise</strong><span>Portal and Titan support larger footprints</span></div>
+            <svg aria-hidden="true" viewBox="0 0 280 52"><path d="M4 42h272M60 42 44 28l20-20 20 20-16 14M170 42l-16-14 20-20 20 20-16 14M64 8l110 0M68 42h102"></path></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="process">
+        <div class="process-heading">
+          <p class="section-kicker">From checkout to active service</p>
+          <h3>How one AirNode becomes a working asset.</h3>
+        </div>
+        <ol>
+          {
+            steps.map((step) => (
+              <li>
+                <span class="step-number">{step.number}</span>
+                <span class={`step-icon ${step.icon}`} aria-hidden="true"></span>
+                <h4>{step.title}</h4>
+                <p>{step.body}</p>
+              </li>
+            ))
+          }
+        </ol>
+        <div class="reward-flow" aria-label="How reward outcomes are produced">
+          <span>Service is used</span><i aria-hidden="true">›</i>
+          <span>Verified activity is measured</span><i aria-hidden="true">›</i>
+          <span>Rewards accrue under product terms</span><i aria-hidden="true">›</i>
+          <span>Claims are managed in the dashboard</span>
+        </div>
+        <p class="payout-note">
+          World Mobile says eligible rewards become claimable 30 days after
+          month-end, subject to a US$10 minimum. Published payout options include
+          USD, GBP, EUR and USDT on Ethereum; processing can take up to 10 business
+          days and crypto transaction fees may apply.
+          <a href={sources.platform} target="_blank" rel="noopener noreferrer"
+            >Platform source ↗</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-ruled" id="airnodes" aria-labelledby="airnodes-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">02 / Current landscape</p>
+            <h2 id="airnodes-title">Different layers.<br />Different <span>economics.</span></h2>
+          </div>
+          <p>
+            “AirNode” is an umbrella, not a single offer. Compare the network role,
+            market, deployment model and reward logic before comparing price.
+          </p>
+        </div>
+
+        <div class="product-ledger">
+          {
+            products.map((product) => (
+              <details class={`product-row ${product.tone}`}>
+                <summary>
+                  <div class="product-name">
+                    <span class="product-glyph" aria-hidden="true"></span>
+                    <div>
+                      <h3>{product.name}</h3>
+                      <span>{product.status}</span>
+                    </div>
+                  </div>
+                  <div class="product-layer">
+                    <span class="cell-label">Role / layer</span>
+                    <strong>{product.layer}</strong>
+                  </div>
+                  <div class="product-economics">
+                    <span class="cell-label">Current headline price</span>
+                    <strong>{product.price}</strong>
+                    <span>{product.terms}</span>
+                  </div>
+                  <span class="product-toggle">
+                    <span class="sr-only">Read more about {product.name}</span>
+                    <i aria-hidden="true"></i>
+                  </span>
+                </summary>
+                <div class="product-detail">
+                  <p>{product.detail}</p>
+                  <a href={product.source} target="_blank" rel="noopener noreferrer">
+                    Product source ↗
+                  </a>
+                </div>
+              </details>
+            ))
+          }
+        </div>
+        <p class="ledger-note">
+          Availability, price and terms can change. Values shown are World Mobile’s
+          published information reviewed <time datetime={site.reviewDate}>{site.reviewDateLabel}</time>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section shell economics-section" id="economics" aria-labelledby="economics-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">03 / Economics</p>
+          <h2 id="economics-title">Model the <span>return.</span><br />Don’t market the promise.</h2>
+        </div>
+        <p>
+          Buying an AirNode means committing capital to physical telecom
+          infrastructure under a product agreement. It is not a deposit, bond or
+          guaranteed income product.
+        </p>
+      </div>
+
+      <div class="scenario-grid">
+        <article class="scenario cyan">
+          <header>
+            <span>Scenario 1</span>
+            <h3>EmberNode · one unit at US$165</h3>
+          </header>
+          <dl>
+            <div>
+              <dt>World Mobile planning benchmark</dt>
+              <dd><strong>~800 GB</strong><span>/ month</span></dd>
             </div>
             <div>
-              <h2>{title}</h2>
-              <p>{body}</p>
+              <dt>Published reward rate</dt>
+              <dd><strong>~$0.004167</strong><span>/ verified GB</span></dd>
             </div>
-          </article>
-        ))
-      }
+            <div>
+              <dt>Illustrative gross reward</dt>
+              <dd><strong>~$3.33</strong><span>/ month</span></dd>
+            </div>
+            <div>
+              <dt>Simple gross payback</dt>
+              <dd><strong>~49.5</strong><span>months</span></dd>
+            </div>
+            <div>
+              <dt>Gross annual reward / price</dt>
+              <dd><strong>~24.2%</strong><span>not APY</span></dd>
+            </div>
+          </dl>
+          <p>
+            Calculated from World Mobile’s average planning benchmark. Traffic can
+            be below the benchmark, and rewards are not capped by it.
+          </p>
+          <a href={sources.ember} target="_blank" rel="noopener noreferrer"
+            >Check the EmberNode source ↗</a
+          >
+        </article>
+
+        <article class="scenario violet">
+          <header>
+            <span>Scenario 2</span>
+            <h3>Frontier Core · list price</h3>
+          </header>
+          <dl>
+            <div>
+              <dt>Published list price</dt>
+              <dd><strong>$585</strong><span>one unit</span></dd>
+            </div>
+            <div>
+              <dt>Monthly base reward</dt>
+              <dd><strong>$17.55</strong><span>when active</span></dd>
+            </div>
+            <div>
+              <dt>Activation window</dt>
+              <dd><strong>Up to 60</strong><span>days</span></dd>
+            </div>
+            <div>
+              <dt>Simple gross payback</dt>
+              <dd><strong>~33.3</strong><span>months from activation</span></dd>
+            </div>
+            <div>
+              <dt>Gross annual reward / price</dt>
+              <dd><strong>36.0%</strong><span>not APY</span></dd>
+            </div>
+          </dl>
+          <p>
+            The base reward begins only after the matched business service is
+            active and may pause if the business leaves while a replacement is
+            found.
+          </p>
+          <a href={sources.frontier} target="_blank" rel="noopener noreferrer"
+            >Check the Frontier source ↗</a
+          >
+        </article>
+      </div>
+
+      <p class="scenario-disclaimer">
+        Illustrative, gross and not guaranteed. Simple payback ignores tax,
+        transaction fees, downtime, maintenance, connectivity, currency movement,
+        contract changes, time value and any costs not stated in the product page.
+        It is not APY or financial advice.
+      </p>
+
+      <div class="owner-note">
+        <div class="owner-symbol" aria-hidden="true"><span></span></div>
+        <div>
+          <p class="section-kicker">What “investing” means here</p>
+          <h3>Think like an infrastructure owner.</h3>
+        </div>
+        <p>
+          Your purchase is exposure to an operating network—not an account
+          balance. World Mobile’s current public materials do not establish a
+          liquid resale market. Treat the purchase as risk capital; the final
+          agreement determines legal title, rights and obligations.
+        </p>
+      </div>
+
+      <div class="driver-equation">
+        <div>
+          <p class="section-kicker">A more useful mental model</p>
+          <h3>Reward outcome</h3>
+        </div>
+        <span class="equals" aria-hidden="true">=</span>
+        <div><i class="equation-icon terms" aria-hidden="true"></i><strong>Model terms</strong></div>
+        <span aria-hidden="true">×</span>
+        <div><i class="equation-icon activity" aria-hidden="true"></i><strong>Verified usage<br />or service status</strong></div>
+        <span aria-hidden="true">×</span>
+        <div><i class="equation-icon uptime" aria-hidden="true"></i><strong>Uptime</strong></div>
+        <span aria-hidden="true">×</span>
+        <div><i class="equation-icon time" aria-hidden="true"></i><strong>Time</strong></div>
+      </div>
     </section>
 
-    <footer class="footer shell">
-      <a class="brand brand-small" href="/">
-        <svg aria-hidden="true" viewBox="0 0 48 48">
-          <path d="m24 3 18 10.5v21L24 45 6 34.5v-21L24 3Z" />
-          <path d="m6 13.5 18 10.3 18-10.3M24 23.8V45" />
-        </svg>
-        <span>Airnodes</span>
-      </a>
-      <p>Built with Astro · Deployed on Cloudflare</p>
-      <p>© {new Date().getFullYear()} Airnodes</p>
-    </footer>
+    <section class="section risk-section" id="risks" aria-labelledby="risks-title">
+      <div class="shell">
+        <div class="risk-title">
+          <p class="section-index">04 / Risk</p>
+          <h2 id="risks-title">Infrastructure has <span>upside.</span><br />It also has <em>exposure.</em></h2>
+        </div>
+        <div class="risk-list">
+          {
+            risks.map((risk) => (
+              <details>
+                <summary>
+                  <span class={`risk-icon ${risk.icon}`} aria-hidden="true"></span>
+                  <strong>{risk.title}</strong>
+                  <i aria-hidden="true"></i>
+                </summary>
+                <p>{risk.body}</p>
+              </details>
+            ))
+          }
+        </div>
+        <p class="risk-bottom-line">
+          Rewards can be lower than illustrations—or zero. Read the current
+          agreements and only commit capital you can afford to lock up or lose.
+        </p>
+      </div>
+    </section>
+
+    <aside class="affiliate-band" aria-labelledby="affiliate-title">
+      <div class="shell affiliate-inner">
+        <BrandMark compact />
+        <div>
+          <h2 id="affiliate-title">A clearer path to World Mobile.</h2>
+          <p>
+            Airnodes Club is independent from World Mobile. We explain the options
+            and may receive a commission when a qualifying purchase starts from an
+            eligible tagged referral link.
+          </p>
+          <p>
+            World Mobile’s Hex Operator launch terms describe 6–8% commission on
+            qualifying Ember orders and 10% off an eligible buyer’s first AirNode
+            order, capped at US$1,000. Eligibility, current code and checkout terms
+            control; wider affiliate terms may differ.
+          </p>
+          <a href={sources.affiliate} target="_blank" rel="noopener noreferrer"
+            >Read the programme source ↗</a
+          >
+        </div>
+      </div>
+    </aside>
+
+    <section class="section shell faq-section" aria-labelledby="faq-title">
+      <div class="faq-heading">
+        <p class="section-index">05 / Plain answers</p>
+        <h2 id="faq-title">FAQ</h2>
+      </div>
+      <div class="faq-list">
+        {
+          faqs.map((faq) => (
+            <details>
+              <summary><span>{faq.question}</span><i aria-hidden="true"></i></summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="shell">
+        <p class="section-index">Continue with current information</p>
+        <h2 id="cta-title">Ready to explore the live market?</h2>
+        <p>
+          Verify availability, agreements, reward terms and any eligible discount
+          directly with World Mobile before committing capital.
+        </p>
+        <div>
+          <a
+            class="button button-primary"
+            href={site.affiliateUrl}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+          >
+            Continue to World Mobile
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button button-secondary" href="#risks">
+            Review the risks again
+            <span aria-hidden="true">↑</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources shell" aria-labelledby="sources-title">
+      <div>
+        <p class="section-index">Research record</p>
+        <h2 id="sources-title">Sources</h2>
+        <p>
+          Information reviewed <time datetime={site.reviewDate}>{site.reviewDateLabel}</time>.
+          World Mobile figures and forecasts are company-published and have not
+          been independently audited by Airnodes Club.
+        </p>
+      </div>
+      <details>
+        <summary>World Mobile first-party sources <i aria-hidden="true"></i></summary>
+        <ul>
+          {
+            firstPartySources.map(([label, href]) => (
+              <li><a href={href} target="_blank" rel="noopener noreferrer">{label} ↗</a></li>
+            ))
+          }
+        </ul>
+      </details>
+      <details>
+        <summary>Independent, reseller & legacy context <i aria-hidden="true"></i></summary>
+        <ul>
+          {
+            contextSources.map(([label, href]) => (
+              <li><a href={href} target="_blank" rel="noopener noreferrer">{label} ↗</a></li>
+            ))
+          }
+        </ul>
+        <p>
+          These sources were used for context only. The legacy knowledge base was
+          not used for current products, pricing or rewards.
+        </p>
+      </details>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <a class="brand" href="/" aria-label="Airnodes Club home"><BrandMark compact /></a>
+      <p>
+        Independent affiliate guide. Not operated by, endorsed by, or part of
+        World Mobile.
+      </p>
+      <nav aria-label="Footer navigation">
+        <a href="#sources-title">Sources</a>
+        <a href="#affiliate-title">Affiliate disclosure</a>
+        <a href="#risks">Risk notice</a>
+        <a href="https://github.com/its-me-julien/airnodes.club" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+      <p class="legal">
+        Educational and marketing content only—not financial, tax or legal advice.
+        AirNode ownership carries capital, operational, counterparty and regulatory
+        risk. Earnings may be zero. References to ownership reflect World Mobile’s
+        product framing; the governing agreement determines legal title, rights and
+        obligations. © {new Date().getFullYear()} Airnodes Club.
+      </p>
+    </div>
+  </footer>
 </Layout>
-
-<style is:global>
-  :root {
-    color-scheme: dark;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --bg: #07111f;
-    --bg-deep: #030a14;
-    --text: #f6f9ff;
-    --muted: #9aabc7;
-    --line: rgba(139, 174, 217, 0.2);
-    --cyan: #63e6ff;
-    --violet: #7667ff;
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    min-width: 320px;
-    color: var(--text);
-    background:
-      radial-gradient(circle at 78% 36%, rgba(34, 91, 180, 0.2), transparent 28rem),
-      radial-gradient(circle at 10% 60%, rgba(26, 106, 154, 0.08), transparent 24rem),
-      var(--bg-deep);
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.22;
-    background-image:
-      linear-gradient(rgba(99, 230, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(99, 230, 255, 0.035) 1px, transparent 1px);
-    background-size: 52px 52px;
-    mask-image: linear-gradient(to bottom, black, transparent 82%);
-  }
-  a { color: inherit; text-decoration: none; }
-  .shell { width: min(1240px, calc(100% - 64px)); margin-inline: auto; }
-  .nav {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--line);
-  }
-  .brand { display: inline-flex; align-items: center; gap: 14px; font-size: 1.5rem; font-weight: 720; letter-spacing: -0.04em; }
-  .brand svg { width: 38px; fill: none; stroke: var(--cyan); stroke-width: 1.6; }
-  .nav-link { color: var(--muted); font-size: 0.9rem; transition: color 180ms ease; }
-  .nav-link:hover { color: var(--cyan); }
-  .hero {
-    min-height: 610px;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
-    border-bottom: 1px solid var(--line);
-    overflow: hidden;
-  }
-  .hero-copy { position: relative; z-index: 2; padding-block: 92px; }
-  h1 {
-    max-width: 760px;
-    margin: 0;
-    font-size: clamp(3.25rem, 6.2vw, 6.5rem);
-    line-height: 0.98;
-    letter-spacing: -0.065em;
-    text-wrap: balance;
-  }
-  h1 span { color: var(--cyan); }
-  .hero-copy > p {
-    max-width: 540px;
-    margin: 32px 0 0;
-    color: var(--muted);
-    font-size: clamp(1.1rem, 2vw, 1.35rem);
-    line-height: 1.55;
-  }
-  .actions { display: flex; align-items: center; gap: 34px; margin-top: 42px; }
-  .actions a { display: inline-flex; align-items: center; gap: 30px; font-weight: 700; }
-  .primary {
-    padding: 17px 22px;
-    color: #031018;
-    background: var(--cyan);
-    border: 1px solid var(--cyan);
-    transition: transform 180ms ease, box-shadow 180ms ease;
-  }
-  .primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(99, 230, 255, 0.2); }
-  .secondary { padding-block: 10px; border-bottom: 2px solid var(--cyan); }
-  .orbit { position: relative; aspect-ratio: 1; width: min(600px, 52vw); justify-self: center; }
-  .ring { position: absolute; border: 1px solid rgba(134, 172, 255, 0.38); border-radius: 50%; inset: 50%; translate: -50% -50%; }
-  .ring-1 { width: 24%; height: 24%; }
-  .ring-2 { width: 44%; height: 44%; }
-  .ring-3 { width: 65%; height: 65%; border-style: dashed; }
-  .ring-4 { width: 88%; height: 88%; }
-  .core {
-    position: absolute; inset: 50%; width: 76px; aspect-ratio: 1; translate: -50% -50%;
-    border: 2px solid var(--cyan); rotate: 30deg; box-shadow: 0 0 45px rgba(99,230,255,.42);
-  }
-  .core::before, .core::after { content: ""; position: absolute; inset: 50%; width: 100%; height: 1px; background: var(--cyan); transform-origin: center; }
-  .core::before { rotate: 60deg; } .core::after { rotate: 120deg; }
-  .core span { position: absolute; width: 8px; aspect-ratio: 1; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 14px var(--cyan); }
-  .core span:nth-child(1) { left: -5px; top: -5px; } .core span:nth-child(2) { right: -5px; top: -5px; }
-  .core span:nth-child(3) { right: -5px; bottom: -5px; } .core span:nth-child(4) { left: -5px; bottom: -5px; }
-  .node { position: absolute; width: 12px; aspect-ratio: 1; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 18px currentColor; }
-  .n1 { left: 18%; top: 25%; color: var(--cyan); } .n2 { right: 8%; top: 43%; color: var(--violet); background: var(--violet); }
-  .n3 { left: 9%; bottom: 26%; color: #548aff; background: #548aff; } .n4 { right: 28%; bottom: 9%; }
-  .n5 { left: 42%; top: 4%; color: var(--violet); background: var(--violet); } .n6 { right: 22%; top: 24%; }
-  .principles { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
-  .principles article { min-height: 190px; padding: 44px 36px; display: flex; gap: 26px; align-items: flex-start; }
-  .principles article + article { border-left: 1px solid var(--line); }
-  .principles h2 { margin: 2px 0 8px; font-size: 1.2rem; letter-spacing: -0.025em; }
-  .principles p { margin: 0; max-width: 220px; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
-  .principle-icon { position: relative; flex: 0 0 46px; height: 46px; color: var(--cyan); }
-  .speed { border: 1px solid currentColor; border-radius: 50%; }
-  .speed::before, .speed::after, .speed span:first-child { content: ""; position: absolute; right: 34px; width: 32px; height: 1px; background: currentColor; }
-  .speed::before { top: 12px; } .speed span:first-child { top: 22px; width: 44px; } .speed::after { top: 32px; }
-  .globe { border: 1px solid currentColor; border-radius: 50%; }
-  .globe::before, .globe::after { content: ""; position: absolute; inset: 4px 14px; border: 1px solid currentColor; border-radius: 50%; }
-  .globe::after { inset: 21px 0 auto; height: 1px; border-width: 1px 0 0; border-radius: 0; }
-  .branch::before { content: ""; position: absolute; left: 6px; top: 6px; width: 28px; height: 30px; border-left: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: skewY(-34deg); }
-  .branch span { position: absolute; width: 8px; aspect-ratio: 1; border: 2px solid currentColor; border-radius: 50%; }
-  .branch span:nth-child(1) { left: 1px; top: 0; } .branch span:nth-child(2) { right: 0; top: 10px; } .branch span:nth-child(3) { right: 0; bottom: 0; }
-  .footer { min-height: 130px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px; align-items: center; color: var(--muted); font-size: 0.82rem; }
-  .footer > :last-child { text-align: right; }
-  .brand-small { color: var(--text); font-size: 1rem; }
-  .brand-small svg { width: 28px; }
-
-  @media (max-width: 860px) {
-    .shell { width: min(100% - 36px, 680px); }
-    .nav { height: 78px; }
-    .hero { min-height: auto; grid-template-columns: 1fr; padding-bottom: 40px; }
-    .hero-copy { padding: 68px 0 20px; }
-    .orbit { width: min(520px, 100%); margin-top: -16px; }
-    .principles { grid-template-columns: 1fr; }
-    .principles article { min-height: 140px; padding: 34px 18px; }
-    .principles article + article { border-left: 0; border-top: 1px solid var(--line); }
-    .footer { grid-template-columns: 1fr; padding-block: 34px; gap: 12px; }
-    .footer > :last-child { text-align: left; }
-  }
-  @media (max-width: 520px) {
-    h1 { font-size: 3.2rem; }
-    .actions { align-items: stretch; flex-direction: column; gap: 18px; }
-    .actions a { justify-content: space-between; }
-    .orbit { margin-top: 0; }
-    .nav-link { display: none; }
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .ring-3 { animation: spin 36s linear infinite; }
-    .ring-4 { animation: spin 52s linear infinite reverse; }
-    @keyframes spin { to { rotate: 360deg; } }
-  }
-</style>

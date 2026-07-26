@@ -1,0 +1,23 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<span class:list={["brand-lockup", { compact }]}>
+  <svg aria-hidden="true" viewBox="0 0 48 48">
+    <path d="m24 3 18 10.5v21L24 45 6 34.5v-21L24 3Z"></path>
+    <path d="m6 13.5 18 10.3 18-10.3M24 23.8V45"></path>
+    <path d="M6 34.5 24 23.8l18 10.7"></path>
+    <circle cx="24" cy="3" r="2.5"></circle>
+    <circle cx="42" cy="13.5" r="2.5"></circle>
+    <circle cx="42" cy="34.5" r="2.5"></circle>
+    <circle cx="24" cy="45" r="2.5"></circle>
+    <circle cx="6" cy="34.5" r="2.5"></circle>
+    <circle cx="6" cy="13.5" r="2.5"></circle>
+    <circle cx="24" cy="23.8" r="2.5"></circle>
+  </svg>
+  <span class="brand-name">Airnodes <span>Club</span></span>
+</span>
