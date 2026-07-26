@@ -4,6 +4,9 @@ An independent, research-backed affiliate guide to World Mobile AirNodes. Built
 with Astro and deployed as a Cloudflare Worker at
 [airnodes.club](https://airnodes.club).
 
+The identity, content voice, layout system and implementation rules are documented
+in [`docs/BRAND_GUIDELINES.md`](docs/BRAND_GUIDELINES.md).
+
 ## Local development
 
 ```sh

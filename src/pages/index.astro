@@ -1,6 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import BrandMark from "../components/BrandMark.astro";
-import NetworkMap from "../components/NetworkMap.astro";
+import heroImage from "../assets/airnode-operator.png";
 import Layout from "../layouts/Layout.astro";
 import { products, site, sources } from "../config";
 
@@ -123,6 +124,7 @@ const contextSources = [
         <a href="#airnodes">AirNodes</a>
         <a href="#economics">Economics</a>
         <a href="#risks">Risks</a>
+        <a href="#faq">FAQ</a>
       </div>
       <a
         class="button button-small button-primary"
@@ -139,15 +141,11 @@ const contextSources = [
   <main id="main-content">
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="signal-line">
-          <span aria-hidden="true"></span>
-          Independent AirNode ownership guide
-        </p>
-        <h1 id="hero-title">Own the infrastructure behind the signal.</h1>
+        <h1 id="hero-title">Own a piece of the network people rely on.</h1>
         <p class="hero-lede">
-          AirNodes open a new path into telecom ownership: real hardware
-          supporting a live network, with rewards shaped by usage, uptime and
-          product terms.
+          AirNodes are real telecom infrastructure supporting a live network.
+          We help you understand the options, the economics and the risks before
+          you buy.
         </p>
         <div class="hero-actions">
           <a
@@ -160,7 +158,7 @@ const contextSources = [
             <span aria-hidden="true">↗</span>
           </a>
           <a class="button button-secondary" href="#how-it-works">
-            Understand the model
+            How ownership works
             <span aria-hidden="true">↓</span>
           </a>
         </div>
@@ -170,7 +168,21 @@ const contextSources = [
           purchases.
         </p>
       </div>
-      <NetworkMap />
+      <figure class="hero-media">
+        <Image
+          src={heroImage}
+          alt="A network operator working beside outdoor telecom equipment on an urban rooftop"
+          widths={[720, 960, 1280]}
+          sizes="(max-width: 900px) 100vw, 58vw"
+          format="webp"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <figcaption>
+          Illustrative image · AirNode hardware and deployment vary by model and
+          market.
+        </figcaption>
+      </figure>
     </section>
 
     <section class="proof-rail" aria-label="World Mobile reported network figures">
@@ -530,7 +542,7 @@ const contextSources = [
     <aside class="affiliate-band" aria-labelledby="affiliate-title">
       <div class="shell affiliate-inner">
         <BrandMark compact />
-        <div>
+        <div class="affiliate-copy">
           <h2 id="affiliate-title">A clearer path to World Mobile.</h2>
           <p>
             Airnodes Club is independent from World Mobile. We explain the options
@@ -547,13 +559,25 @@ const contextSources = [
             >Read the programme source ↗</a
           >
         </div>
+        <div class="affiliate-action">
+          <p>Current availability and final terms are shown by World Mobile.</p>
+          <a
+            class="button button-primary"
+            href={site.affiliateUrl}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+          >
+            Explore live AirNodes
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </aside>
 
-    <section class="section shell faq-section" aria-labelledby="faq-title">
+    <section class="section shell faq-section" id="faq" aria-labelledby="faq-title">
       <div class="faq-heading">
         <p class="section-index">05 / Plain answers</p>
-        <h2 id="faq-title">FAQ</h2>
+        <h2 id="faq-title">Plain answers before you buy.</h2>
       </div>
       <div class="faq-list">
         {
