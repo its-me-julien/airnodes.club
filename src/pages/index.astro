@@ -1,0 +1,246 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const principles = [
+  {
+    title: "Fast by default",
+    body: "Astro ships only the JavaScript your interface needs.",
+    icon: "speed",
+  },
+  {
+    title: "Edge-native",
+    body: "Cloudflare runs the experience close to every visitor.",
+    icon: "globe",
+  },
+  {
+    title: "Built to evolve",
+    body: "Strict TypeScript and a clean foundation keep change easy.",
+    icon: "branch",
+  },
+];
+---
+
+<Layout
+  title="Airnodes — Infrastructure at the speed of air"
+  description="A modern Astro foundation deployed globally on Cloudflare's edge."
+>
+  <main>
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Airnodes home">
+        <svg aria-hidden="true" viewBox="0 0 48 48">
+          <path d="m24 3 18 10.5v21L24 45 6 34.5v-21L24 3Z" />
+          <path d="m6 13.5 18 10.3 18-10.3M24 23.8V45" />
+          <circle cx="24" cy="3" r="2.5" />
+          <circle cx="42" cy="13.5" r="2.5" />
+          <circle cx="42" cy="34.5" r="2.5" />
+          <circle cx="24" cy="45" r="2.5" />
+          <circle cx="6" cy="34.5" r="2.5" />
+          <circle cx="6" cy="13.5" r="2.5" />
+        </svg>
+        <span>Airnodes</span>
+      </a>
+      <a class="nav-link" href="#principles">Principles <span aria-hidden="true">↘</span></a>
+    </nav>
+
+    <section class="hero shell">
+      <div class="hero-copy">
+        <h1>Infrastructure that moves at the speed of air<span>.</span></h1>
+        <p>A modern Astro foundation, deployed globally on Cloudflare’s edge.</p>
+        <div class="actions">
+          <a class="primary" href="#principles">Explore the stack <span aria-hidden="true">→</span></a>
+          <a class="secondary" href="https://github.com/" rel="noreferrer">View on GitHub <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="orbit" aria-hidden="true">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+        <div class="ring ring-4"></div>
+        <div class="core">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <i class="node n1"></i><i class="node n2"></i><i class="node n3"></i>
+        <i class="node n4"></i><i class="node n5"></i><i class="node n6"></i>
+      </div>
+    </section>
+
+    <section class="principles shell" id="principles" aria-label="Technical principles">
+      {
+        principles.map(({ title, body, icon }) => (
+          <article>
+            <div class={`principle-icon ${icon}`} aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div>
+              <h2>{title}</h2>
+              <p>{body}</p>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+
+    <footer class="footer shell">
+      <a class="brand brand-small" href="/">
+        <svg aria-hidden="true" viewBox="0 0 48 48">
+          <path d="m24 3 18 10.5v21L24 45 6 34.5v-21L24 3Z" />
+          <path d="m6 13.5 18 10.3 18-10.3M24 23.8V45" />
+        </svg>
+        <span>Airnodes</span>
+      </a>
+      <p>Built with Astro · Deployed on Cloudflare</p>
+      <p>© {new Date().getFullYear()} Airnodes</p>
+    </footer>
+  </main>
+</Layout>
+
+<style is:global>
+  :root {
+    color-scheme: dark;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --bg: #07111f;
+    --bg-deep: #030a14;
+    --text: #f6f9ff;
+    --muted: #9aabc7;
+    --line: rgba(139, 174, 217, 0.2);
+    --cyan: #63e6ff;
+    --violet: #7667ff;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    min-width: 320px;
+    color: var(--text);
+    background:
+      radial-gradient(circle at 78% 36%, rgba(34, 91, 180, 0.2), transparent 28rem),
+      radial-gradient(circle at 10% 60%, rgba(26, 106, 154, 0.08), transparent 24rem),
+      var(--bg-deep);
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.22;
+    background-image:
+      linear-gradient(rgba(99, 230, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 230, 255, 0.035) 1px, transparent 1px);
+    background-size: 52px 52px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+  }
+  a { color: inherit; text-decoration: none; }
+  .shell { width: min(1240px, calc(100% - 64px)); margin-inline: auto; }
+  .nav {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand { display: inline-flex; align-items: center; gap: 14px; font-size: 1.5rem; font-weight: 720; letter-spacing: -0.04em; }
+  .brand svg { width: 38px; fill: none; stroke: var(--cyan); stroke-width: 1.6; }
+  .nav-link { color: var(--muted); font-size: 0.9rem; transition: color 180ms ease; }
+  .nav-link:hover { color: var(--cyan); }
+  .hero {
+    min-height: 610px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .hero-copy { position: relative; z-index: 2; padding-block: 92px; }
+  h1 {
+    max-width: 760px;
+    margin: 0;
+    font-size: clamp(3.25rem, 6.2vw, 6.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.065em;
+    text-wrap: balance;
+  }
+  h1 span { color: var(--cyan); }
+  .hero-copy > p {
+    max-width: 540px;
+    margin: 32px 0 0;
+    color: var(--muted);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.55;
+  }
+  .actions { display: flex; align-items: center; gap: 34px; margin-top: 42px; }
+  .actions a { display: inline-flex; align-items: center; gap: 30px; font-weight: 700; }
+  .primary {
+    padding: 17px 22px;
+    color: #031018;
+    background: var(--cyan);
+    border: 1px solid var(--cyan);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  .primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(99, 230, 255, 0.2); }
+  .secondary { padding-block: 10px; border-bottom: 2px solid var(--cyan); }
+  .orbit { position: relative; aspect-ratio: 1; width: min(600px, 52vw); justify-self: center; }
+  .ring { position: absolute; border: 1px solid rgba(134, 172, 255, 0.38); border-radius: 50%; inset: 50%; translate: -50% -50%; }
+  .ring-1 { width: 24%; height: 24%; }
+  .ring-2 { width: 44%; height: 44%; }
+  .ring-3 { width: 65%; height: 65%; border-style: dashed; }
+  .ring-4 { width: 88%; height: 88%; }
+  .core {
+    position: absolute; inset: 50%; width: 76px; aspect-ratio: 1; translate: -50% -50%;
+    border: 2px solid var(--cyan); rotate: 30deg; box-shadow: 0 0 45px rgba(99,230,255,.42);
+  }
+  .core::before, .core::after { content: ""; position: absolute; inset: 50%; width: 100%; height: 1px; background: var(--cyan); transform-origin: center; }
+  .core::before { rotate: 60deg; } .core::after { rotate: 120deg; }
+  .core span { position: absolute; width: 8px; aspect-ratio: 1; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 14px var(--cyan); }
+  .core span:nth-child(1) { left: -5px; top: -5px; } .core span:nth-child(2) { right: -5px; top: -5px; }
+  .core span:nth-child(3) { right: -5px; bottom: -5px; } .core span:nth-child(4) { left: -5px; bottom: -5px; }
+  .node { position: absolute; width: 12px; aspect-ratio: 1; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 18px currentColor; }
+  .n1 { left: 18%; top: 25%; color: var(--cyan); } .n2 { right: 8%; top: 43%; color: var(--violet); background: var(--violet); }
+  .n3 { left: 9%; bottom: 26%; color: #548aff; background: #548aff; } .n4 { right: 28%; bottom: 9%; }
+  .n5 { left: 42%; top: 4%; color: var(--violet); background: var(--violet); } .n6 { right: 22%; top: 24%; }
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+  .principles article { min-height: 190px; padding: 44px 36px; display: flex; gap: 26px; align-items: flex-start; }
+  .principles article + article { border-left: 1px solid var(--line); }
+  .principles h2 { margin: 2px 0 8px; font-size: 1.2rem; letter-spacing: -0.025em; }
+  .principles p { margin: 0; max-width: 220px; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+  .principle-icon { position: relative; flex: 0 0 46px; height: 46px; color: var(--cyan); }
+  .speed { border: 1px solid currentColor; border-radius: 50%; }
+  .speed::before, .speed::after, .speed span:first-child { content: ""; position: absolute; right: 34px; width: 32px; height: 1px; background: currentColor; }
+  .speed::before { top: 12px; } .speed span:first-child { top: 22px; width: 44px; } .speed::after { top: 32px; }
+  .globe { border: 1px solid currentColor; border-radius: 50%; }
+  .globe::before, .globe::after { content: ""; position: absolute; inset: 4px 14px; border: 1px solid currentColor; border-radius: 50%; }
+  .globe::after { inset: 21px 0 auto; height: 1px; border-width: 1px 0 0; border-radius: 0; }
+  .branch::before { content: ""; position: absolute; left: 6px; top: 6px; width: 28px; height: 30px; border-left: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: skewY(-34deg); }
+  .branch span { position: absolute; width: 8px; aspect-ratio: 1; border: 2px solid currentColor; border-radius: 50%; }
+  .branch span:nth-child(1) { left: 1px; top: 0; } .branch span:nth-child(2) { right: 0; top: 10px; } .branch span:nth-child(3) { right: 0; bottom: 0; }
+  .footer { min-height: 130px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px; align-items: center; color: var(--muted); font-size: 0.82rem; }
+  .footer > :last-child { text-align: right; }
+  .brand-small { color: var(--text); font-size: 1rem; }
+  .brand-small svg { width: 28px; }
+
+  @media (max-width: 860px) {
+    .shell { width: min(100% - 36px, 680px); }
+    .nav { height: 78px; }
+    .hero { min-height: auto; grid-template-columns: 1fr; padding-bottom: 40px; }
+    .hero-copy { padding: 68px 0 20px; }
+    .orbit { width: min(520px, 100%); margin-top: -16px; }
+    .principles { grid-template-columns: 1fr; }
+    .principles article { min-height: 140px; padding: 34px 18px; }
+    .principles article + article { border-left: 0; border-top: 1px solid var(--line); }
+    .footer { grid-template-columns: 1fr; padding-block: 34px; gap: 12px; }
+    .footer > :last-child { text-align: left; }
+  }
+  @media (max-width: 520px) {
+    h1 { font-size: 3.2rem; }
+    .actions { align-items: stretch; flex-direction: column; gap: 18px; }
+    .actions a { justify-content: space-between; }
+    .orbit { margin-top: 0; }
+    .nav-link { display: none; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .ring-3 { animation: spin 36s linear infinite; }
+    .ring-4 { animation: spin 52s linear infinite reverse; }
+    @keyframes spin { to { rotate: 360deg; } }
+  }
+</style>
