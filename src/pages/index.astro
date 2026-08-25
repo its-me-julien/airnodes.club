@@ -8,97 +8,93 @@ import { products, site, sources } from "../config";
 const steps = [
   {
     number: "01",
-    title: "Choose",
-    body: "Match the AirNode model, market, role and current terms to your own risk tolerance.",
-    icon: "sliders",
+    title: "Choose an AirNode",
+    body: "Compare its network role, approved market, operating model and current terms.",
   },
   {
     number: "02",
-    title: "Purchase & sign",
-    body: "Complete checkout, identity checks where required, and the current Operator agreements.",
-    icon: "document",
+    title: "Buy and sign",
+    body: "Complete World Mobile’s checkout and sign the current Operator agreement.",
   },
   {
     number: "03",
-    title: "Deploy & activate",
-    body: "Install on-site, or let the approved local operator deploy eligible remote-operation models.",
-    icon: "node",
+    title: "Deploy and activate",
+    body: "The equipment is installed and activated. Who handles each step depends on the model and agreement.",
   },
   {
     number: "04",
-    title: "Monitor & claim",
-    body: "Follow allocation, status, usage and rewards from the AirNode platform dashboard.",
-    icon: "chart",
+    title: "Track and claim",
+    body: "Monitor status, usage and eligible rewards through the AirNode platform dashboard.",
   },
 ] as const;
 
 const risks = [
   {
-    title: "Demand & traffic",
+    title: "Demand and traffic",
     body: "Usage-based rewards depend on verified network demand. Planning benchmarks are not usage commitments.",
-    icon: "trend",
   },
   {
-    title: "Activation & uptime",
+    title: "Activation and uptime",
     body: "Rewards may not begin until activation and can pause when service, connectivity or a customer location is unavailable.",
-    icon: "clock",
   },
   {
-    title: "Counterparty & platform",
-    body: "World Mobile, its market partners and the AirNode platform are central to deployment, measurement and payout.",
-    icon: "shield",
+    title: "Operating partners",
+    body: "World Mobile and the AirNode platform govern measurement and payout; approved local partners may handle deployment and operations.",
   },
   {
-    title: "Hardware & location",
+    title: "Hardware and location",
     body: "Physical equipment can fail, be damaged, become obsolete or require relocation and maintenance.",
-    icon: "pin",
   },
   {
-    title: "Regulation & terms",
+    title: "Regulation and terms",
     body: "Telecom rules, product terms, reward rates and availability can change by country and over time.",
-    icon: "file",
   },
   {
-    title: "Liquidity & capital",
+    title: "Liquidity and capital",
     body: "Do not assume a resale market or instant exit. Capital may be locked for an uncertain period or lost.",
-    icon: "coins",
   },
 ] as const;
 
 const faqs = [
   {
+    question: "What do I own when I buy an AirNode?",
+    answer:
+      "World Mobile describes AirNodes as physical telecom infrastructure you own. The model-specific agreement determines legal title, hosting, operation, transfer rights and obligations. You are not buying equity in World Mobile, spectrum, land or a guaranteed income stream.",
+  },
+  {
     question: "Do I install the hardware?",
     answer:
-      "It depends on the model. Some AirNodes can be self-deployed; selected remote-operation products are installed and operated by an approved local partner. Frontier, for example, is installed and maintained in the Philippines by CWC. Check the live product page and agreement before buying.",
+      "It depends on the model. EmberNode is pre-installed and platform-managed. World Mobile says approved local partners install and operate Frontier deployments in the Philippines. Other products may require a suitable site or a different operating arrangement.",
   },
   {
     question: "Are rewards fixed?",
     answer:
-      "Not universally. EmberNode rewards are tied to verified data throughput. Frontier has a fixed monthly base reward while its matched business service is active. Other models have their own terms. Rewards can be lower than illustrations—or zero.",
+      "Not across all models. EmberNode rewards follow verified data throughput. World Mobile’s published Frontier terms describe a monthly base reward while the matched customer service is active. Other models have their own terms, and rewards can be lower than illustrations—or zero.",
   },
   {
     question: "Can I deploy an AirNode anywhere?",
     answer:
-      "No. Products are built for approved markets, network layers and operating partners. A purchase does not grant permission to deploy hardware in an arbitrary country or location.",
+      "No. Each product is designed for an approved market, network role and operating model. Buying an AirNode does not give permission to place equipment in an arbitrary country or location.",
   },
   {
-    question: "When do rewards begin?",
+    question: "Are the reward examples net income?",
     answer:
-      "Only when the applicable product conditions are met. Frontier rewards start after service activation, which World Mobile says may take up to 60 days. EmberNode rewards depend on deployed, operational infrastructure carrying verified traffic.",
+      "No. They are gross illustrations based on World Mobile’s published assumptions. They exclude taxes, fees, currency conversion, financing, downtime and other model-specific costs.",
   },
   {
-    question: "What happens after I continue to World Mobile?",
+    question: "What happens when I click Buy AirNodes?",
     answer:
-      "You leave this independent guide. World Mobile provides the live inventory, eligibility, contracts, checkout and platform account. Airnodes Club does not hold your funds, sell the equipment or determine your rewards.",
+      "You leave this independent guide. World Mobile provides live availability, eligibility, contracts, checkout and the platform account. Airnodes Club does not hold your funds, sell the equipment or determine your rewards.",
   },
 ] as const;
 
 const firstPartySources = [
-  ["AirNodes overview & live metrics", sources.airnodes],
-  ["EmberNode product & economics", sources.ember],
-  ["Frontier Philippines announcement", sources.frontier],
+  ["AirNodes overview and current catalogue", sources.airnodes],
+  ["EmberNode product and economics", sources.ember],
+  ["Frontier product and reward model", sources.frontier],
+  ["Frontier Philippines announcement", sources.frontierAnnouncement],
   ["Frontier launch post on X", sources.frontierSocial],
-  ["New AirNode platform", sources.platform],
+  ["AirNode platform", sources.platform],
   ["Network scale milestone", sources.scale],
   ["Affiliate programme launch terms", sources.affiliate],
 ] as const;
@@ -111,8 +107,8 @@ const contextSources = [
 ---
 
 <Layout
-  title="Airnodes Club — Own infrastructure behind the signal"
-  description="An independent guide to World Mobile AirNodes: understand the hardware, current options, reward models, illustrative economics and risks before you buy."
+  title="Airnodes Club — Own telecom infrastructure"
+  description="A clear, independent guide to World Mobile AirNodes: what the equipment does, who operates it, how eligible rewards work and what to check before you buy."
 >
   <header class="site-header">
     <nav class="shell nav" aria-label="Primary navigation">
@@ -120,11 +116,11 @@ const contextSources = [
         <BrandMark />
       </a>
       <div class="nav-links">
+        <a href="#start">Start here</a>
         <a href="#how-it-works">How it works</a>
         <a href="#airnodes">AirNodes</a>
-        <a href="#economics">Economics</a>
+        <a href="#rewards">Rewards</a>
         <a href="#risks">Risks</a>
-        <a href="#faq">FAQ</a>
       </div>
       <a
         class="button button-small button-primary"
@@ -132,238 +128,166 @@ const contextSources = [
         target="_blank"
         rel="sponsored noopener noreferrer"
       >
-        Explore live AirNodes
-        <span aria-hidden="true">↗</span>
+        Buy AirNodes <span aria-hidden="true">↗</span>
       </a>
     </nav>
   </header>
 
   <main id="main-content">
-    <section class="hero shell" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title">Own a piece of the network people rely on.</h1>
+        <p class="hero-kicker">Independent guide to World Mobile AirNodes</p>
+        <h1 id="hero-title">Own telecom infrastructure. Help more people connect.</h1>
         <p class="hero-lede">
-          AirNodes are real telecom infrastructure supporting a live network.
-          We help you understand the options, the economics and the risks before
-          you buy.
+          AirNodes are physical equipment inside World Mobile’s network. Compare
+          what each model does, who operates it and how eligible rewards work
+          before you buy.
         </p>
         <div class="hero-actions">
           <a
-            class="button button-primary"
+            class="button button-light"
             href={site.affiliateUrl}
             target="_blank"
             rel="sponsored noopener noreferrer"
           >
-            Explore live AirNodes
-            <span aria-hidden="true">↗</span>
-          </a>
-          <a class="button button-secondary" href="#how-it-works">
-            How ownership works
-            <span aria-hidden="true">↓</span>
+            Buy AirNodes <span aria-hidden="true">↗</span>
           </a>
         </div>
         <p class="micro-disclosure">
-          <span class="info-icon" aria-hidden="true">i</span>
-          Independent affiliate guide · We may earn a commission from qualifying
+          Independent affiliate guide. We may earn a commission from qualifying
           purchases.
         </p>
       </div>
       <figure class="hero-media">
         <Image
           src={heroImage}
-          alt="A network operator working beside outdoor telecom equipment on an urban rooftop"
-          widths={[720, 960, 1280]}
-          sizes="(max-width: 900px) 100vw, 58vw"
+          alt="A network technician working beside outdoor telecom equipment above a neighbourhood"
+          widths={[720, 960, 1280, 1600]}
+          sizes="(max-width: 860px) 100vw, 55vw"
           format="webp"
           loading="eager"
           fetchpriority="high"
         />
         <figcaption>
-          Illustrative image · AirNode hardware and deployment vary by model and
-          market.
+          Illustrative image. AirNode hardware and deployment vary by model and market.
         </figcaption>
       </figure>
     </section>
 
-    <section class="proof-rail" aria-label="World Mobile reported network figures">
-      <div class="shell proof-grid">
-        <p class="proof-source">
-          World Mobile reports
-          <a href={sources.airnodes} target="_blank" rel="noopener noreferrer"
-            >View source ↗</a
-          >
+    <section class="section intro-section shell" id="start" aria-labelledby="start-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">01 / Start here</p>
+          <h2 id="start-title">A different way to build a mobile network.</h2>
+        </div>
+        <p class="section-lede">
+          World Mobile combines telecom infrastructure with independent ownership
+          and local operations. More people can participate in building the
+          network—not only traditional telecom companies.
         </p>
+      </div>
+
+      <div class="definition-list">
         <article>
-          <svg aria-hidden="true" viewBox="0 0 48 48">
-            <path d="m24 4 17 10v20L24 44 7 34V14L24 4Z"></path>
-            <circle cx="24" cy="4" r="2"></circle><circle cx="41" cy="14" r="2"
-            ></circle><circle cx="41" cy="34" r="2"></circle><circle
-              cx="24"
-              cy="44"
-              r="2"></circle><circle cx="7" cy="34" r="2"></circle><circle
-              cx="7"
-              cy="14"
-              r="2"></circle>
-          </svg>
-          <div><strong>145,000+</strong><span>AirNodes deployed</span></div>
+          <p class="definition-label">World Mobile</p>
+          <div>
+            <h3>The network</h3>
+            <p>
+              World Mobile coordinates mobile and internet services, the AirNode
+              platform and operating partners across approved markets.
+            </p>
+          </div>
         </article>
         <article>
-          <svg aria-hidden="true" viewBox="0 0 48 48">
-            <path d="M6 40h36M9 35V25M18 35V18M27 35V28M36 35V10"></path>
-            <path d="m7 20 10-8 9 5L40 5M34 5h6v6"></path>
-          </svg>
-          <div><strong>3M+</strong><span>unique users / 24h</span></div>
+          <p class="definition-label">AirNode</p>
+          <div>
+            <h3>The physical infrastructure</h3>
+            <p>
+              One AirNode may distribute capacity, connect a business, extend
+              coverage or support the network backbone. The role changes by model.
+            </p>
+          </div>
         </article>
         <article>
-          <svg aria-hidden="true" viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="19"></circle>
-            <path d="M30 16c-2-2-4-3-7-3-4 0-7 2-7 5 0 8 16 3 16 11 0 4-3 6-8 6-4 0-7-1-9-4M24 8v5M24 35v5"></path>
-          </svg>
-          <div><strong>$2M+</strong><span>rewards paid</span></div>
+          <p class="definition-label">Operator</p>
+          <div>
+            <h3>The owner</h3>
+            <p>
+              World Mobile calls an AirNode owner an Operator. The agreement says
+              who deploys the equipment, who runs it and how eligible rewards are calculated.
+            </p>
+          </div>
         </article>
+      </div>
+
+      <div class="ownership-statement">
+        <p>You own the infrastructure.</p>
+        <p>The product agreement defines who deploys and operates it.</p>
       </div>
     </section>
 
-    <section class="section shell how-section" id="how-it-works" aria-labelledby="how-title">
-      <div class="section-intro split-intro">
-        <div>
-          <p class="section-index">01 / The model</p>
-          <h2 id="how-title">Telecom,<br /><span>opened up.</span></h2>
+    <section class="journey-section" id="how-it-works" aria-labelledby="journey-title">
+      <div class="shell">
+        <div class="journey-heading">
+          <p class="section-index">02 / How it works</p>
+          <h2 id="journey-title">From choosing to claiming—in four steps.</h2>
         </div>
-        <div class="intro-copy">
-          <p>
-            An AirNode is physical telecom infrastructure owned by an Operator,
-            deployed in an approved market, and monitored through the AirNode
-            platform.
-          </p>
-          <div class="principle-list">
-            <article>
-              <span class="line-icon hardware" aria-hidden="true"></span>
-              <div>
-                <h3>Real hardware</h3>
-                <p>Physical infrastructure deployed in the real world.</p>
-              </div>
-            </article>
-            <article>
-              <span class="line-icon location" aria-hidden="true"></span>
-              <div>
-                <h3>Market-specific deployment</h3>
-                <p>Placed where approved operations and demand exist.</p>
-              </div>
-            </article>
-            <article>
-              <span class="line-icon rewards" aria-hidden="true"></span>
-              <div>
-                <h3>Model-specific rewards</h3>
-                <p>Defined by the node’s role and current product terms.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-
-      <div class="layer-diagram" aria-labelledby="layer-title">
-        <div class="layer-copy">
-          <p class="section-kicker">One network · different layers</p>
-          <h3 id="layer-title">Infrastructure is not one product.</h3>
-          <p>
-            AirNodes can sit between a carrier backbone and a local network,
-            deliver service at a business edge, extend radio coverage or support
-            enterprise-scale operations.
-          </p>
-        </div>
-        <div class="layer-stack">
-          <div class="layer-row">
-            <span class="layer-node cyan" aria-hidden="true"></span>
-            <div><strong>Backbone</strong><span>High-capacity core connectivity</span></div>
-            <svg aria-hidden="true" viewBox="0 0 280 52"><path d="M4 26h272M30 8v36M100 8v36M170 8v36M240 8v36"></path><circle cx="30" cy="26" r="5"></circle><circle cx="100" cy="26" r="5"></circle><circle cx="170" cy="26" r="5"></circle><circle cx="240" cy="26" r="5"></circle></svg>
-          </div>
-          <div class="layer-row">
-            <span class="layer-node violet" aria-hidden="true"></span>
-            <div><strong>Distribution</strong><span>Ember moves capacity toward the edge</span></div>
-            <svg aria-hidden="true" viewBox="0 0 280 52"><path d="M4 26h272M40 26 82 8l42 36 42-36 42 36 32-18"></path><circle cx="40" cy="26" r="5"></circle><circle cx="124" cy="44" r="5"></circle><circle cx="208" cy="44" r="5"></circle></svg>
-          </div>
-          <div class="layer-row">
-            <span class="layer-node cyan" aria-hidden="true"></span>
-            <div><strong>Customer edge</strong><span>Frontier and Spark connect local users</span></div>
-            <svg aria-hidden="true" viewBox="0 0 280 52"><path d="M4 42h272M52 42V22M44 42h16M49 22l3-12 3 12M40 18a17 17 0 0 1 24 0M130 42V22M122 42h16M127 22l3-12 3 12M118 18a17 17 0 0 1 24 0M208 42V22M200 42h16M205 22l3-12 3 12M196 18a17 17 0 0 1 24 0"></path></svg>
-          </div>
-          <div class="layer-row">
-            <span class="layer-node violet" aria-hidden="true"></span>
-            <div><strong>Wide-area & enterprise</strong><span>Portal and Titan support larger footprints</span></div>
-            <svg aria-hidden="true" viewBox="0 0 280 52"><path d="M4 42h272M60 42 44 28l20-20 20 20-16 14M170 42l-16-14 20-20 20 20-16 14M64 8l110 0M68 42h102"></path></svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="process">
-        <div class="process-heading">
-          <p class="section-kicker">From checkout to active service</p>
-          <h3>How one AirNode becomes a working asset.</h3>
-        </div>
-        <ol>
+        <ol class="journey-list">
           {
             steps.map((step) => (
               <li>
                 <span class="step-number">{step.number}</span>
-                <span class={`step-icon ${step.icon}`} aria-hidden="true"></span>
-                <h4>{step.title}</h4>
+                <h3>{step.title}</h3>
                 <p>{step.body}</p>
               </li>
             ))
           }
         </ol>
-        <div class="reward-flow" aria-label="How reward outcomes are produced">
-          <span>Service is used</span><i aria-hidden="true">›</i>
-          <span>Verified activity is measured</span><i aria-hidden="true">›</i>
-          <span>Rewards accrue under product terms</span><i aria-hidden="true">›</i>
-          <span>Claims are managed in the dashboard</span>
+        <div class="reward-logic">
+          <p class="reward-logic-title">Rewards follow qualifying service—not ownership alone.</p>
+          <div>
+            <p><strong>Usage-linked</strong> EmberNode rewards follow verified traffic.</p>
+            <p><strong>Service-linked</strong> Published Frontier terms use an active customer service.</p>
+          </div>
         </div>
         <p class="payout-note">
-          World Mobile says eligible rewards become claimable 30 days after
-          month-end, subject to a US$10 minimum. Published payout options include
-          USD, GBP, EUR and USDT on Ethereum; processing can take up to 10 business
-          days and crypto transaction fees may apply.
-          <a href={sources.platform} target="_blank" rel="noopener noreferrer"
-            >Platform source ↗</a
-          >
+          World Mobile says eligible rewards are managed through the AirNode
+          dashboard. Timing, minimum claims, payout methods and fees are subject to
+          current platform terms.
+          <a href={sources.airnodes} target="_blank" rel="noopener noreferrer">Check the official details ↗</a>
         </p>
       </div>
     </section>
 
-    <section class="section section-ruled" id="airnodes" aria-labelledby="airnodes-title">
+    <section class="section product-section" id="airnodes" aria-labelledby="airnodes-title">
       <div class="shell">
         <div class="section-heading">
           <div>
-            <p class="section-index">02 / Current landscape</p>
-            <h2 id="airnodes-title">Different layers.<br />Different <span>economics.</span></h2>
+            <p class="section-index">03 / The options</p>
+            <h2 id="airnodes-title">Choose by role—not headline return.</h2>
           </div>
-          <p>
-            “AirNode” is an umbrella, not a single offer. Compare the network role,
-            market, deployment model and reward logic before comparing price.
+          <p class="section-lede">
+            “AirNode” is an umbrella, not one product. Compare the network role,
+            market, operating model and reward basis before comparing price.
           </p>
         </div>
 
         <div class="product-ledger">
           {
             products.map((product) => (
-              <details class={`product-row ${product.tone}`}>
+              <details class="product-row">
                 <summary>
                   <div class="product-name">
-                    <span class="product-glyph" aria-hidden="true"></span>
-                    <div>
-                      <h3>{product.name}</h3>
-                      <span>{product.status}</span>
-                    </div>
+                    <h3>{product.name}</h3>
+                    <span>{product.status}</span>
                   </div>
                   <div class="product-layer">
-                    <span class="cell-label">Role / layer</span>
+                    <span class="cell-label">Role and market</span>
                     <strong>{product.layer}</strong>
                   </div>
                   <div class="product-economics">
-                    <span class="cell-label">Current headline price</span>
+                    <span class="cell-label">Published price</span>
                     <strong>{product.price}</strong>
-                    <span>{product.terms}</span>
                   </div>
                   <span class="product-toggle">
                     <span class="sr-only">Read more about {product.name}</span>
@@ -372,158 +296,110 @@ const contextSources = [
                 </summary>
                 <div class="product-detail">
                   <p>{product.detail}</p>
-                  <a href={product.source} target="_blank" rel="noopener noreferrer">
-                    Product source ↗
-                  </a>
+                  <p>{product.terms}</p>
+                  <a href={product.source} target="_blank" rel="noopener noreferrer">Product source ↗</a>
                 </div>
               </details>
             ))
           }
         </div>
         <p class="ledger-note">
-          Availability, price and terms can change. Values shown are World Mobile’s
-          published information reviewed <time datetime={site.reviewDate}>{site.reviewDateLabel}</time>.
+          Availability, price and terms can change. Information shown was reviewed
+          <time datetime={site.reviewDate}>{site.reviewDateLabel}</time>. World Mobile’s
+          checkout and current agreement control.
         </p>
       </div>
     </section>
 
-    <section class="section shell economics-section" id="economics" aria-labelledby="economics-title">
+    <section class="section rewards-section shell" id="rewards" aria-labelledby="rewards-title">
       <div class="section-heading">
         <div>
-          <p class="section-index">03 / Economics</p>
-          <h2 id="economics-title">Model the <span>return.</span><br />Don’t market the promise.</h2>
+          <p class="section-index">04 / Rewards</p>
+          <h2 id="rewards-title">Real activity first. Rewards second.</h2>
         </div>
-        <p>
-          Buying an AirNode means committing capital to physical telecom
-          infrastructure under a product agreement. It is not a deposit, bond or
-          guaranteed income product.
+        <p class="section-lede">
+          These examples explain two different reward models. They are gross
+          illustrations based on published terms—not forecasts, APY or guarantees.
         </p>
       </div>
 
       <div class="scenario-grid">
-        <article class="scenario cyan">
+        <article class="scenario">
           <header>
-            <span>Scenario 1</span>
-            <h3>EmberNode · one unit at US$165</h3>
+            <span>Usage-linked example</span>
+            <h3>EmberNode</h3>
           </header>
           <dl>
-            <div>
-              <dt>World Mobile planning benchmark</dt>
-              <dd><strong>~800 GB</strong><span>/ month</span></dd>
-            </div>
-            <div>
-              <dt>Published reward rate</dt>
-              <dd><strong>~$0.004167</strong><span>/ verified GB</span></dd>
-            </div>
-            <div>
-              <dt>Illustrative gross reward</dt>
-              <dd><strong>~$3.33</strong><span>/ month</span></dd>
-            </div>
-            <div>
-              <dt>Simple gross payback</dt>
-              <dd><strong>~49.5</strong><span>months</span></dd>
-            </div>
-            <div>
-              <dt>Gross annual reward / price</dt>
-              <dd><strong>~24.2%</strong><span>not APY</span></dd>
-            </div>
+            <div><dt>Starting price</dt><dd>US$165</dd></div>
+            <div><dt>Planning benchmark</dt><dd>~800 GB / month</dd></div>
+            <div><dt>Published rate</dt><dd>~US$0.004167 / GB</dd></div>
+            <div class="scenario-result"><dt>Illustrative gross reward</dt><dd>~US$3.33 / month</dd></div>
           </dl>
           <p>
-            Calculated from World Mobile’s average planning benchmark. Traffic can
-            be below the benchmark, and rewards are not capped by it.
+            Actual throughput may be lower or higher. EmberNode does not connect
+            end users directly; it distributes capacity downstream in Pakistan.
           </p>
-          <a href={sources.ember} target="_blank" rel="noopener noreferrer"
-            >Check the EmberNode source ↗</a
-          >
+          <a href={sources.ember} target="_blank" rel="noopener noreferrer">Check the EmberNode source ↗</a>
         </article>
 
-        <article class="scenario violet">
+        <article class="scenario">
           <header>
-            <span>Scenario 2</span>
-            <h3>Frontier Core · list price</h3>
+            <span>Service-linked example</span>
+            <h3>Frontier Core</h3>
           </header>
           <dl>
-            <div>
-              <dt>Published list price</dt>
-              <dd><strong>$585</strong><span>one unit</span></dd>
-            </div>
-            <div>
-              <dt>Monthly base reward</dt>
-              <dd><strong>$17.55</strong><span>when active</span></dd>
-            </div>
-            <div>
-              <dt>Activation window</dt>
-              <dd><strong>Up to 60</strong><span>days</span></dd>
-            </div>
-            <div>
-              <dt>Simple gross payback</dt>
-              <dd><strong>~33.3</strong><span>months from activation</span></dd>
-            </div>
-            <div>
-              <dt>Gross annual reward / price</dt>
-              <dd><strong>36.0%</strong><span>not APY</span></dd>
-            </div>
+            <div><dt>Previously published price</dt><dd>US$585</dd></div>
+            <div><dt>Customer requirement</dt><dd>Active service</dd></div>
+            <div><dt>Published activation window</dt><dd>Up to 60 days</dd></div>
+            <div class="scenario-result"><dt>Published monthly base</dt><dd>US$17.55 when active</dd></div>
           </dl>
           <p>
-            The base reward begins only after the matched business service is
-            active and may pause if the business leaves while a replacement is
-            found.
+            World Mobile publishes Frontier through scheduled drops. These figures
+            explain the current model; confirm live batch availability and terms.
           </p>
-          <a href={sources.frontier} target="_blank" rel="noopener noreferrer"
-            >Check the Frontier source ↗</a
-          >
+          <a href={sources.frontier} target="_blank" rel="noopener noreferrer">Check the Frontier source ↗</a>
         </article>
       </div>
 
       <p class="scenario-disclaimer">
-        Illustrative, gross and not guaranteed. Simple payback ignores tax,
-        transaction fees, downtime, maintenance, connectivity, currency movement,
-        contract changes, time value and any costs not stated in the product page.
-        It is not APY or financial advice.
+        Gross examples exclude tax, fees, downtime, maintenance, connectivity,
+        currency movement, financing and other model-specific costs. Rewards may
+        be lower than shown—or zero.
       </p>
 
-      <div class="owner-note">
-        <div class="owner-symbol" aria-hidden="true"><span></span></div>
+      <div class="ownership-note">
         <div>
-          <p class="section-kicker">What “investing” means here</p>
-          <h3>Think like an infrastructure owner.</h3>
+          <p class="section-index">What ownership means</p>
+          <h3>What you own—and what you do not.</h3>
         </div>
         <p>
-          Your purchase is exposure to an operating network—not an account
-          balance. World Mobile’s current public materials do not establish a
-          liquid resale market. Treat the purchase as risk capital; the final
-          agreement determines legal title, rights and obligations.
+          World Mobile frames the purchase as ownership of telecom infrastructure.
+          The agreement determines the legal title, hosting, operation, transfer
+          rights and obligations. You do not buy equity in World Mobile, spectrum,
+          land or a guaranteed income stream.
         </p>
-      </div>
-
-      <div class="driver-equation">
-        <div>
-          <p class="section-kicker">A more useful mental model</p>
-          <h3>Reward outcome</h3>
-        </div>
-        <span class="equals" aria-hidden="true">=</span>
-        <div><i class="equation-icon terms" aria-hidden="true"></i><strong>Model terms</strong></div>
-        <span aria-hidden="true">×</span>
-        <div><i class="equation-icon activity" aria-hidden="true"></i><strong>Verified usage<br />or service status</strong></div>
-        <span aria-hidden="true">×</span>
-        <div><i class="equation-icon uptime" aria-hidden="true"></i><strong>Uptime</strong></div>
-        <span aria-hidden="true">×</span>
-        <div><i class="equation-icon time" aria-hidden="true"></i><strong>Time</strong></div>
       </div>
     </section>
 
     <section class="section risk-section" id="risks" aria-labelledby="risks-title">
       <div class="shell">
-        <div class="risk-title">
-          <p class="section-index">04 / Risk</p>
-          <h2 id="risks-title">Infrastructure has <span>upside.</span><br />It also has <em>exposure.</em></h2>
+        <div class="risk-heading">
+          <div>
+            <p class="section-index">05 / Before you buy</p>
+            <h2 id="risks-title">What could reduce or stop rewards?</h2>
+          </div>
+          <p>
+            AirNodes are physical infrastructure, not savings products. Rewards
+            depend on activation, verified usage or service, uptime, local
+            operations and current terms.
+          </p>
         </div>
         <div class="risk-list">
           {
-            risks.map((risk) => (
+            risks.map((risk, index) => (
               <details>
                 <summary>
-                  <span class={`risk-icon ${risk.icon}`} aria-hidden="true"></span>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
                   <strong>{risk.title}</strong>
                   <i aria-hidden="true"></i>
                 </summary>
@@ -533,50 +409,40 @@ const contextSources = [
           }
         </div>
         <p class="risk-bottom-line">
-          Rewards can be lower than illustrations—or zero. Read the current
-          agreements and only commit capital you can afford to lock up or lose.
+          Read the current agreement and only commit capital you can afford to
+          lock up or lose.
         </p>
       </div>
     </section>
 
     <aside class="affiliate-band" aria-labelledby="affiliate-title">
       <div class="shell affiliate-inner">
-        <BrandMark compact />
-        <div class="affiliate-copy">
-          <h2 id="affiliate-title">A clearer path to World Mobile.</h2>
-          <p>
-            Airnodes Club is independent from World Mobile. We explain the options
-            and may receive a commission when a qualifying purchase starts from an
-            eligible tagged referral link.
-          </p>
-          <p>
-            World Mobile’s Hex Operator launch terms describe 6–8% commission on
-            qualifying Ember orders and 10% off an eligible buyer’s first AirNode
-            order, capped at US$1,000. Eligibility, current code and checkout terms
-            control; wider affiliate terms may differ.
-          </p>
-          <a href={sources.affiliate} target="_blank" rel="noopener noreferrer"
-            >Read the programme source ↗</a
-          >
+        <div>
+          <p class="section-index">Independent affiliate guide</p>
+          <h2 id="affiliate-title">Buy through World Mobile.</h2>
         </div>
-        <div class="affiliate-action">
-          <p>Current availability and final terms are shown by World Mobile.</p>
+        <div class="affiliate-copy">
+          <p>
+            Airnodes Club is independent from World Mobile. We may receive a
+            commission after a qualifying first order is completed through our
+            eligible referral link. World Mobile confirms availability,
+            eligibility, price, any discount and the final agreement at checkout.
+          </p>
           <a
-            class="button button-primary"
+            class="button button-light"
             href={site.affiliateUrl}
             target="_blank"
             rel="sponsored noopener noreferrer"
           >
-            Explore live AirNodes
-            <span aria-hidden="true">↗</span>
+            Buy AirNodes <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
     </aside>
 
-    <section class="section shell faq-section" id="faq" aria-labelledby="faq-title">
+    <section class="section faq-section shell" id="faq" aria-labelledby="faq-title">
       <div class="faq-heading">
-        <p class="section-index">05 / Plain answers</p>
+        <p class="section-index">06 / Questions</p>
         <h2 id="faq-title">Plain answers before you buy.</h2>
       </div>
       <div class="faq-list">
@@ -591,40 +457,13 @@ const contextSources = [
       </div>
     </section>
 
-    <section class="final-cta" aria-labelledby="cta-title">
-      <div class="shell">
-        <p class="section-index">Continue with current information</p>
-        <h2 id="cta-title">Ready to explore the live market?</h2>
-        <p>
-          Verify availability, agreements, reward terms and any eligible discount
-          directly with World Mobile before committing capital.
-        </p>
-        <div>
-          <a
-            class="button button-primary"
-            href={site.affiliateUrl}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-          >
-            Continue to World Mobile
-            <span aria-hidden="true">↗</span>
-          </a>
-          <a class="button button-secondary" href="#risks">
-            Review the risks again
-            <span aria-hidden="true">↑</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <section class="sources shell" aria-labelledby="sources-title">
       <div>
         <p class="section-index">Research record</p>
-        <h2 id="sources-title">Sources</h2>
+        <h2 id="sources-title">Check the source.</h2>
         <p>
           Information reviewed <time datetime={site.reviewDate}>{site.reviewDateLabel}</time>.
-          World Mobile figures and forecasts are company-published and have not
-          been independently audited by Airnodes Club.
+          Company-published figures have not been independently audited by Airnodes Club.
         </p>
       </div>
       <details>
@@ -638,7 +477,7 @@ const contextSources = [
         </ul>
       </details>
       <details>
-        <summary>Independent, reseller & legacy context <i aria-hidden="true"></i></summary>
+        <summary>Independent, reseller and legacy context <i aria-hidden="true"></i></summary>
         <ul>
           {
             contextSources.map(([label, href]) => (
@@ -647,8 +486,8 @@ const contextSources = [
           }
         </ul>
         <p>
-          These sources were used for context only. The legacy knowledge base was
-          not used for current products, pricing or rewards.
+          Context only. The legacy knowledge base was not used for current product,
+          pricing or reward claims.
         </p>
       </details>
     </section>
@@ -657,11 +496,9 @@ const contextSources = [
   <footer class="site-footer">
     <div class="shell footer-grid">
       <a class="brand" href="/" aria-label="Airnodes Club home"><BrandMark compact /></a>
-      <p>
-        Independent affiliate guide. Not operated by, endorsed by, or part of
-        World Mobile.
-      </p>
+      <p>Independent guide. Not operated by, endorsed by or part of World Mobile.</p>
       <nav aria-label="Footer navigation">
+        <a href="#faq">Questions</a>
         <a href="#sources-title">Sources</a>
         <a href="#affiliate-title">Affiliate disclosure</a>
         <a href="#risks">Risk notice</a>
@@ -670,9 +507,8 @@ const contextSources = [
       <p class="legal">
         Educational and marketing content only—not financial, tax or legal advice.
         AirNode ownership carries capital, operational, counterparty and regulatory
-        risk. Earnings may be zero. References to ownership reflect World Mobile’s
-        product framing; the governing agreement determines legal title, rights and
-        obligations. © {new Date().getFullYear()} Airnodes Club.
+        risk. Earnings may be zero. The governing agreement determines legal title,
+        rights and obligations. © {new Date().getFullYear()} Airnodes Club.
       </p>
     </div>
   </footer>

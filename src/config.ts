@@ -6,14 +6,15 @@ export const site = {
   affiliateUrl:
     import.meta.env.PUBLIC_AIRNODE_AFFILIATE_URL ??
     "https://worldmobile.io/airnodes",
-  reviewDate: "2026-07-26",
-  reviewDateLabel: "26 July 2026",
+  reviewDate: "2026-08-25",
+  reviewDateLabel: "25 August 2026",
 } as const;
 
 export const sources = {
   airnodes: "https://worldmobile.io/airnodes",
   ember: "https://worldmobile.io/airnodes/embernode",
-  frontier:
+  frontier: "https://worldmobile.io/airnodes/frontier",
+  frontierAnnouncement:
     "https://worldmobile.io/blog/post/own-the-next-market-introducing-frontier-airnodes-in-the-philippines",
   frontierSocial:
     "https://x.com/WorldMobileTeam/status/2080699168775962842",
@@ -22,7 +23,10 @@ export const sources = {
   scale:
     "https://worldmobile.io/blog/post/world-mobile-hits-unprecedented-scale",
   affiliate:
-    "https://worldmobile.io/blog/post/the-airnode-affiliate-program-opens-to-hex-operators",
+    "https://worldmobile.io/blog/post/the-airnode-affiliate-program-is-now-open-to-everyone",
+  spark: "https://worldmobile.io/airnodes/spark",
+  portal: "https://worldmobile.io/airnodes/portal",
+  titan: "https://worldmobile.io/airnodes/titan",
   hexy: "https://hexynodes.com/airnodes/",
   alliance: "https://worldmobilealliance.io/airnodes/",
   legacy:
@@ -32,58 +36,53 @@ export const sources = {
 export const products = [
   {
     name: "EmberNode",
-    status: "Available in drops",
+    status: "Available via reservations",
     layer: "Pakistan distribution",
-    price: "US$165 each",
+    price: "Starting from US$165",
     detail:
       "A rugged fibre gateway that moves capacity from an ISP backbone to downstream network infrastructure. It does not connect end users directly.",
-    terms: "1–10 $165 · 11–149 $150 · 150–500 $145 each",
+    terms: "Progressive pricing: first 10 at $165 each · units 11–149 at $150 · units 150–500 at $145",
     source: sources.ember,
-    tone: "cyan",
   },
   {
     name: "Frontier",
-    status: "Drop One · 29 Jul 2026",
+    status: "Scheduled drops · check availability",
     layer: "Philippines business edge",
-    price: "US$585–$1,950",
+    price: "From US$585",
     detail:
-      "Customer-edge Wi‑Fi matched to contracted businesses in General Luna, Siargao. At 1–10 unit pricing: Core is $585 / $17.55 monthly base, Plus $750 / $22.50, Pro $1,000 / $30, and Max $1,950 / $58.50. CWC handles local installation and operations.",
-    terms: "Core · Plus · Pro · Max · higher-quantity pricing published",
+      "Customer-edge Wi‑Fi for connected businesses in the Philippines. World Mobile says an approved local partner installs and operates the hardware while the owner manages it remotely.",
+    terms: "Core, Plus, Pro and Max tiers are published. Check the current drop for live availability.",
     source: sources.frontier,
-    tone: "violet",
   },
   {
     name: "Spark",
-    status: "Partner exclusive",
+    status: "Distribution partners only",
     layer: "Pakistan Wi‑Fi edge",
-    price: "Partner offer",
+    price: "From US$62.99",
     detail:
       "A compact Wi‑Fi AirNode for last-mile access in Pakistan, designed to mesh with nearby units and serve users at the network edge.",
     terms: "Current availability is through selected partners",
-    source: sources.airnodes,
-    tone: "cyan",
+    source: sources.spark,
   },
   {
     name: "Portal",
-    status: "Availability alerts",
+    status: "Available via reservations / Hex Operators",
     layer: "USA wide-area coverage",
     price: "From US$9,000",
     detail:
       "A high-capacity, wide-area endpoint designed to extend coverage in the United States.",
-    terms: "Register interest for current availability",
-    source: sources.airnodes,
-    tone: "violet",
+    terms: "Professional installation through a World Mobile-sourced or eligible owner-provided site",
+    source: sources.portal,
   },
   {
     name: "Titan",
     status: "Contact sales",
-    layer: "Enterprise backbone",
-    price: "Bespoke",
+    layer: "USA long-range coverage",
+    price: "From US$100,000",
     detail:
-      "Large-scale infrastructure for enterprise, backbone and network-overwatch roles.",
+      "World Mobile’s highest-capacity AirNode for enterprise deployments and network backbone.",
     terms: "Commercial terms are handled by sales",
-    source: sources.airnodes,
-    tone: "cyan",
+    source: sources.titan,
   },
   {
     name: "Pulse",
@@ -91,9 +90,8 @@ export const products = [
     layer: "Energy infrastructure",
     price: "Not announced",
     detail:
-      "An announced infrastructure category intended to bring energy into the broader AirNode network model.",
+      "World Mobile describes Pulse as its first energy-infrastructure node. Public product details have not been announced.",
     terms: "No public pricing or reward terms yet",
     source: sources.airnodes,
-    tone: "violet",
   },
 ] as const;

@@ -1,652 +1,554 @@
 # Airnodes Club brand guidelines
 
-Version 1.0 · 26 July 2026
+Version 2.0 · 25 August 2026
 
 This document is the source of truth for the Airnodes Club brand and interface.
-The live implementation tokens are in `src/styles/global.css`.
+The live design tokens are implemented in `src/styles/global.css`.
 
-## 1. Brand in one page
+## 1. Brand foundation
 
-### The idea
+### Brand idea
 
 **Own what connects us.**
 
-Airnodes Club makes an unfamiliar category—individual participation in telecom
-infrastructure—clear enough to evaluate. We show the equipment, its role in the
-network, the published economics, the operating conditions and the material
-risks in one calm place.
+Airnodes Club helps people understand a new category: independently owned,
+real-world telecom infrastructure. We make the equipment, operating model,
+reward logic and risks clear enough to evaluate without specialist knowledge.
 
-### The promise
+### Brand promise
 
-**See the network. Model the economics. Understand the risk before you buy.**
+**A clear path from curiosity to an informed decision.**
 
-### The positioning
+### Positioning
 
-For globally minded builders and prospective infrastructure owners, Airnodes
-Club is the independent guide to World Mobile AirNodes. It turns an unfamiliar
-telecom opportunity into a decision people can understand through current
-product facts, transparent arithmetic, material risks and a direct path to
-official availability.
+Airnodes Club is an independent guide and affiliate publisher for World Mobile
+AirNodes. It explains what each model does, who deploys and operates it, how
+eligible rewards work and what can go wrong before sending a buyer to World
+Mobile for live availability and checkout.
 
-Unlike yield-led affiliate sites, Airnodes Club leads with infrastructure
-utility and explains where rewards actually come from.
+It is not an investment platform, telecom operator or part of World Mobile.
+
+### Visual thesis
+
+**A live network, opened to more people.**
+
+The visual system combines bold public-service clarity with real field
+photography. Signal blue creates energy and forward motion. Deep navy provides
+technical authority. Open ruled layouts make information easy to compare.
+
+The intended feeling is modern, direct, human and optimistic—not private-club,
+luxury-editorial, crypto or enterprise-software.
 
 ### “Airbnb of telecom”
 
-Use this as an internal design brief, not a public tagline.
+Use this as an internal strategic shorthand, not a public product claim.
 
 The useful analogy is broader participation: platform models changed who could
 participate in hospitality capacity; AirNodes aim to change who can participate
-in telecom infrastructure. The analogy is about access—not identical economics,
-operations, liquidity or ownership rights.
+in telecom infrastructure. The economics, legal rights, operation and liquidity
+are not equivalent.
 
-Do not borrow Airbnb’s logo, coral color, illustration language, vocabulary or
-photographic composition. Airnodes Club must remain unmistakably its own brand.
-
-### The test
-
-The brand should still feel credible if every reward number is removed. Trust
-must come from people, evidence and clarity—not projected financial excitement.
+Do not imitate Airbnb’s logo, coral color, illustration style, vocabulary or
+photographic composition.
 
 ## 2. Audience
 
-### Primary: infrastructure-first opportunity seekers
+### Primary
 
-Tech-literate people looking beyond conventional assets who are attracted to
-real-world utility, long-term network growth and measurable service—not token
-speculation.
+People interested in owning useful real-world infrastructure who want a plain,
+credible explanation before committing capital.
 
-### Secondary: Network Builders and existing operators
+### Secondary
 
-People who know World Mobile but need a current, clearer comparison of models,
-drops, terms and economics.
+Existing World Mobile community members, Network Builders and Operators looking
+for a current comparison of AirNode models.
 
-### Tertiary: skeptical researchers and diversifiers
+### Tertiary
 
-Prospective owners asking due-diligence questions before committing capital.
+Skeptical researchers comparing the opportunity, constraints and risk.
 
-### Questions every page should answer
+### Questions every page must answer
 
-1. What am I actually buying?
-2. What role does it play in the network?
-3. Who deploys and operates it?
-4. Where do rewards come from?
-5. What can delay, reduce or stop rewards?
-6. Where can I verify the terms and buy?
+1. What is World Mobile?
+2. What is an AirNode?
+3. What am I buying?
+4. Who deploys and operates it?
+5. What creates eligible rewards?
+6. What can delay, reduce or stop rewards?
+7. Where can I verify current terms and buy?
 
 ## 3. Brand character
 
-### Personality
-
-- Pioneering, not futuristic theatre
-- Warm, not sentimental
-- Precise, not sterile
+- Bold, not loud
+- Human, not sentimental
+- Modern, not futuristic theatre
+- Clear, not reductive
 - Optimistic, not promotional
-- Club-like, not elitist
 - Independent, not adversarial
-- Bold, not reckless
+- Candid, not alarmist
+- Accessible, not exclusive
 
-Imagine a well-travelled infrastructure analyst who is excited by wider access
-and unwilling to hide the caveats.
+Imagine a field engineer who can explain the network to a neighbour: excited by
+what it can enable, precise about how it works and honest about uncertainty.
 
 ### Values
 
-**Access**
+**Connection** — The service and the people it reaches come before financial
+language.
 
-More people should be able to understand and participate in network
-infrastructure.
+**Access** — Telecom infrastructure should be understandable beyond specialist
+and corporate circles.
 
-**Evidence**
+**Evidence** — Product facts are sourced, dated and distinguished from examples
+or inference.
 
-Facts are sourced, dated and distinguished from company claims, calculations
-and inference.
+**Ownership literacy** — Explain equipment, agreements and responsibilities,
+not only the purchase button.
 
-**Ownership literacy**
+**Risk honesty** — Reward potential and material risk appear in the same
+conversation.
 
-Explain the hardware, agreements, economics and responsibilities—not only the
-purchase button.
-
-**Risk honesty**
-
-Reward potential and capital risk belong in the same conversation and at
-comparable visual prominence.
-
-**Real-world utility**
-
-The network service comes first. Rewards follow qualifying operation.
-
-**Independence**
-
-Affiliate economics are visible and never determine the analysis.
+**Independence** — Affiliate compensation is disclosed and never presented as
+product evidence.
 
 ## 4. Verbal identity
 
-### Voice
+### Voice principles
 
-- Use short, active sentences.
-- Prefer plain telecom language.
-- Be confident and qualified at the same time.
-- Make arithmetic inspectable.
-- Distinguish fact, company claim and calculation.
-- Sound human; never sound like a crypto promoter.
+- Lead with concrete nouns and short verbs.
+- Explain the buyer journey before network taxonomy.
+- Use “buy, deploy, connect, track and claim” where accurate.
+- Define Operator once: World Mobile’s term for an AirNode owner.
+- Qualify model-specific facts at the point of use.
+- Prefer “eligible rewards” to “earnings” in independent copy.
+- Make gross examples inspectable and clearly non-guaranteed.
+- Sound like a person, never a crypto promoter or financial adviser.
 
-### Tone by context
+### Messaging order
 
-| Context | Tone |
-| --- | --- |
-| Hero | Expansive, human and plain |
-| Product information | Factual, current and practical |
-| Economics | Clinical, assumption-led and transparent |
-| Risk | Candid and unsoftened |
-| Affiliate disclosure | Direct and visible |
-| CTA | Decisive without pressure |
-| Community | Warm, curious and builder-oriented |
+1. AirNodes are physical telecom infrastructure.
+2. Different AirNodes perform different roles.
+3. The agreement defines who owns, deploys and operates each model.
+4. Rewards follow qualifying network activity or service—not ownership alone.
+5. Current availability and terms come from World Mobile.
+6. Physical infrastructure carries operational and capital risk.
+7. Airnodes Club may receive affiliate compensation.
 
-### Messaging hierarchy
-
-1. Infrastructure ownership should not be limited to large telecom companies.
-2. Own what connects us.
-3. Understand the infrastructure, economics and risks in one place.
-4. AirNodes perform distinct roles inside a live telecom network.
-5. Show dated, attributed evidence.
-6. Explain purchase, allocation, activation, measured service and rewards.
-7. Show gross arithmetic with assumptions and exclusions visible.
-8. Give demand, uptime, hardware, terms, regulation and liquidity equal weight.
-9. Disclose the affiliate relationship.
-10. Continue to World Mobile for live inventory, agreements and checkout.
-
-### Approved phrases
+### Approved headline territory
 
 - Own what connects us.
-- Own a piece of the network people rely on.
-- Own the infrastructure behind the signal.
-- Telecom ownership, opened up.
-- Real infrastructure. Live service. Measurable activity.
-- Infrastructure first. Rewards second.
-- Model the return. Don’t market the promise.
-- Read the terms. Run the numbers. Then decide.
-- A clearer path to World Mobile.
+- Own telecom infrastructure. Help more people connect.
+- A different way to build a mobile network.
+- Real activity first. Rewards second.
+- Choose by role—not headline return.
+- What you own—and what you do not.
+- Plain answers before you buy.
 
 ### CTA language
 
-Use:
+Primary commercial CTA:
 
-- Explore live AirNodes
-- Compare network roles
-- How ownership works
-- Understand the economics
-- Check price and eligibility
-- Continue to World Mobile
-- Review the official terms
+- **Buy AirNodes**
 
-Do not use:
+Supporting CTAs:
+
+- Check the official details
+- Check the product source
+- Read the current agreement
+- Review the risks
+
+Avoid:
 
 - Invest now
 - Start earning
 - Lock in your yield
 - Claim passive income
-- Buy before it’s gone
+- Guaranteed returns
+- Buy before it is gone
+- Explore live AirNodes
 
 ### Naming and casing
 
 - Brand: **Airnodes Club**
 - Product category: **AirNodes**
+- Owner term: **Operator** after it has been defined
 - Product: **EmberNode**
-- Use sentence case for headings, controls and navigation.
-- Use title case only for proper names.
-- Never style “AIRNODES” as a permanent all-caps wordmark.
+- Use sentence case for headings, navigation and controls.
+- Reserve all caps for small operational labels, never the wordmark.
 
 ## 5. Claim and trust rules
 
 ### Ownership
 
-“Own” refers to World Mobile’s product framing. Never imply equity in World
-Mobile, ownership of spectrum, land or the entire network. The governing
-agreement determines legal title, rights and obligations.
-
-### Investment language
-
-Describe an infrastructure purchase or ownership opportunity. Do not describe a
-deposit, security, savings product or guaranteed income product.
+“Own” reflects World Mobile’s product framing. Do not imply equity in World
+Mobile or ownership of spectrum, land, subscribers or the whole network. The
+model-specific agreement determines legal title, hosting, operation, transfer
+rights and obligations.
 
 ### Rewards and ROI
 
-- State the specific model and condition.
+- Name the exact model and qualifying condition.
 - Never use APY.
-- Show only dated, illustrative gross arithmetic.
-- Keep purchase price, reward assumption and exclusions visible.
-- State that actual rewards can be lower or zero.
-- Never call a gross ratio a net return.
+- Do not headline simple payback or annualized return percentages.
+- Use only dated, gross illustrations with assumptions visible.
+- State that rewards can be lower than shown or zero.
+- Never imply passive, fixed or guaranteed income across the category.
+- State exclusions: tax, fees, downtime, maintenance, financing and currency
+  conversion where relevant.
 
-### Network figures
+### Model differences
 
-Prefix company data with “World Mobile reports” and show the review date. Do not
-combine conflicting published deployment figures.
+Never generalize one model’s mechanics to every AirNode. In particular:
 
-### Affiliate offer
-
-Present buyer discounts or commission rates only with eligibility, cap, quantity
-and checkout qualifications. Until a tagged referral URL is configured, never
-claim that tracking or a discount is active.
+- EmberNode operates at the distribution layer and does not serve end users
+  directly.
+- EmberNode rewards follow verified traffic under current published terms.
+- Published Frontier terms use an active matched customer service.
+- Installation and management responsibilities vary by product.
 
 ### Availability
 
-Clearly distinguish available, limited drop, partner-exclusive, announced,
-interest-only and coming-soon products.
+Use only current catalogue labels such as:
 
-## 6. Visual idea: Hearthline
+- Available via reservations
+- Partner exclusive
+- Register interest
+- Coming soon
+- Contact sales
 
-Hearthline pairs the human warmth of a trusted club with the physical honesty of
-field infrastructure.
+Old drop dates and historical prices must be labeled as historical or removed.
 
-Its three recurring visual signals are:
+### Affiliate disclosure
 
-1. **The open relay** — an arch/site containing a mast and signal.
-2. **The field journal** — warm paper, editorial type and ruled ledgers.
-3. **The working network** — natural-light people, equipment and places.
+Airnodes Club’s independence and possible commission must be visible near the
+first commercial CTA and at the main affiliate handoff. Do not promise a buyer
+discount until a valid tagged referral URL and current checkout eligibility are
+confirmed.
 
-The result should feel inviting at first glance and rigorous on closer reading.
+## 6. Visual system: Open Signal
+
+Open Signal is built from three simple ideas:
+
+1. **Real work** — people installing, maintaining or using real infrastructure.
+2. **Open space** — large, calm layouts that make an unfamiliar category easier.
+3. **Continuous signal** — alignment, blue rules and sequences that connect
+   information without decorative network diagrams.
 
 ### Explicitly avoid
 
-- Black or midnight page backgrounds
-- Neon cyan and violet
-- Glow, glassmorphism and luminous borders
-- Web3 gradients and abstract orbs
-- Hexagons, cubes, coins and token marks
-- Code, terminal and dashboard motifs
-- Pulsing network nodes
-- Passive-income imagery
-- Generic card grids
-- Stock handshakes
-- Futuristic blue lighting
+- Cream paper, country-club green and luxury editorial styling
+- High-contrast serif display type
+- Script or italic display moments
+- Neon, glow, glassmorphism and Web3 gradients
+- Abstract nodes, hexagons, cubes, coins or token marks
+- Ornamental telecom icon sets
+- Decorative network diagrams
+- Generic rounded card grids
+- Stock finance imagery
+- Suits, private lounges, golf, champagne or luxury-property cues
+- Tiny uppercase copy below 13px
 
-## 7. Logo system
-
-### Name
-
-The symbol is called **The Open Relay**.
+## 7. Logo
 
 ### Construction
 
-The mark combines:
+The brand mark is an open site outline containing a mast and two signal arcs. It
+represents physical equipment serving a wider place. The opening is deliberate:
+the network is participatory rather than closed.
 
-- an open architectural arch for a physical site and welcome;
-- a central mast for real telecom equipment;
-- one solid node and two short signal arcs;
-- negative space that loosely suggests an “A”.
+### Wordmark
 
-It must not become a heart, location pin, continuous loop, hexagon or imitation
-of Airbnb’s Bélo.
-
-### Lockups
-
-**Primary lockup**
-
-Open Relay symbol plus “Airnodes Club” in Newsreader, on one line.
-
-**Compact lockup**
-
-Smaller primary lockup for footer and constrained horizontal spaces.
-
-**Symbol only**
-
-Favicon, social avatar and very small utilities.
+Set **Airnodes Club** in Instrument Sans Variable, weight 780, with tight
+tracking. “Club” may use Signal Blue while the rest uses Network Ink.
 
 ### Clear space
 
-Use the mast-to-arch gap inside the mark as one unit `x`. Keep at least `1x`
-clear space on every side of the symbol and at least `0.75x` between symbol and
-wordmark.
+Keep clear space equal to the height of the circular mast node around the full
+lockup. Never place the mark directly over a visually busy image.
 
 ### Minimum size
 
-- Full lockup: 150px wide digital
-- Compact lockup: 118px wide digital
-- Symbol: 24px minimum
-- Favicon: simplified symbol at 16px
+- Full lockup: 112px wide on screen
+- Mark only: 24px square on screen
+- Favicon: use a blue field with a white mark
 
-### Color
+### Logo color
 
-- Default: Evergreen on Canvas, Clay node and signal
-- Reversed: Canvas on Evergreen Deep, Soft Clay node and signal
-- One-color: all Evergreen or all Canvas when production requires it
+- Default: Network Ink with Signal Blue node and “Club”
+- Dark field: white with Light Signal accent
+- Signal Blue field: white only
 
-Never add a gradient, glow, drop shadow, bevel or enclosing coin.
+Do not add shadows, gradients, bevels or a container around the lockup.
 
-## 8. Color system
+## 8. Color
 
-| Token | Hex | Purpose |
+| Token | Value | Use |
 | --- | --- | --- |
-| Canvas | `#F7F3EB` | Default page background |
-| Surface | `#FFFDF8` | Ledgers, disclosures and elevated media |
-| Surface muted | `#EFE7DC` | Section bands |
-| Ink | `#19372F` | Primary text |
-| Ink deep | `#102D26` | Display text and dark footer base |
-| Ink soft | `#4D5B55` | Supporting copy |
-| Evergreen | `#174A3B` | Brand, diagrams, secondary actions |
-| Evergreen dark | `#10382E` | Dark bands and hover states |
-| Clay | `#B44631` | Primary action and focal accent |
-| Clay dark | `#8F3324` | Links and small text accent |
-| Ochre | `#98621D` | Economics annotation and caution |
-| Sage | `#DCE6DE` | Informational ownership surfaces |
-| Sand | `#E8DDCF` | Affiliate and human warmth surfaces |
-| Risk | `#963D34` | Risk emphasis |
-| Line | `#C9CDC4` | Borders and rules |
+| Canvas | `#F5F7FA` | Page background |
+| Surface | `#FFFFFF` | Content and header background |
+| Network Ink | `#0B1F33` | Main text and dark sections |
+| Field Note | `#506176` | Secondary copy |
+| Signal Blue | `#1F66FF` | Primary CTA, energy and links |
+| Deep Signal | `#1247B8` | CTA hover and high-contrast blue text |
+| Signal Wash | `#E9F1FF` | Explanatory bands and status labels |
+| Network Line | `#D7E0EA` | Rules and boundaries |
+| Risk Red | `#B42318` | Material warnings only |
+| Light Signal | `#8FB1FF` | Accent text on dark fields |
+
+### Color rules
+
+- Signal Blue is the sole brand accent.
+- Risk Red is semantic, never decorative.
+- Use Canvas and Surface for most of the page.
+- Use Network Ink and Signal Blue for decisive full-width sections.
+- Do not tint product models into competing color families.
 
 ### Accessibility
 
-Verified contrast ratios:
-
-- Surface on Evergreen: 9.94:1
-- Surface on Evergreen Dark: 12.70:1
-- Surface on Clay: 5.35:1
-- Ink on Canvas: 11.65:1
-- Ink Soft on Canvas: 6.45:1
-- Clay Dark on Canvas: 7.11:1
-- Clay on Canvas: 4.91:1
-
-Clay is suitable for normal text on Canvas, but Clay Dark is preferred for small
-links. Never use color alone to communicate product status or risk.
-
-### Color proportion
-
-- 55% Canvas and Surface
-- 25% Ink and Evergreen
-- 12% Sand, Sage and muted surfaces
-- 8% Clay, Ochre and Risk combined
-
-No gradients are part of the core brand.
+- Network Ink on Canvas or Surface exceeds WCAG AA for body text.
+- Deep Signal is preferred for small blue text on white.
+- Use full-opacity white on Signal Blue; translucent white body copy does not meet AA.
+- Never communicate status or risk through color alone.
 
 ## 9. Typography
 
-### Families
+### Family
 
-**Newsreader Variable**
+Use one family throughout:
 
-Display, hero, section headings, major figures and brand wordmark.
+**Instrument Sans Variable** — headings, body, labels, navigation and data.
 
-**Instrument Sans Variable**
+This single-family system makes the brand contemporary, direct and coherent.
+Do not add a display serif.
 
-Body, navigation, controls, tables, captions, disclosures and data.
+### Weight
 
-Both are self-hosted through Fontsource. Do not load them from Google Fonts in
-production.
+- Hero and section headings: 700–760
+- Subheadings: 650–720
+- Body: 430–500
+- Labels and controls: 680–780
 
 ### Type scale
 
-| Style | Desktop | Mobile | Line height | Weight |
-| --- | ---: | ---: | ---: | ---: |
-| Hero | 72–87px | 51–67px | 0.94 | 520 |
-| Section title | 51–77px | 44–59px | 0.98 | 520 |
-| Subsection title | 34–54px | 30–43px | 1.02 | 520 |
-| Editorial lead | 26–34px | 24px | 1.25 | 430 |
-| Body large | 18–20px | 17px | 1.55 | 400 |
-| Body | 16px | 16px | 1.60 | 400 |
-| UI | 14–16px | 14–16px | 1.35 | 580–680 |
-| Caption/legal | 12–13px | 12–13px | 1.45 | 400–600 |
+- Hero: `clamp(58px, 6.6vw, 112px)`, line-height 0.91
+- Section heading: `clamp(48px, 5.4vw, 86px)`, line-height 0.98
+- Subsection heading: `28–52px`, line-height 1.0–1.12
+- Lead: `18–21px`, line-height 1.45–1.55
+- Body: `16–18px`, line-height 1.5–1.6
+- Labels: minimum 13px, line-height 1.2
 
-Use tabular numerals for economics. Keep reading measure between 58 and 68
-characters. Avoid tiny uppercase labels; when an operational label needs
-uppercase, keep it at 12px or larger with restrained tracking.
+Use tight negative tracking only on large headings. Body copy keeps natural
+tracking.
 
 ## 10. Spacing
 
-The system uses a 4px base:
+Base unit: **8px**.
 
-`4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 120, 128`
+Core scale: `4, 8, 12, 16, 24, 32, 48, 64, 80, 104, 128`.
 
-### Application
+- Desktop section spacing: 104–128px
+- Tablet section spacing: 80–104px
+- Mobile section spacing: 64–72px
+- Desktop shell gutter: up to 64px
+- Mobile gutter: 20px
+- Maximum content shell: 1280px
 
-- Control internal padding: 12–20px
-- Adjacent UI elements: 8–16px
-- Paragraph rhythm: 16–24px
-- Component groups: 24–40px
-- Major section internal gaps: 48–80px
-- Desktop section spacing: 96–120px
-- Tablet section spacing: 80–88px
-- Mobile section spacing: 60–68px
-
-Whitespace is an active trust signal. Do not fill it with badges, icon rows or
-decorative metrics.
+Whitespace is structural. Do not fill it with labels, illustrations or extra
+copy.
 
 ## 11. Layout
 
-### Grid
+### Hero
 
-- Maximum shell: 1280px
-- Desktop: 12 columns, 24–32px gaps, 64px outer gutters
-- Tablet: 8 columns, 24px gaps, 40px outer gutters
-- Mobile: 4 columns, 16px gaps, 20–24px outer gutters
+- Full-bleed, viewport-scale composition
+- Approximately 45% Signal Blue copy and 55% real-world image on desktop
+- Stack copy above the image on mobile
+- Image remains flush to the viewport with no rounded frame or shadow
+- One primary CTA only
 
-### Breakpoints
+### Content
 
-- Small: below 640px
-- Medium: 640–900px
-- Large: 900–1180px
-- Full shell: above 1180px
+- Use a twelve-column mental model inside the 1280px shell.
+- Prefer asymmetric 7/5 or 8/4 heading layouts.
+- Use full-width ruled rows for definitions, products, questions and risks.
+- Use two open columns for comparisons; avoid cards unless a contained object is
+  genuinely required.
+- Keep readable prose between 55 and 75 characters per line.
 
-Breakpoints respond to content, not device marketing names.
+### Responsive breakpoints
 
-### Rhythm
-
-Vary the page:
-
-- editorial text + photograph;
-- sourced proof rail;
-- open narrative split;
-- field-manual diagram;
-- horizontal process;
-- ruled product ledger;
-- paper economics worksheet;
-- equal-weight risk register;
-- candid affiliate handoff;
-- open FAQ and dark close.
-
-Do not repeat the same left-copy/right-card composition. Do not wrap every
-section in a rounded container.
+- Large: above 1120px
+- Tablet: 861–1120px
+- Mobile: 600–860px
+- Small mobile: below 600px
 
 ## 12. Shape, borders and depth
 
-- Buttons: 8px radius
-- Information panels: 12px
-- Photography: 16px
-- Status labels: square or 4–6px radius, never pills by default
-- Borders: 1px neutral gray-green
-- Media shadow: `0 16px 42px rgba(25, 55, 47, 0.11)`
-- Paper shadow: `0 10px 30px rgba(25, 55, 47, 0.05)`
-
-Most sections stay flat and use whitespace or rules. Shadows are reserved for a
-photograph or a genuinely raised ledger.
+- Default corner radius: 10px on buttons only
+- Status labels: 4px radius
+- Content regions: square, open and ruled
+- Standard border: 1px Network Line
+- Emphasis rule: 2–4px Signal Blue
+- No decorative shadows
+- Blur is allowed only for the sticky header backdrop
 
 ## 13. Photography
 
 ### Subjects
 
-- working installations;
-- hardware in environmental context;
-- local operators and participating businesses;
-- rooftops, streets, storefronts and landscapes;
-- hands, tools and real material detail.
+- People installing or maintaining network equipment
+- Real neighbourhoods, businesses and community settings
+- Visible physical telecom hardware
+- People using connectivity in everyday life
+- Geographic context relevant to the product
 
-### Treatment
+### Direction
 
-- natural daylight;
-- moderate contrast;
-- restrained saturation;
-- candid activity, not people posing for the camera;
-- mix wide environment, medium human action and close hardware detail;
-- stable crops with 4:3, 3:2 or 16:10 ratios.
+- Natural light and believable working moments
+- Documentary perspective, not staged executive portraiture
+- Show people with agency and dignity
+- Favor broad environmental compositions over isolated device close-ups
+- Color-grade neutrally; allow Signal Blue UI to provide brand energy
 
-### Rights and truth
+### Truth and rights
 
-Prefer approved World Mobile or affiliate media-kit photography with documented
-usage rights, location and date. If a generated illustrative image is used, label
-it “Illustrative image” and never imply that it depicts a specific model,
-customer or deployment.
-
-Avoid stock handshakes, generic towers at sunset, floating 3D devices, fake
-screens and synthetic imagery presented as reportage.
+Never imply a generic image shows a specific AirNode model, country or partner.
+Use a visible “illustrative image” caption where needed. Store licensing and
+generation provenance with the asset record.
 
 ## 14. Iconography and diagrams
 
-### Icons
+The interface is text-led.
 
-- 24px default
-- 1.75px stroke
-- rounded line caps and joins
-- labels always accompany ambiguous icons
-- Evergreen default; Clay for one focal detail
+- Do not use decorative icons in explainer, journey, product or risk sections.
+- Use numerals for sequences.
+- Use alignment, rules and typography to show relationships.
+- Plus/minus controls are permitted because they communicate disclosure state.
+- External-link arrows are permitted as functional text cues.
+- The logo is the only recurring telecom symbol.
 
-Use icons only when they clarify a role, process or risk.
-
-### Diagrams
-
-Network diagrams should resemble an approachable field manual:
-
-- solid named layers;
-- thin evergreen lines;
-- clay nodes;
-- real product names;
-- no animation required to understand them;
-- no glowing paths, particles, hexagons or blockchain metaphors.
-
-Custom brand and network SVGs are preferred when meaning is specific. Use
-Lucide only for standard utility metaphors.
+If a technical diagram is essential, it must answer a question that cannot be
+explained as clearly in two sentences or a comparison table.
 
 ## 15. Components
 
 ### Buttons
 
-**Primary**
-
-Clay background, Surface text, 8px radius. Use once per decision area.
-
-**Secondary**
-
-Transparent with Evergreen border. Reverses on dark surfaces.
-
-Labels describe the destination. External actions include an arrow and the
-appropriate `rel` values.
+- Primary: Signal Blue, white text
+- On Signal Blue: white, Network Ink text
+- Height: 52px standard, 45px compact
+- Radius: 10px
+- Label: direct verb + noun
+- Hover: 2px rise and arrow shift; never glow
 
 ### Product ledger
 
-Use open ruled rows, not a pricing-card grid. The collapsed row must show model,
-availability, network role and headline price. The detail reveals product
-explanation and source.
+- One model per ruled disclosure row
+- Show name, current status, role/market and current published price
+- Put detailed operation and terms inside the disclosure
+- No model icons or decorative model colors
 
-### Economics
+### Reward examples
 
-Use a paper worksheet with assumptions and outputs aligned in rows. Pair every
-illustration with exclusions. Never use celebratory charts, gauges, green profit
-arrows or count-up animations.
+- Two open columns with a strong blue top rule
+- Show assumptions before the gross outcome
+- Omit annualized return and simple-payback headlines
+- Place exclusions immediately below
 
-### Risk
+### Risk section
 
-Risk must receive comparable spacing, type size and visibility to economics. Do
-not hide the risk section in legal copy.
+- Network Ink field
+- Numbered disclosure rows
+- Risk Red appears only on the bottom-line warning
+- Risk language remains plain and unsoftened
 
 ### Affiliate handoff
 
-Keep disclosure adjacent to the purchase CTA. State that World Mobile controls
-inventory, eligibility, agreements and checkout.
-
-### FAQ
-
-Use full-width ruled disclosure rows with visible plus/minus states. Keep plain
-answers readable without nested panels.
+- Full-width Signal Blue band
+- State independence and possible commission before the CTA
+- World Mobile controls availability, price, eligibility and agreements
+- Use “Buy AirNodes”
 
 ## 16. Motion
 
-- 150–220ms ease-out
-- maximum 4px translation
-- hover and focus communicate affordance
-- disclosure expansion may animate only when accessibility remains intact
-- respect `prefers-reduced-motion`
+Motion should make the page feel responsive and alive, never speculative.
 
-Do not use parallax, looping signal waves, pulsing nodes, scrolling marquees or
-count-up statistics.
+- Hero copy: 12px upward entrance with short stagger
+- Hero image: subtle 1.025-to-1 reveal
+- Buttons: 2px rise and directional arrow shift
+- Ruled rows: 4px lateral or vertical shift on hover
+- Disclosure controls: plus rotates to minus
+- Duration: 180–850ms depending on scale
+- Easing: purposeful ease-out, no elastic movement
+
+Do not use parallax, pulsing nodes, count-up metrics, floating objects or
+continuous ambient animation. Honor `prefers-reduced-motion`.
 
 ## 17. Accessibility
 
-- Meet WCAG 2.2 AA as a minimum.
-- Maintain a visible 3px Clay focus ring with 3px offset.
-- Keep legal and source text at 12px or larger.
-- Provide descriptive alt text and width/height for every image.
-- Ensure every `details` element has a meaningful `summary`.
-- Preserve logical heading order and exactly one `h1`.
-- Keep touch targets at least 44px.
-- Do not rely on color, hover or motion alone.
-- Test at 200% zoom, keyboard-only and reduced-motion settings.
+- Target WCAG 2.2 AA.
+- Keep one logical `h1` and sequential headings.
+- Preserve native `details` and `summary` keyboard behavior.
+- Provide visible focus states with more than color alone.
+- Make touch targets at least 44px high.
+- Keep operational labels at 13px or larger.
+- Write useful image alternatives; leave decorative media empty.
+- Never encode product status, risk or reward logic only with color.
+- Verify 200% zoom, keyboard navigation and narrow-screen reflow.
 
-## 18. Recommended implementation stack
+## 18. Implementation stack
 
 ### Required
 
-- Astro for the mostly static, content-led site
-- Cloudflare Workers adapter and Wrangler for deployment
-- `@fontsource-variable/newsreader`
-- `@fontsource-variable/instrument-sans`
-- Astro `<Image>` / `<Picture>` for responsive WebP or AVIF
-- CSS custom properties for tokens
-- semantic HTML and native `details` for disclosures
+- Astro for the static site and asset pipeline
+- TypeScript for structured product and source data
+- Native CSS with custom properties for the visual system
+- `@fontsource-variable/instrument-sans` for self-hosted type
+- Native `details` and `summary` for disclosures
+- Astro Image for responsive image output
+- Cloudflare Workers for hosting
 
 ### Add only when needed
 
-- `lucide-astro` for standard utility icons
-- `@astrojs/sitemap` when sitemap generation needs automation
-- `@axe-core/playwright` as a development QA dependency
+- A small Astro island for a genuinely stateful interaction
+- Zod for external structured data validation
+- Vitest for new calculation or content transformation logic
+- Playwright for repeatable browser regression checks
 
 ### Avoid
 
-- a client UI framework for this static page;
-- an animation framework;
-- runtime icon libraries;
-- a component system that forces card-first layouts;
-- remote font loading;
-- WebGL and decorative canvas effects.
+- Component libraries for basic marketing layouts
+- Icon libraries for ornamental decoration
+- Utility frameworks added only to express the existing token system
+- Client-side JavaScript for interactions native HTML can handle
+- Third-party font delivery
 
-## 19. Responsive behavior
+## 19. Governance
 
-- Header simplifies to brand plus action, then brand only on small screens.
-- Hero changes from editorial split to text above a full-width photograph.
-- Proof rail becomes stacked.
-- Process changes from four columns to two, then one.
-- Product ledger hides the less critical role column before stacking values.
-- Economics scenarios stack without changing their order.
-- Risk changes from six columns to three, then accessible disclosure rows.
-- Affiliate, FAQ, sources and footer become single-column flows.
+### Sources of truth
 
-Do not shrink desktop typography until it becomes unreadable; recompose the
-layout instead.
+- Brand and content rules: `docs/BRAND_GUIDELINES.md`
+- Design tokens and component styles: `src/styles/global.css`
+- Product status, pricing and sources: `src/config.ts`
 
-## 20. Governance
+### Review cadence
 
-### Source of truth
+- Verify product availability before every release.
+- Review price, reward and affiliate terms at least monthly while products are
+  active.
+- Remove launch dates as soon as a drop closes or a catalogue status changes.
+- Date every factual review.
+- Keep legacy knowledge-base material out of current claims.
 
-- Strategy and identity: this document
-- Tokens and components: `src/styles/global.css`
-- Product data, dates and sources: `src/config.ts`
-- Commercial destination: `PUBLIC_AIRNODE_AFFILIATE_URL`
+### Release checklist
 
-### Content review
-
-Before changing the published review date:
-
-1. Recheck first-party product availability.
-2. Recheck pricing and reward terms.
-3. Recheck affiliate eligibility and discount conditions.
-4. Recheck company-reported network figures.
-5. Confirm source links still resolve.
-6. Recalculate every displayed illustration.
-7. Review legal and risk qualifications.
-
-### Brand review questions
-
-- Does this show real infrastructure before financial upside?
-- Is every important claim sourced or qualified?
-- Is risk visible without hunting?
-- Could a reasonable person misunderstand what they own?
-- Does the page feel human without pretending to be documentary evidence?
-- Does every purchase CTA sit near disclosure or a link to it?
-- Is any visual choice drifting back toward Web3 theatre?
+1. Is World Mobile explained before model taxonomy?
+2. Can a new buyer explain what an AirNode is after the first two sections?
+3. Does every reward claim name a model and qualifying condition?
+4. Are historical figures labeled as historical?
+5. Is risk as legible as reward potential?
+6. Is the affiliate relationship visible near the purchase path?
+7. Is “Buy AirNodes” the consistent commercial CTA?
+8. Are there any decorative icons, diagrams or luxury cues to remove?
+9. Does the page work with keyboard, reduced motion and at 200% zoom?
+10. Do build, browser and live checks pass?
