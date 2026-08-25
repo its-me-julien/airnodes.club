@@ -213,12 +213,11 @@ summary::-webkit-details-marker {
   vector-effect: non-scaling-stroke;
 }
 
-.brand-lockup .mark-site,
 .brand-lockup .mark-mast,
 .brand-lockup .mark-signal {
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: 2.25;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
