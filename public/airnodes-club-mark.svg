@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" role="img" aria-labelledby="title">
+  <title id="title">Airnodes Club mark</title>
+  <g fill="none" stroke="#071727" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25">
+    <path d="M14 19c7.5-9 20.5-9 28 0"/>
+    <path d="M28 27v17M20 44h16"/>
+  </g>
+  <circle cx="28" cy="22" r="3.5" fill="#1F66FF"/>
+</svg>

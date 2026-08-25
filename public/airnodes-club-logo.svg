@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 52" role="img" aria-labelledby="title">
+  <title id="title">Airnodes Club</title>
+  <g fill="none" stroke="#071727" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25">
+    <path d="M14 19c7.5-9 20.5-9 28 0"/>
+    <path d="M28 27v17M20 44h16"/>
+  </g>
+  <circle cx="28" cy="22" r="3.5" fill="#1F66FF"/>
+  <text x="60" y="34" fill="#071727" font-family="Instrument Sans, Arial, sans-serif" font-size="23" font-weight="750" letter-spacing="-0.7">Airnodes</text>
+  <text x="158" y="34" fill="#1F66FF" font-family="Instrument Sans, Arial, sans-serif" font-size="23" font-weight="750" letter-spacing="-0.7">Club</text>
+</svg>
