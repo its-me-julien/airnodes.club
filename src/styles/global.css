@@ -719,7 +719,6 @@ summary::-webkit-details-marker {
 }
 
 .product-toggle,
-.faq-list summary i,
 .sources summary i,
 .risk-list summary i {
   position: relative;
@@ -730,8 +729,6 @@ summary::-webkit-details-marker {
 
 .product-toggle::before,
 .product-toggle::after,
-.faq-list summary i::before,
-.faq-list summary i::after,
 .sources summary i::before,
 .sources summary i::after,
 .risk-list summary i::before,
@@ -748,14 +745,12 @@ summary::-webkit-details-marker {
 }
 
 .product-toggle::after,
-.faq-list summary i::after,
 .sources summary i::after,
 .risk-list summary i::after {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .product-row[open] .product-toggle::after,
-.faq-list details[open] summary i::after,
 .sources details[open] summary i::after,
 .risk-list details[open] summary i::after {
   transform: translate(-50%, -50%) rotate(0);
@@ -1003,46 +998,6 @@ summary::-webkit-details-marker {
   box-shadow: 0 0 0 4px var(--white);
 }
 
-.faq-section {
-  display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  gap: clamp(3rem, 8vw, 8rem);
-}
-
-.faq-heading h2 {
-  max-width: 9ch;
-}
-
-.faq-list {
-  border-bottom: 1px solid var(--line);
-}
-
-.faq-list details {
-  border-top: 1px solid var(--line);
-}
-
-.faq-list summary {
-  display: grid;
-  min-height: 5.5rem;
-  grid-template-columns: 1fr 1.2rem;
-  align-items: center;
-  gap: 1.5rem;
-  cursor: pointer;
-  font-size: clamp(1.05rem, 1.55vw, 1.3rem);
-  font-weight: 650;
-}
-
-.faq-list details[open] summary,
-.faq-list summary:hover {
-  color: var(--blue);
-}
-
-.faq-list details p {
-  max-width: 47rem;
-  padding: 0 3rem 2rem 0;
-  color: var(--muted);
-}
-
 .sources {
   display: grid;
   grid-template-columns: 0.8fr 1fr 1fr;
@@ -1255,8 +1210,7 @@ summary::-webkit-details-marker {
   }
 
   .scenario-grid,
-  .affiliate-inner,
-  .faq-section {
+  .affiliate-inner {
     grid-template-columns: 1fr;
   }
 

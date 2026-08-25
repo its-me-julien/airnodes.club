@@ -137,12 +137,11 @@ product evidence.
 ### Approved headline territory
 
 - Own what connects us.
-- Own telecom infrastructure. Help more people connect.
+- Help people connect. Own telecom infrastructure. Earn rewards
 - A different way to build a mobile network.
 - Real activity first. Rewards second.
 - Choose by role—not headline return.
 - What you own—and what you do not.
-- Plain answers before you buy.
 
 ### CTA language
 

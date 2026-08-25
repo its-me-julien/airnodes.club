@@ -1,11 +1,10 @@
 export const site = {
   name: "Airnodes Club",
   url: "https://airnodes.club",
-  // Set PUBLIC_AIRNODE_AFFILIATE_URL to the issued World Mobile referral URL.
-  // Until then, every commercial CTA safely falls back to the official AirNodes page.
+  // The environment variable allows controlled campaign overrides at build time.
   affiliateUrl:
     import.meta.env.PUBLIC_AIRNODE_AFFILIATE_URL ??
-    "https://worldmobile.io/airnodes",
+    "https://airnode.worldmobile.net/r/JWBMLA",
   reviewDate: "2026-08-25",
   reviewDateLabel: "25 August 2026",
 } as const;

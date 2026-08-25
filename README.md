@@ -14,9 +14,8 @@ npm install
 npm run dev
 ```
 
-The project falls back to World Mobile's official AirNodes page for commercial
-links. To test the issued affiliate link locally, copy `.env.example` to `.env`
-and replace the value.
+Commercial links use the issued World Mobile affiliate URL. Copy `.env.example`
+to `.env` only when testing a different campaign URL locally.
 
 ## Validate
 
@@ -31,10 +30,9 @@ npx wrangler deploy --dry-run
 Provide the issued referral URL at build time, then deploy:
 
 ```sh
-PUBLIC_AIRNODE_AFFILIATE_URL="https://worldmobile.io/airnodes" npm run deploy
+PUBLIC_AIRNODE_AFFILIATE_URL="https://airnode.worldmobile.net/r/JWBMLA" npm run deploy
 ```
 
-Replace the example URL with the exact tagged URL from the affiliate platform.
 The Worker configuration binds the apex custom domain `airnodes.club`; `www`
 is intentionally outside this Worker route.
 

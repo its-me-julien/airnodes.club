@@ -55,39 +55,6 @@ const risks = [
   },
 ] as const;
 
-const faqs = [
-  {
-    question: "What do I own when I buy an AirNode?",
-    answer:
-      "World Mobile describes AirNodes as physical telecom infrastructure you own. The model-specific agreement determines legal title, hosting, operation, transfer rights and obligations. You are not buying equity in World Mobile, spectrum, land or a guaranteed income stream.",
-  },
-  {
-    question: "Do I install the hardware?",
-    answer:
-      "It depends on the model. EmberNode is pre-installed and platform-managed. World Mobile says approved local partners install and operate Frontier deployments in the Philippines. Other products may require a suitable site or a different operating arrangement.",
-  },
-  {
-    question: "Are rewards fixed?",
-    answer:
-      "Not across all models. EmberNode rewards follow verified data throughput. World Mobile’s published Frontier terms describe a monthly base reward while the matched customer service is active. Other models have their own terms, and rewards can be lower than illustrations—or zero.",
-  },
-  {
-    question: "Can I deploy an AirNode anywhere?",
-    answer:
-      "No. Each product is designed for an approved market, network role and operating model. Buying an AirNode does not give permission to place equipment in an arbitrary country or location.",
-  },
-  {
-    question: "Are the reward examples net income?",
-    answer:
-      "No. They are gross illustrations based on World Mobile’s published assumptions. They exclude taxes, fees, currency conversion, financing, downtime and other model-specific costs.",
-  },
-  {
-    question: "What happens when I click Buy AirNodes?",
-    answer:
-      "You leave this independent guide. World Mobile provides live availability, eligibility, contracts, checkout and the platform account. Airnodes Club does not hold your funds, sell the equipment or determine your rewards.",
-  },
-] as const;
-
 const firstPartySources = [
   ["AirNodes overview and current catalogue", sources.airnodes],
   ["EmberNode product and economics", sources.ember],
@@ -136,8 +103,7 @@ const contextSources = [
   <main id="main-content">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="hero-kicker">Independent guide to World Mobile AirNodes</p>
-        <h1 id="hero-title">Own telecom infrastructure. Help more people connect.</h1>
+        <h1 id="hero-title">Help people connect. Own telecom infrastructure. Earn rewards</h1>
         <p class="hero-lede">
           AirNodes are physical equipment inside World Mobile’s network. Compare
           what each model does, who operates it and how eligible rewards work
@@ -169,7 +135,7 @@ const contextSources = [
           fetchpriority="high"
         />
         <figcaption>
-          Illustrative image. AirNode hardware and deployment vary by model and market.
+          AirNode hardware is deployed where people need connectivity.
         </figcaption>
       </figure>
     </section>
@@ -440,23 +406,6 @@ const contextSources = [
       </div>
     </aside>
 
-    <section class="section faq-section shell" id="faq" aria-labelledby="faq-title">
-      <div class="faq-heading">
-        <p class="section-index">06 / Questions</p>
-        <h2 id="faq-title">Plain answers before you buy.</h2>
-      </div>
-      <div class="faq-list">
-        {
-          faqs.map((faq) => (
-            <details>
-              <summary><span>{faq.question}</span><i aria-hidden="true"></i></summary>
-              <p>{faq.answer}</p>
-            </details>
-          ))
-        }
-      </div>
-    </section>
-
     <section class="sources shell" aria-labelledby="sources-title">
       <div>
         <p class="section-index">Research record</p>
@@ -498,7 +447,6 @@ const contextSources = [
       <a class="brand" href="/" aria-label="Airnodes Club home"><BrandMark compact /></a>
       <p>Independent guide. Not operated by, endorsed by or part of World Mobile.</p>
       <nav aria-label="Footer navigation">
-        <a href="#faq">Questions</a>
         <a href="#sources-title">Sources</a>
         <a href="#affiliate-title">Affiliate disclosure</a>
         <a href="#risks">Risk notice</a>
