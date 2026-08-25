@@ -56,22 +56,6 @@ const risks = [
   },
 ] as const;
 
-const firstPartySources = [
-  ["AirNodes overview and current catalogue", sources.airnodes],
-  ["EmberNode product and economics", sources.ember],
-  ["Frontier product and reward model", sources.frontier],
-  ["Frontier Philippines announcement", sources.frontierAnnouncement],
-  ["Frontier launch post on X", sources.frontierSocial],
-  ["AirNode platform", sources.platform],
-  ["Network scale milestone", sources.scale],
-  ["Affiliate programme launch terms", sources.affiliate],
-] as const;
-
-const contextSources = [
-  ["HexyNodes market context", sources.hexy],
-  ["World Mobile Alliance offers", sources.alliance],
-  ["Legacy infrastructure knowledge base", sources.legacy],
-] as const;
 ---
 
 <Layout
@@ -389,8 +373,7 @@ const contextSources = [
           <p>
             Airnodes Club is independent from World Mobile. We may receive a
             commission after a qualifying first order is completed through our
-            eligible referral link. World Mobile confirms availability,
-            eligibility, price, any discount and the final agreement at checkout.
+            eligible referral link.
           </p>
           <a
             class="button button-light"
@@ -404,40 +387,6 @@ const contextSources = [
       </div>
     </aside>
 
-    <section class="sources shell" aria-labelledby="sources-title">
-      <div>
-        <p class="section-index">Research record</p>
-        <h2 id="sources-title">Check the source.</h2>
-        <p>
-          Information reviewed <time datetime={site.reviewDate}>{site.reviewDateLabel}</time>.
-          Company-published figures have not been independently audited by Airnodes Club.
-        </p>
-      </div>
-      <details>
-        <summary>World Mobile first-party sources <i aria-hidden="true"></i></summary>
-        <ul>
-          {
-            firstPartySources.map(([label, href]) => (
-              <li><a href={href} target="_blank" rel="noopener noreferrer">{label} ↗</a></li>
-            ))
-          }
-        </ul>
-      </details>
-      <details>
-        <summary>Independent, reseller and legacy context <i aria-hidden="true"></i></summary>
-        <ul>
-          {
-            contextSources.map(([label, href]) => (
-              <li><a href={href} target="_blank" rel="noopener noreferrer">{label} ↗</a></li>
-            ))
-          }
-        </ul>
-        <p>
-          Context only. The legacy knowledge base was not used for current product,
-          pricing or reward claims.
-        </p>
-      </details>
-    </section>
   </main>
 
   <SiteFooter />
