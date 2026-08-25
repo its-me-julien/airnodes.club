@@ -1,0 +1,29 @@
+---
+import BrandMark from "./BrandMark.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div class="footer-brand-row">
+      <a class="brand" href="/" aria-label="Airnodes Club home">
+        <BrandMark compact />
+      </a>
+      <a class="back-to-top" href="#top">
+        Back to top <span aria-hidden="true">↑</span>
+      </a>
+    </div>
+
+    <div class="footer-info">
+      <p class="footer-independence">
+        Independent guide. Not operated by, endorsed by or part of World Mobile.
+      </p>
+      <p class="footer-legal">
+        Educational and marketing content only—not financial, tax or legal advice.
+        AirNode ownership carries risk, and earnings may be zero.
+      </p>
+      <p class="footer-copyright">© {year} Airnodes Club</p>
+    </div>
+  </div>
+</footer>

@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BrandMark from "../components/BrandMark.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 import heroImage from "../assets/airnode-operator.png";
 import Layout from "../layouts/Layout.astro";
 import { products, site, sources } from "../config";
@@ -442,22 +443,5 @@ const contextSources = [
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell footer-grid">
-      <a class="brand" href="/" aria-label="Airnodes Club home"><BrandMark compact /></a>
-      <p>Independent guide. Not operated by, endorsed by or part of World Mobile.</p>
-      <nav aria-label="Footer navigation">
-        <a href="#sources-title">Sources</a>
-        <a href="#affiliate-title">Affiliate disclosure</a>
-        <a href="#risks">Risk notice</a>
-        <a href="https://github.com/its-me-julien/airnodes.club" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      </nav>
-      <p class="legal">
-        Educational and marketing content only—not financial, tax or legal advice.
-        AirNode ownership carries capital, operational, counterparty and regulatory
-        risk. Earnings may be zero. The governing agreement determines legal title,
-        rights and obligations. © {new Date().getFullYear()} Airnodes Club.
-      </p>
-    </div>
-  </footer>
+  <SiteFooter />
 </Layout>

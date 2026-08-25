@@ -1058,16 +1058,26 @@ summary::-webkit-details-marker {
 }
 
 .site-footer {
-  padding-block: 3.5rem;
+  padding-block: clamp(2.75rem, 5vw, 4.5rem);
   background: #071727;
   color: rgba(255, 255, 255, 0.68);
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
-  gap: 2rem clamp(2rem, 5vw, 5rem);
-  align-items: start;
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.footer-brand-row,
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-brand-row {
+  align-items: center;
 }
 
 .site-footer .brand-lockup {
@@ -1081,29 +1091,49 @@ summary::-webkit-details-marker {
   stroke: #8fb1ff;
 }
 
-.footer-grid > p,
-.site-footer nav {
-  font-size: 0.82rem;
-}
-
-.site-footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.8rem 1.2rem;
-}
-
-.site-footer a:hover {
+.back-to-top {
+  display: inline-flex;
+  gap: 0.55rem;
+  align-items: center;
   color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.legal {
-  grid-column: 1 / -1;
-  max-width: 66rem;
-  padding-top: 2rem;
+.back-to-top span {
+  color: #8fb1ff;
+  font-size: 1.05rem;
+  transition: transform 180ms ease;
+}
+
+.back-to-top:hover span {
+  transform: translateY(-0.18rem);
+}
+
+.footer-info {
+  align-items: flex-start;
+  padding-top: clamp(1.75rem, 3vw, 2.5rem);
   border-top: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.46);
+  font-size: 0.82rem;
   line-height: 1.55;
+}
+
+.footer-independence {
+  max-width: 28rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.footer-legal {
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.footer-copyright {
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.46);
+  white-space: nowrap;
 }
 
 @media (max-width: 1120px) {
@@ -1239,13 +1269,13 @@ summary::-webkit-details-marker {
     max-width: 42rem;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+  .footer-info {
+    flex-wrap: wrap;
   }
 
-  .site-footer nav {
-    grid-column: 1 / -1;
-    justify-content: flex-start;
+  .footer-legal {
+    order: 3;
+    flex-basis: 100%;
   }
 }
 
@@ -1385,8 +1415,7 @@ summary::-webkit-details-marker {
     padding-left: 3rem;
   }
 
-  .sources,
-  .footer-grid {
+  .sources {
     grid-template-columns: 1fr;
   }
 
@@ -1394,8 +1423,13 @@ summary::-webkit-details-marker {
     grid-column: auto;
   }
 
-  .site-footer nav {
-    grid-column: auto;
+  .footer-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-legal {
+    order: initial;
   }
 }
 
