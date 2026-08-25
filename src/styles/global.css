@@ -621,32 +621,11 @@ summary::-webkit-details-marker {
   line-height: 1.08;
 }
 
-.reward-logic > div {
-  display: grid;
-  gap: 1rem;
-}
-
-.reward-logic > div p {
+.reward-logic-copy {
+  max-width: 42rem;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 1.02rem;
-}
-
-.reward-logic strong {
-  display: inline-block;
-  min-width: 8rem;
-  color: var(--white);
-}
-
-.payout-note {
-  max-width: 56rem;
-  margin-top: 2rem;
-  color: rgba(255, 255, 255, 0.56);
-  font-size: 0.82rem;
-}
-
-.payout-note a {
-  color: var(--white);
-  font-weight: 650;
+  font-size: clamp(1.02rem, 1.35vw, 1.18rem);
+  line-height: 1.6;
 }
 
 .product-section {
@@ -1277,12 +1256,6 @@ summary::-webkit-details-marker {
 
   .step-number {
     margin-bottom: 2.25rem;
-  }
-
-  .reward-logic strong {
-    display: block;
-    min-width: auto;
-    margin-bottom: 0.15rem;
   }
 
   .product-row summary {
