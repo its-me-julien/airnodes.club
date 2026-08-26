@@ -840,6 +840,115 @@ summary::-webkit-details-marker {
   font-size: clamp(1.3rem, 2.5vw, 2rem);
 }
 
+.dashboard-portfolio {
+  min-height: auto;
+  margin-bottom: clamp(1rem, 2.5vw, 2rem);
+}
+
+.portfolio-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.portfolio-head > span {
+  flex: 0 0 auto;
+  color: #8f8f8f;
+  font-size: 0.78rem;
+}
+
+.portfolio-table-wrap {
+  overflow-x: auto;
+  margin-top: 2rem;
+  scrollbar-color: #444 transparent;
+}
+
+.portfolio-scroll-hint {
+  display: none;
+}
+
+.portfolio-table {
+  width: 100%;
+  min-width: 62rem;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.portfolio-table th,
+.portfolio-table td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #333;
+  vertical-align: middle;
+}
+
+.portfolio-table thead th {
+  color: #8f8f8f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.portfolio-table tbody th {
+  font-size: 0.95rem;
+  font-weight: 680;
+}
+
+.portfolio-table tbody td {
+  color: #aaa;
+  font-size: 0.84rem;
+}
+
+.portfolio-table .portfolio-location {
+  max-width: 14rem;
+}
+
+.portfolio-table .portfolio-earned {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.portfolio-type {
+  display: inline-flex;
+  padding: 0.3rem 0.65rem;
+  border-radius: 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 680;
+}
+
+.portfolio-type-spark {
+  background: rgba(63, 194, 147, 0.14);
+  color: #4fd5a4;
+}
+
+.portfolio-type-ember {
+  background: rgba(239, 152, 80, 0.14);
+  color: #f1a061;
+}
+
+.portfolio-type-frontier {
+  background: rgba(238, 102, 121, 0.14);
+  color: #f17c8d;
+}
+
+.portfolio-type-portal {
+  background: rgba(82, 132, 255, 0.16);
+  color: #84a9ff;
+}
+
+.portfolio-open {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid #3a3a3a;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+}
+
 .dashboard-overview {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1568,6 +1677,32 @@ summary::-webkit-details-marker {
 
   .dashboard-panel {
     padding: 1.35rem;
+  }
+
+  .portfolio-head {
+    display: block;
+  }
+
+  .portfolio-head > span {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .portfolio-scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1rem;
+    color: #8f8f8f;
+    font-size: 0.75rem;
+  }
+
+  .dashboard-portfolio {
+    padding-right: 0;
+  }
+
+  .portfolio-table-wrap {
+    padding-right: 1.35rem;
   }
 
   .node-donut {
