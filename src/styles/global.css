@@ -820,7 +820,7 @@ summary::-webkit-details-marker {
   place-items: center;
   margin: 2rem auto;
   border-radius: 50%;
-  background: conic-gradient(#df4f69 0 0.19%, #ee6679 0.19% 0.56%, #ef9850 0.56% 3.74%, #3fc293 3.74% 100%);
+  background: conic-gradient(#df4f69 0 0.88%, #ee6679 0.88% 2.34%, #ef9850 2.34% 8.48%, #3fc293 8.48% 100%);
   transform: rotate(1deg);
 }
 

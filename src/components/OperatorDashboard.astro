@@ -1,36 +1,36 @@
 ---
 const points = [
-  { month: "Aug ’25", value: 548, x: 58, y: 224 },
-  { month: "Sep ’25", value: 581, x: 154, y: 207 },
-  { month: "Oct ’25", value: 580, x: 250, y: 207 },
-  { month: "Nov ’25", value: 584, x: 346, y: 205 },
-  { month: "Dec ’25", value: 603, x: 442, y: 196 },
-  { month: "Jan ’26", value: 611, x: 538, y: 192 },
-  { month: "Feb ’26", value: 612, x: 634, y: 192 },
-  { month: "Mar ’26", value: 614, x: 730, y: 191 },
-  { month: "Apr ’26", value: 632, x: 826, y: 182 },
-  { month: "May ’26", value: 919, x: 922, y: 54 },
-  { month: "Jun ’26", value: 916, x: 1018, y: 55 },
-  { month: "Jul ’26", value: 928, x: 1114, y: 49 },
+  { month: "Aug ’25", value: 552, x: 58, y: 222 },
+  { month: "Sep ’25", value: 579, x: 154, y: 208 },
+  { month: "Oct ’25", value: 582, x: 250, y: 207 },
+  { month: "Nov ’25", value: 588, x: 346, y: 203 },
+  { month: "Dec ’25", value: 601, x: 442, y: 197 },
+  { month: "Jan ’26", value: 614, x: 538, y: 191 },
+  { month: "Feb ’26", value: 609, x: 634, y: 193 },
+  { month: "Mar ’26", value: 621, x: 730, y: 187 },
+  { month: "Apr ’26", value: 647, x: 826, y: 175 },
+  { month: "May ’26", value: 884, x: 922, y: 70 },
+  { month: "Jun ’26", value: 901, x: 1018, y: 62 },
+  { month: "Jul ’26", value: 893, x: 1114, y: 66 },
 ] as const;
 
-const linePath = "M58 224 C90 224 124 207 154 207 C186 207 218 207 250 207 C282 207 314 205 346 205 C378 205 410 196 442 196 C474 196 506 192 538 192 C570 192 602 192 634 192 C666 192 698 191 730 191 C762 191 794 182 826 182 C862 182 888 54 922 54 C954 54 986 55 1018 55 C1050 55 1082 49 1114 49";
+const linePath = "M58 222 C90 222 124 208 154 208 C186 208 218 207 250 207 C282 207 314 203 346 203 C378 203 410 197 442 197 C474 197 506 191 538 191 C570 191 602 193 634 193 C666 193 698 187 730 187 C762 187 794 175 826 175 C862 175 888 70 922 70 C954 70 986 62 1018 62 C1050 62 1082 66 1114 66";
 const areaPath = `${linePath} L1114 246 L58 246 Z`;
 
 const nodeTypes = [
-  { name: "Frontier Plus", count: 1, color: "#df4f69" },
-  { name: "Frontier Core", count: 2, color: "#ee6679" },
-  { name: "Ember", count: 17, color: "#ef9850" },
-  { name: "Spark", count: 515, color: "#3fc293" },
+  { name: "Frontier Plus", count: 3, color: "#df4f69" },
+  { name: "Frontier Core", count: 5, color: "#ee6679" },
+  { name: "Ember", count: 21, color: "#ef9850" },
+  { name: "Spark", count: 313, color: "#3fc293" },
 ] as const;
 
 const activity = [
-  { kind: "purchase", title: "Node purchase", detail: "Purchased 3× Frontier Core Stack", date: "5 days ago", label: "Purchase", amount: "" },
-  { kind: "claim", title: "Rewards claimed", detail: "Claimed January 2026 earnings", date: "27/02/2026", label: "Claim", amount: "US$800.70" },
-  { kind: "claim", title: "Rewards claimed", detail: "Claimed December 2025 earnings", date: "02/02/2026", label: "Claim", amount: "US$792.20" },
-  { kind: "claim", title: "Rewards claimed", detail: "Claimed September 2025 earnings", date: "02/11/2025", label: "Claim", amount: "US$756.50" },
-  { kind: "claim", title: "Rewards claimed", detail: "Claimed August 2025 earnings", date: "30/09/2025", label: "Claim", amount: "US$722.50" },
-  { kind: "claim", title: "Rewards claimed", detail: "Claimed July 2025 earnings", date: "29/08/2025", label: "Claim", amount: "US$564.40" },
+  { kind: "purchase", title: "Node purchase", detail: "Purchased 2× EmberNode Stack", date: "8 days ago", label: "Purchase", amount: "" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed February 2026 earnings", date: "18/03/2026", label: "Claim", amount: "US$681.30" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed December 2025 earnings", date: "21/01/2026", label: "Claim", amount: "US$744.90" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed October 2025 earnings", date: "14/11/2025", label: "Claim", amount: "US$619.80" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed August 2025 earnings", date: "22/09/2025", label: "Claim", amount: "US$703.25" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed July 2025 earnings", date: "19/08/2025", label: "Claim", amount: "US$532.10" },
 ] as const;
 ---
 
@@ -48,8 +48,8 @@ const activity = [
         </div>
       ))}
     </dl>
-    <div class="node-donut" role="img" aria-label="515 Spark, 17 Ember, 2 Frontier Core and 1 Frontier Plus AirNodes">
-      <span>535<small>AirNodes</small></span>
+    <div class="node-donut" role="img" aria-label="313 Spark, 21 Ember, 5 Frontier Core and 3 Frontier Plus AirNodes">
+      <span>342<small>AirNodes</small></span>
     </div>
     <div class="dashboard-ghost-button">My AirNodes <span aria-hidden="true">→</span></div>
   </section>
@@ -90,7 +90,7 @@ const activity = [
     <div>
       <p class="dashboard-eyebrow">Operator dashboard</p>
       <h3>Monthly earnings</h3>
-      <p class="dashboard-summary">Last 12 months <span>·</span> Total: US$8,134.88 <span>·</span> Avg: US$677.91</p>
+      <p class="dashboard-summary">Last 12 months <span>·</span> Total: US$8,071.00 <span>·</span> Avg: US$672.58</p>
     </div>
     <div class="dashboard-periods" aria-label="Selected chart period">
       <span>3M</span><span>6M</span><span>9M</span><strong>1Y</strong><span>All</span>
