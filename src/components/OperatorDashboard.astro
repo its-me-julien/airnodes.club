@@ -34,6 +34,34 @@ const activity = [
 ] as const;
 ---
 
+<div class="dashboard-intro">
+  <p class="dashboard-kicker">Operator overview</p>
+  <h3>Dashboard</h3>
+  <p>Track your AirNode performance, network activity and rewards.</p>
+</div>
+
+<div class="dashboard-summary-grid">
+  <section class="dashboard-panel dashboard-rewards-card" aria-labelledby="pending-rewards-title">
+    <header class="dashboard-panel-head">
+      <h3 id="pending-rewards-title">Pending rewards</h3>
+      <p>Earnings ready to be claimed</p>
+    </header>
+    <p class="pending-reward"><strong>US$735</strong></p>
+    <div class="dashboard-claim-button">Claim rewards</div>
+  </section>
+
+  <section class="dashboard-panel dashboard-performance-card" aria-labelledby="performance-overview-title">
+    <header class="dashboard-panel-head">
+      <h3 id="performance-overview-title">Performance overview</h3>
+      <p>Earnings and data transfer trends</p>
+    </header>
+    <dl class="performance-stats">
+      <div><dt>Total earnings</dt><dd>US$12,486.35</dd></div>
+      <div><dt>Total data transferred</dt><dd>936.42 TB</dd></div>
+    </dl>
+  </section>
+</div>
+
 <div class="dashboard-overview">
   <section class="dashboard-panel node-breakdown" aria-labelledby="node-breakdown-title">
     <header class="dashboard-panel-head">
