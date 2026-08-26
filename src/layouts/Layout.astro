@@ -13,15 +13,35 @@ const canonical = new URL(Astro.url.pathname, site.url);
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: site.name,
-  url: site.url,
-  description,
-  publisher: {
-    "@type": "Organization",
-    name: site.name,
-    url: site.url,
-  },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      name: site.name,
+      url: site.url,
+      description,
+      publisher: { "@id": `${site.url}/#organization` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${site.url}/#organization`,
+      name: site.name,
+      url: site.url,
+      logo: `${site.url}/android-chrome-512x512.png`,
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonical}#webpage`,
+      url: canonical.toString(),
+      name: title,
+      description,
+      isPartOf: { "@id": `${site.url}/#website` },
+      about: [
+        { "@type": "Thing", name: "World Mobile AirNodes" },
+        { "@type": "Thing", name: "AirNode affiliate code" },
+      ],
+    },
+  ],
 };
 ---
 
