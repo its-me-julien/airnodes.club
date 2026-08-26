@@ -1,0 +1,13 @@
+---
+import GuidePage from "../../components/GuidePage.astro";
+export const prerender = true;
+export function getStaticPaths() {
+const regions = {
+  philippines: { title:"World Mobile AirNodes in the Philippines | Airnodes Club", description:"Learn how World Mobile Frontier AirNodes are being deployed in Siargao, Philippines.", eyebrow:"Deployment region / Philippines", heading:"Frontier AirNodes in Siargao.", intro:"The first commercial Frontier deployment is concentrated around General Luna and toward Cloud 9, where hospitality, retail and visitor activity create clear demand for reliable internet.", facts:[{label:"AirNode",value:"Frontier"},{label:"Starting area",value:"General Luna to Cloud 9"},{label:"Local operations",value:"CWC / eSari-Sari"}], sections:[{title:"Infrastructure comes first",body:"Fibre and backhaul support the rollout before Frontier AirNodes are activated at homes and businesses."},{title:"Demand is already present",body:"Hotels, cafés, shops, workspaces and homes depend on connectivity for payments, bookings, communication and daily operations."},{title:"A model designed to expand",body:"The Siargao rollout brings local operations, physical infrastructure and commercial demand together in a model intended to grow into more locations."}]},
+  pakistan: { title:"World Mobile AirNodes in Pakistan | Airnodes Club", description:"Learn how Spark and EmberNode support World Mobile network expansion with WorldCall in Pakistan.", eyebrow:"Deployment region / Pakistan", heading:"AirNodes across Pakistan’s network path.", intro:"World Mobile and WorldCall combine fibre infrastructure, EmberNode distribution and Spark Wi-Fi coverage to move capacity from the backbone toward people and businesses.", facts:[{label:"AirNodes",value:"EmberNode and Spark"},{label:"Active cities",value:"Islamabad, Lahore, Faisalabad and Multan"},{label:"Local partner",value:"WorldCall"}], sections:[{title:"Backbone and distribution",body:"EmberNode helps carry capacity through Pakistan’s network distribution layer and supports continued expansion at the edge."},{title:"Connectivity at the edge",body:"Spark creates local Wi-Fi coverage in the places where people, homes and businesses connect."},{title:"Local infrastructure partnership",body:"WorldCall brings established fibre infrastructure and local operating capability to the World Mobile network model."}]},
+} as const;
+return Object.entries(regions).map(([slug, props]) => ({params:{slug},props}));
+}
+const region = Astro.props;
+---
+<GuidePage {...region} />

@@ -15,13 +15,13 @@ const steps = [
   },
   {
     number: "02",
-    title: "Buy and sign",
-    body: "Complete your order with World Mobile and sign the current Operator agreement.",
+    title: "Purchase your AirNode",
+    body: "Complete your order with World Mobile and review the current Operator agreement.",
   },
   {
     number: "03",
     title: "Deploy and activate",
-    body: "The AirNode is installed and connected. Who handles this depends on the model and agreement.",
+    body: "Deployment is handled according to the AirNode model and its Operator agreement.",
   },
   {
     number: "04",
@@ -63,7 +63,7 @@ const risks = [
       <div class="nav-links">
         <a href="#how-it-works">How it works</a>
         <a href="#airnodes">AirNodes</a>
-        <a href="#rewards">Rewards &amp; risks</a>
+        <a href="#rewards">Rewards</a>
       </div>
       <a
         class="button button-small button-primary"
@@ -81,8 +81,8 @@ const risks = [
       <div class="hero-copy">
         <h1 id="hero-title">Own the infrastructure that keeps people connected.</h1>
         <p class="hero-lede">
-          Explore World Mobile AirNodes, understand how each model works, and see
-          how rewards are earned.
+          Compare World Mobile AirNodes, understand what each one does, and learn
+          how operators earn rewards.
         </p>
         <div class="hero-actions">
           <a
@@ -95,8 +95,8 @@ const risks = [
           </a>
         </div>
         <p class="micro-disclosure">
-          Independent affiliate guide. We may earn a commission from qualifying
-          purchases.
+          Independent AirNode guide. Affiliate code {site.affiliateCode} is applied
+          automatically through our link.
         </p>
       </div>
       <figure class="hero-media">
@@ -122,8 +122,8 @@ const risks = [
           <h2 id="start-title">A different way to build a mobile network.</h2>
         </div>
         <p class="section-lede">
-          World Mobile brings together telecom infrastructure, local operations and
-          ownership by everyday people. Anyone can help build the network.
+          World Mobile opens telecom infrastructure ownership to more people,
+          supported by local partners who deploy and operate the network.
         </p>
       </div>
 
@@ -196,34 +196,17 @@ const risks = [
       </div>
     </section>
 
-    <section class="section dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
-      <div class="shell">
-        <div class="section-heading dashboard-section-heading">
-          <div>
-            <p class="section-index">03 / Your dashboard</p>
-            <h2 id="dashboard-title">See how your AirNodes are performing.</h2>
-          </div>
-          <p class="section-lede">
-            Follow network activity, monitor performance and track rewards from one
-            operator dashboard.
-          </p>
-        </div>
-        <OperatorDashboard />
-      </div>
-    </section>
-
     <section class="section product-section" id="airnodes" aria-labelledby="airnodes-title">
       <div class="shell">
         <div class="section-heading">
           <div>
-            <p class="section-index">04 / The options</p>
+            <p class="section-index">03 / The options</p>
             <h2 id="airnodes-title">Choose the AirNode that fits your operator profile.</h2>
           </div>
           <p class="section-lede">
-            AirNodes are deployed in different places and perform different jobs
-            across the network. Published prices range from about US$63 to US$100,000,
-            while operating needs and reward models vary. Compare them to find the
-            right fit for you.
+            AirNodes serve different parts of the network, with prices ranging from
+            about US$63 to US$100,000. Compare their service, location, operator
+            profile and reward model to find the right fit.
           </p>
         </div>
 
@@ -247,6 +230,10 @@ const risks = [
                     <span class="cell-label">Price</span>
                     <strong>{product.price}</strong>
                   </div>
+                  <div class="product-reward">
+                    <span class="cell-label">Reward example*</span>
+                    <strong>{product.rewardExample}</strong>
+                  </div>
                   <span class="product-toggle">
                     <span class="sr-only">Read more about {product.name}</span>
                     <i aria-hidden="true"></i>
@@ -254,8 +241,16 @@ const risks = [
                 </summary>
                 <div class="product-detail">
                   <div>
-                    <span class="cell-label">How rewards work</span>
-                    <p>{product.reward}</p>
+                    <span class="cell-label">Operator profile</span>
+                    <p>{product.profile}</p>
+                  </div>
+                  <div>
+                    <span class="cell-label">Deployment</span>
+                    <p>{product.deployment}</p>
+                  </div>
+                  <div>
+                    <span class="cell-label">Reward model</span>
+                    <p>{product.rewardModel}</p>
                   </div>
                   <a
                     class="button button-small button-primary"
@@ -265,123 +260,48 @@ const risks = [
                   >
                     {product.cta} <span aria-hidden="true">↗</span>
                   </a>
+                  <a class="product-guide-link" href={product.guidePath}>
+                    Learn about {product.name} <span aria-hidden="true">→</span>
+                  </a>
                 </div>
               </details>
             ))
           }
         </div>
-      </div>
-    </section>
-
-    <section class="section rewards-section shell" id="rewards" aria-labelledby="rewards-title">
-      <div class="section-heading">
-        <div>
-          <p class="section-index">05 / Rewards</p>
-          <h2 id="rewards-title">How each AirNode earns.</h2>
-        </div>
-        <p class="section-lede">
-          AirNodes earn according to the service they provide. Compare how Spark,
-          EmberNode, Frontier and Portal generate rewards.
+        <p class="scenario-disclaimer">
+          *Reward figures reflect World Mobile’s latest information, but they are not
+          guaranteed. Actual rewards depend on AirNode type, activation, network use,
+          location and other factors. Earnings can vary and may be zero.
         </p>
       </div>
-
-      <div class="scenario-grid">
-        <article class="scenario">
-          <header>
-            <h3>Spark</h3>
-          </header>
-          <dl>
-            <div><dt>Service</dt><dd>Local Wi-Fi coverage</dd></div>
-            <div><dt>Reward model</dt><dd>Fixed monthly</dd></div>
-            <div class="scenario-result"><dt>Rewards expectations*</dt><dd>US$1.70 / month</dd></div>
-          </dl>
-          <a
-            class="button button-small button-primary"
-            href={site.affiliateUrl}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-          >
-            Buy Spark <span aria-hidden="true">↗</span>
-          </a>
-        </article>
-
-        <article class="scenario">
-          <header>
-            <h3>EmberNode</h3>
-          </header>
-          <dl>
-            <div><dt>Service</dt><dd>Network data distribution</dd></div>
-            <div><dt>Reward model</dt><dd>Verified network traffic</dd></div>
-            <div class="scenario-result"><dt>Rewards expectations*</dt><dd>~US$3.33 / month</dd></div>
-          </dl>
-          <a
-            class="button button-small button-primary"
-            href={site.affiliateUrl}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-          >
-            Buy EmberNode <span aria-hidden="true">↗</span>
-          </a>
-        </article>
-
-        <article class="scenario">
-          <header>
-            <h3>Frontier</h3>
-          </header>
-          <dl>
-            <div><dt>Service</dt><dd>Business Wi-Fi</dd></div>
-            <div><dt>Reward model</dt><dd>Fixed monthly base</dd></div>
-            <div class="scenario-result"><dt>Rewards expectations*</dt><dd>US$17.55 to US$58.50 / month</dd></div>
-          </dl>
-          <a
-            class="button button-small button-primary"
-            href={site.affiliateUrl}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-          >
-            Buy Frontier <span aria-hidden="true">↗</span>
-          </a>
-        </article>
-
-        <article class="scenario">
-          <header>
-            <h3>Portal</h3>
-          </header>
-          <dl>
-            <div><dt>Service</dt><dd>Wide-area coverage</dd></div>
-            <div><dt>Reward model</dt><dd>Subscriber and usage linked</dd></div>
-            <div class="scenario-result"><dt>Rewards expectations*</dt><dd>US$250 to US$500 / month</dd></div>
-          </dl>
-          <a
-            class="button button-small button-primary"
-            href={site.affiliateUrl}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-          >
-            Buy Portal <span aria-hidden="true">↗</span>
-          </a>
-        </article>
-      </div>
-
-      <p class="scenario-disclaimer">
-        *Reward figures reflect World Mobile’s latest information, but they are not a
-        guarantee of rewards. Actual rewards depend on the AirNode type, activation
-        status, network usage, location and other factors. Earnings can vary and may
-        be zero.
-      </p>
-
     </section>
 
-    <section class="section risk-section" id="risks" aria-labelledby="risks-title">
+    <section class="section dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
+      <div class="shell">
+        <div class="section-heading dashboard-section-heading">
+          <div>
+            <p class="section-index">04 / Operator dashboard</p>
+            <h2 id="dashboard-title">See how your AirNodes are performing.</h2>
+          </div>
+          <p class="section-lede">
+            Follow network activity, monitor performance and track rewards from one
+            operator dashboard.
+          </p>
+        </div>
+        <OperatorDashboard />
+      </div>
+    </section>
+
+    <section class="section risk-section" id="rewards" aria-labelledby="risks-title">
       <div class="shell">
         <div class="risk-heading">
           <div>
-            <p class="section-index">06 / Before you buy</p>
-            <h2 id="risks-title">What shapes your rewards?</h2>
+            <p class="section-index">05 / Before you buy</p>
+            <h2 id="risks-title">What influences AirNode performance?</h2>
           </div>
           <p>
-            Strong performance starts with the right location, an active connection
-            and reliable equipment. Here are the factors that matter most.
+            Location, demand, uptime and reliable equipment all shape how an AirNode
+            performs and earns.
           </p>
         </div>
         <div class="risk-list">
@@ -405,8 +325,8 @@ const risks = [
       <div class="shell">
         <div class="section-heading deployment-heading">
           <div>
-            <p class="section-index">07 / Deployment regions</p>
-            <h2 id="regions-title">Built around real places and real demand.</h2>
+            <p class="section-index">06 / Deployment regions</p>
+            <h2 id="regions-title">AirNodes are built around real connectivity demand.</h2>
           </div>
           <p class="section-lede">
             Every rollout begins with local partners, physical infrastructure and a
@@ -480,8 +400,8 @@ const risks = [
         </div>
         <div class="affiliate-copy">
           <p>
-            Use AirNode affiliate code <strong>{site.affiliateCode}</strong>. It is
-            applied automatically when you continue to World Mobile through our link.
+            Use World Mobile AirNode affiliate code <strong>{site.affiliateCode}</strong>.
+            It is applied automatically when you buy through our link.
           </p>
           <div class="affiliate-code" aria-label={`AirNode affiliate code ${site.affiliateCode}`}>
             <div class="affiliate-code-meta">
@@ -495,7 +415,7 @@ const risks = [
               target="_blank"
               rel="sponsored noopener noreferrer"
             >
-              Buy AirNodes with code <span aria-hidden="true">↗</span>
+              Explore AirNodes with code {site.affiliateCode} <span aria-hidden="true">↗</span>
             </a>
           </div>
           <p class="affiliate-disclosure">

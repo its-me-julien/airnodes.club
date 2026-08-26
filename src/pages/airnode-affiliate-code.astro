@@ -1,0 +1,13 @@
+---
+import GuidePage from "../components/GuidePage.astro";
+import { site } from "../config";
+---
+<GuidePage
+  title={`World Mobile AirNode Affiliate Code ${site.affiliateCode} | Airnodes Club`}
+  description={`Use World Mobile AirNode affiliate code ${site.affiliateCode}. The code is applied automatically through the Airnodes Club referral link.`}
+  eyebrow="World Mobile AirNode affiliate code"
+  heading={`Use AirNode affiliate code ${site.affiliateCode}.`}
+  intro="Continue to the official World Mobile AirNode platform through our referral link. The affiliate code is applied automatically, so you can explore current AirNodes, availability and terms."
+  facts={[{label:"Affiliate code",value:site.affiliateCode},{label:"Applied",value:"Automatically through our link"},{label:"Checkout",value:"World Mobile"}]}
+  sections={[{title:"Follow the referral link",body:"Use any Airnodes Club purchase button to continue to the official World Mobile AirNode platform."},{title:"Confirm the code",body:`The referral URL includes affiliate code ${site.affiliateCode}. Review the current checkout before completing an order.`},{title:"Choose an AirNode",body:"Compare the service, deployment region, price and reward model before selecting the AirNode that fits your operator profile."}]}
+/>
