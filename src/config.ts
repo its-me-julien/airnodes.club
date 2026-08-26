@@ -5,6 +5,7 @@ export const site = {
   affiliateUrl:
     import.meta.env.PUBLIC_AIRNODE_AFFILIATE_URL ??
     "https://airnode.worldmobile.net/r/JWBMLA",
+  affiliateCode: "JWBMLA",
   reviewDate: "2026-08-25",
   reviewDateLabel: "25 August 2026",
 } as const;
