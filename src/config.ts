@@ -35,62 +35,44 @@ export const sources = {
 export const products = [
   {
     name: "EmberNode",
-    status: "Available via reservations",
     layer: "Pakistan distribution",
     price: "Starting from US$165",
     detail:
       "A rugged fibre gateway that moves data from an internet provider into the local network. It does not connect people directly.",
-    terms: "Volume pricing: first 10 at $165 each, units 11 to 149 at $150, and units 150 to 500 at $145",
-    source: sources.ember,
   },
   {
     name: "Frontier",
-    status: "Scheduled releases, check availability",
     layer: "Businesses in the Philippines",
     price: "From US$585",
     detail:
       "Wi-Fi equipment that connects businesses in the Philippines. An approved local partner installs and operates it while the owner follows it remotely.",
-    terms: "Core, Plus, Pro and Max options are published. Check the current release for availability.",
-    source: sources.frontier,
   },
   {
     name: "Spark",
-    status: "Distribution partners only",
     layer: "Local Wi-Fi in Pakistan",
     price: "From US$62.99",
     detail:
       "A compact Wi-Fi AirNode that works with nearby units to connect people in Pakistan.",
-    terms: "Current availability is through selected partners",
-    source: sources.spark,
   },
   {
     name: "Portal",
-    status: "Available via reservations / Hex Operators",
     layer: "Wide-area coverage in the USA",
     price: "From US$9,000",
     detail:
       "High-capacity equipment designed to extend coverage in the United States.",
-    terms: "Professional installation at a World Mobile location or an eligible location provided by the owner",
-    source: sources.portal,
   },
   {
     name: "Titan",
-    status: "Contact sales",
     layer: "Long-range coverage in the USA",
     price: "From US$100,000",
     detail:
       "World Mobile’s most powerful AirNode, designed for large deployments and the network backbone.",
-    terms: "Commercial terms are handled by sales",
-    source: sources.titan,
   },
   {
     name: "Pulse",
-    status: "Coming soon",
     layer: "Network energy",
     price: "Not announced",
     detail:
       "World Mobile describes Pulse as its first node for energy infrastructure. Full product details have not been announced.",
-    terms: "No public pricing or reward terms yet",
-    source: sources.airnodes,
   },
 ] as const;

@@ -208,12 +208,13 @@ const risks = [
         <div class="section-heading">
           <div>
             <p class="section-index">03 / The options</p>
-            <h2 id="airnodes-title">Choose the AirNode that fits you.</h2>
+            <h2 id="airnodes-title">Choose the AirNode that fits your operator profile.</h2>
           </div>
           <p class="section-lede">
-            AirNode is the name for several types of telecom equipment. Compare what
-            each model does, where it is available, who operates it and how it earns
-            rewards.
+            AirNodes are deployed in different places and perform different jobs
+            across the network. Published prices range from about US$63 to US$100,000,
+            while operating needs and reward models vary. Compare them to find the
+            right fit for you.
           </p>
         </div>
 
@@ -224,7 +225,6 @@ const risks = [
                 <summary>
                   <div class="product-name">
                     <h3>{product.name}</h3>
-                    <span>{product.status}</span>
                   </div>
                   <div class="product-layer">
                     <span class="cell-label">What it does and where</span>
@@ -241,8 +241,6 @@ const risks = [
                 </summary>
                 <div class="product-detail">
                   <p>{product.detail}</p>
-                  <p>{product.terms}</p>
-                  <a href={product.source} target="_blank" rel="noopener noreferrer">Product source ↗</a>
                 </div>
               </details>
             ))

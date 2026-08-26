@@ -655,23 +655,11 @@ summary::-webkit-details-marker {
 }
 
 .product-name h3 {
-  margin-bottom: 0.5rem;
   font-size: clamp(1.75rem, 2.8vw, 2.7rem);
   font-weight: 720;
   letter-spacing: -0.05em;
   line-height: 1;
   transition: color 180ms ease, transform 180ms ease;
-}
-
-.product-name > span {
-  display: inline-flex;
-  padding: 0.38rem 0.58rem;
-  border-radius: 0.25rem;
-  background: var(--blue-wash);
-  color: var(--blue-dark);
-  font-size: 0.8125rem;
-  font-weight: 740;
-  line-height: 1;
 }
 
 .product-layer,
@@ -729,19 +717,10 @@ summary::-webkit-details-marker {
 }
 
 .product-detail {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr auto;
-  gap: clamp(1.25rem, 4vw, 4rem);
+  max-width: 64rem;
   padding: 0 3.25rem 2.5rem max(14rem, 26%);
   color: var(--muted);
   font-size: 0.94rem;
-}
-
-.product-detail a {
-  align-self: start;
-  color: var(--blue-dark);
-  font-weight: 680;
-  white-space: nowrap;
 }
 
 .scenario-disclaimer {
@@ -1106,12 +1085,7 @@ summary::-webkit-details-marker {
   }
 
   .product-detail {
-    grid-template-columns: 1fr 1fr;
     padding-right: 0;
-  }
-
-  .product-detail a {
-    grid-column: 1 / -1;
   }
 
   .scenario-grid,
@@ -1237,12 +1211,7 @@ summary::-webkit-details-marker {
   }
 
   .product-detail {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .product-detail a {
-    grid-column: auto;
+    padding-left: 0;
   }
 
   .scenario-grid {
