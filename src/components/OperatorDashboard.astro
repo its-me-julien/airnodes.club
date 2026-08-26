@@ -16,7 +16,74 @@ const points = [
 
 const linePath = "M58 224 C90 224 124 207 154 207 C186 207 218 207 250 207 C282 207 314 205 346 205 C378 205 410 196 442 196 C474 196 506 192 538 192 C570 192 602 192 634 192 C666 192 698 191 730 191 C762 191 794 182 826 182 C862 182 888 54 922 54 C954 54 986 55 1018 55 C1050 55 1082 49 1114 49";
 const areaPath = `${linePath} L1114 246 L58 246 Z`;
+
+const nodeTypes = [
+  { name: "Frontier Plus", count: 1, color: "#df4f69" },
+  { name: "Frontier Core", count: 2, color: "#ee6679" },
+  { name: "Ember", count: 17, color: "#ef9850" },
+  { name: "Spark", count: 515, color: "#3fc293" },
+] as const;
+
+const activity = [
+  { kind: "purchase", title: "Node purchase", detail: "Purchased 3× Frontier Core Stack", date: "5 days ago", label: "Purchase", amount: "" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed January 2026 earnings", date: "27/02/2026", label: "Claim", amount: "US$800.70" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed December 2025 earnings", date: "02/02/2026", label: "Claim", amount: "US$792.20" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed September 2025 earnings", date: "02/11/2025", label: "Claim", amount: "US$756.50" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed August 2025 earnings", date: "30/09/2025", label: "Claim", amount: "US$722.50" },
+  { kind: "claim", title: "Rewards claimed", detail: "Claimed July 2025 earnings", date: "29/08/2025", label: "Claim", amount: "US$564.40" },
+] as const;
 ---
+
+<div class="dashboard-overview">
+  <section class="dashboard-panel node-breakdown" aria-labelledby="node-breakdown-title">
+    <header class="dashboard-panel-head">
+      <h3 id="node-breakdown-title">Node breakdown</h3>
+      <p>Your AirNode distribution by type</p>
+    </header>
+    <dl class="node-legend">
+      {nodeTypes.map((node) => (
+        <div>
+          <dt><i style={`--node-color:${node.color}`}></i>{node.name}</dt>
+          <dd>{node.count}</dd>
+        </div>
+      ))}
+    </dl>
+    <div class="node-donut" role="img" aria-label="515 Spark, 17 Ember, 2 Frontier Core and 1 Frontier Plus AirNodes">
+      <span>535<small>AirNodes</small></span>
+    </div>
+    <div class="dashboard-ghost-button">My AirNodes <span aria-hidden="true">→</span></div>
+  </section>
+
+  <section class="dashboard-panel recent-activity" aria-labelledby="recent-activity-title">
+    <header class="dashboard-panel-head">
+      <h3 id="recent-activity-title">Recent activity</h3>
+      <p>Latest transactions and events</p>
+    </header>
+    <ol class="activity-list">
+      {activity.map((item) => (
+        <li>
+          <span class="activity-icon" aria-hidden="true">
+            {item.kind === "purchase" ? (
+              <svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L20.5 8H6.1M10 20a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm9 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" /></svg>
+            ) : (
+              <svg viewBox="0 0 24 24"><path d="M4 10h16v10H4V10Zm8 0v10M3 7h18v3H3V7Zm9 0H7.8A2.8 2.8 0 1 1 12 4.6V7Zm0 0h4.2A2.8 2.8 0 1 0 12 4.6V7Z" /></svg>
+            )}
+          </span>
+          <div class="activity-copy">
+            <strong>{item.title}</strong>
+            <span>{item.detail}</span>
+            <time>{item.date}</time>
+          </div>
+          <div class="activity-value">
+            <span>{item.label}</span>
+            {item.amount && <strong>{item.amount}</strong>}
+          </div>
+        </li>
+      ))}
+    </ol>
+    <div class="dashboard-ghost-button">See all <span aria-hidden="true">→</span></div>
+  </section>
+</div>
 
 <div class="operator-dashboard" aria-label="Illustrative AirNode operator dashboard">
   <div class="dashboard-head">
