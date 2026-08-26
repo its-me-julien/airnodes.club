@@ -840,7 +840,7 @@ summary::-webkit-details-marker {
   font-size: clamp(1.3rem, 2.5vw, 2rem);
 }
 
-.dashboard-portfolio {
+.dashboard-panel.dashboard-portfolio {
   min-height: auto;
   margin-bottom: clamp(1rem, 2.5vw, 2rem);
 }
@@ -904,6 +904,12 @@ summary::-webkit-details-marker {
   max-width: 14rem;
 }
 
+.portfolio-location code {
+  color: #aaa;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8rem;
+}
+
 .portfolio-table .portfolio-earned {
   color: #fff;
   font-size: 0.95rem;
@@ -933,11 +939,6 @@ summary::-webkit-details-marker {
   color: #f17c8d;
 }
 
-.portfolio-type-portal {
-  background: rgba(82, 132, 255, 0.16);
-  color: #84a9ff;
-}
-
 .portfolio-open {
   display: grid;
   width: 2.5rem;
@@ -949,7 +950,7 @@ summary::-webkit-details-marker {
   font-size: 1rem;
 }
 
-.dashboard-rewards-guide {
+.dashboard-panel.dashboard-rewards-guide {
   min-height: auto;
   margin-bottom: clamp(1rem, 2.5vw, 2rem);
 }

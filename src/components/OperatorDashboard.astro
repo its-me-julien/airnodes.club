@@ -34,12 +34,12 @@ const activity = [
 ] as const;
 
 const portfolio = [
-  { name: "Harbour Link", type: "Frontier", tone: "frontier", location: "General Luna, Philippines", total: "US$1,482.30", month: "US$48.75" },
-  { name: "North Market Wi-Fi", type: "Spark", tone: "spark", location: "Lahore, Pakistan", total: "US$94.60", month: "US$1.70" },
-  { name: "Canal Street Relay", type: "EmberNode", tone: "ember", location: "Faisalabad, Pakistan", total: "US$71.85", month: "US$3.18" },
-  { name: "Riverside Connect", type: "Spark", tone: "spark", location: "Multan, Pakistan", total: "US$88.40", month: "US$1.70" },
-  { name: "Silver State West", type: "Portal", tone: "portal", location: "Reno, USA", total: "US$4,936.25", month: "US$418.90" },
-  { name: "Capital Corner", type: "Spark", tone: "spark", location: "Islamabad, Pakistan", total: "US$102.15", month: "US$1.70" },
+  { name: "#Frontier-b7c42", type: "Frontier", tone: "frontier", location: "#harbor-signal-lantern", total: "US$57.00", month: "US$57.00" },
+  { name: "#Ember-91fd3", type: "Ember", tone: "ember", location: "#valley-bridge-orbit", total: "US$9.90", month: "US$3.30" },
+  { name: "#Spark-a1aa1", type: "Spark", tone: "spark", location: "#market-river-signal", total: "US$5.10", month: "US$1.70" },
+  { name: "#Spark-c4e82", type: "Spark", tone: "spark", location: "#cluster-maple-route", total: "US$5.10", month: "US$1.70" },
+  { name: "#Spark-7bd09", type: "Spark", tone: "spark", location: "#corner-cable-light", total: "US$5.10", month: "US$1.70" },
+  { name: "#Spark-f31c6", type: "Spark", tone: "spark", location: "#garden-tower-link", total: "US$5.10", month: "US$1.70" },
 ] as const;
 ---
 
@@ -91,7 +91,7 @@ const portfolio = [
           <tr>
             <th scope="row">{node.name}</th>
             <td><span class={`portfolio-type portfolio-type-${node.tone}`}>{node.type}</span></td>
-            <td class="portfolio-location">{node.location}</td>
+            <td class="portfolio-location"><code>{node.location}</code></td>
             <td class="portfolio-earned">{node.total}</td>
             <td>{node.month}</td>
             <td><span class="portfolio-open" aria-hidden="true">↗</span></td>
