@@ -1,0 +1,65 @@
+---
+const points = [
+  { month: "Aug ’25", value: 548, x: 58, y: 224 },
+  { month: "Sep ’25", value: 581, x: 154, y: 207 },
+  { month: "Oct ’25", value: 580, x: 250, y: 207 },
+  { month: "Nov ’25", value: 584, x: 346, y: 205 },
+  { month: "Dec ’25", value: 603, x: 442, y: 196 },
+  { month: "Jan ’26", value: 611, x: 538, y: 192 },
+  { month: "Feb ’26", value: 612, x: 634, y: 192 },
+  { month: "Mar ’26", value: 614, x: 730, y: 191 },
+  { month: "Apr ’26", value: 632, x: 826, y: 182 },
+  { month: "May ’26", value: 919, x: 922, y: 54 },
+  { month: "Jun ’26", value: 916, x: 1018, y: 55 },
+  { month: "Jul ’26", value: 928, x: 1114, y: 49 },
+] as const;
+
+const linePath = "M58 224 C90 224 124 207 154 207 C186 207 218 207 250 207 C282 207 314 205 346 205 C378 205 410 196 442 196 C474 196 506 192 538 192 C570 192 602 192 634 192 C666 192 698 191 730 191 C762 191 794 182 826 182 C862 182 888 54 922 54 C954 54 986 55 1018 55 C1050 55 1082 49 1114 49";
+const areaPath = `${linePath} L1114 246 L58 246 Z`;
+---
+
+<div class="operator-dashboard" aria-label="Illustrative AirNode operator dashboard">
+  <div class="dashboard-head">
+    <div>
+      <p class="dashboard-eyebrow">Operator dashboard</p>
+      <h3>Monthly earnings</h3>
+      <p class="dashboard-summary">Last 12 months <span>·</span> Total: US$8,134.88 <span>·</span> Avg: US$677.91</p>
+    </div>
+    <div class="dashboard-periods" aria-label="Selected chart period">
+      <span>3M</span><span>6M</span><span>9M</span><strong>1Y</strong><span>All</span>
+    </div>
+  </div>
+
+  <div class="dashboard-chart" aria-hidden="true">
+    <svg viewBox="0 0 1180 292" role="img">
+      <defs>
+        <linearGradient id="earnings-fill" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#ffdf00" stop-opacity=".19" />
+          <stop offset="100%" stop-color="#ffdf00" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      {[40, 92, 144, 196, 246].map((y) => <line x1="58" y1={y} x2="1114" y2={y} class="chart-gridline" />)}
+      {["$1,000", "$900", "$800", "$700", "$600"].map((label, index) => (
+        <text x="0" y={45 + index * 52} class="chart-axis-value">{label}</text>
+      ))}
+      <path d={areaPath} fill="url(#earnings-fill)" />
+      <path d={linePath} class="chart-line" />
+      {points.map((point) => <circle cx={point.x} cy={point.y} r="5" class="chart-point" />)}
+      {points.map((point) => <text x={point.x} y="278" text-anchor="middle" class="chart-month">{point.month}</text>)}
+    </svg>
+  </div>
+
+  <div class="dashboard-mobile-list">
+    {points.slice(-4).map((point) => (
+      <div><span>{point.month}</span><strong>US${point.value}</strong></div>
+    ))}
+  </div>
+
+  <p class="dashboard-note">Illustrative dashboard preview. Figures shown are examples, not guaranteed rewards.</p>
+
+  <table class="sr-only">
+    <caption>Illustrative monthly AirNode earnings</caption>
+    <thead><tr><th>Month</th><th>Earnings</th></tr></thead>
+    <tbody>{points.map((point) => <tr><td>{point.month}</td><td>US${point.value}</td></tr>)}</tbody>
+  </table>
+</div>

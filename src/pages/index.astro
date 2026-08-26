@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BrandMark from "../components/BrandMark.astro";
+import OperatorDashboard from "../components/OperatorDashboard.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import heroImage from "../assets/airnode-operator.png";
 import Layout from "../layouts/Layout.astro";
@@ -195,11 +196,27 @@ const risks = [
       </div>
     </section>
 
+    <section class="section dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
+      <div class="shell">
+        <div class="section-heading dashboard-section-heading">
+          <div>
+            <p class="section-index">03 / Your dashboard</p>
+            <h2 id="dashboard-title">See how your AirNodes are performing.</h2>
+          </div>
+          <p class="section-lede">
+            Follow network activity, monitor performance and track rewards from one
+            operator dashboard.
+          </p>
+        </div>
+        <OperatorDashboard />
+      </div>
+    </section>
+
     <section class="section product-section" id="airnodes" aria-labelledby="airnodes-title">
       <div class="shell">
         <div class="section-heading">
           <div>
-            <p class="section-index">03 / The options</p>
+            <p class="section-index">04 / The options</p>
             <h2 id="airnodes-title">Choose the AirNode that fits your operator profile.</h2>
           </div>
           <p class="section-lede">
@@ -259,7 +276,7 @@ const risks = [
     <section class="section rewards-section shell" id="rewards" aria-labelledby="rewards-title">
       <div class="section-heading">
         <div>
-          <p class="section-index">04 / Rewards</p>
+          <p class="section-index">05 / Rewards</p>
           <h2 id="rewards-title">How each AirNode earns.</h2>
         </div>
         <p class="section-lede">
@@ -359,7 +376,7 @@ const risks = [
       <div class="shell">
         <div class="risk-heading">
           <div>
-            <p class="section-index">05 / Before you buy</p>
+            <p class="section-index">06 / Before you buy</p>
             <h2 id="risks-title">What shapes your rewards?</h2>
           </div>
           <p>
