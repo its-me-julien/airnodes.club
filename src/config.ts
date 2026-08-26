@@ -39,6 +39,7 @@ export const products = [
     location: "Pakistan",
     price: "From US$62.99",
     reward: "Fixed rewards of US$1.70 per month, accrued daily.",
+    cta: "Buy Spark",
   },
   {
     name: "EmberNode",
@@ -46,6 +47,7 @@ export const products = [
     location: "Pakistan",
     price: "From US$165",
     reward: "Rewards follow verified traffic. Around 800 GB may earn about US$3.33 per month.",
+    cta: "Buy EmberNode",
   },
   {
     name: "Frontier",
@@ -53,6 +55,7 @@ export const products = [
     location: "Philippines",
     price: "From US$585",
     reward: "Fixed base rewards range from US$17.55 to US$58.50 per month after activation, depending on tier.",
+    cta: "Buy Frontier",
   },
   {
     name: "Portal",
@@ -60,6 +63,7 @@ export const products = [
     location: "USA",
     price: "From US$9,000",
     reward: "Rewards follow subscriber activity and network usage. World Mobile reports about US$250 to US$500 per month for active deployments.",
+    cta: "Buy Portal",
   },
   {
     name: "Titan",
@@ -67,6 +71,7 @@ export const products = [
     location: "USA",
     price: "From US$100,000",
     reward: "Rewards follow subscriber use and downstream network traffic. Coverage can reach up to 28 km.",
+    cta: "Buy Titan",
   },
   {
     name: "Pulse",
@@ -74,5 +79,6 @@ export const products = [
     location: "Not announced",
     price: "Not announced",
     reward: "World Mobile’s first energy infrastructure node. More details are coming.",
+    cta: "Explore Pulse",
   },
 ] as const;

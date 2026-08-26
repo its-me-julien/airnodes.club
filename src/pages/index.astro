@@ -235,7 +235,7 @@ const risks = [
                     <strong>{product.location}</strong>
                   </div>
                   <div class="product-economics">
-                    <span class="cell-label">Published price</span>
+                    <span class="cell-label">Price</span>
                     <strong>{product.price}</strong>
                   </div>
                   <span class="product-toggle">
@@ -244,8 +244,18 @@ const risks = [
                   </span>
                 </summary>
                 <div class="product-detail">
-                  <span class="cell-label">How rewards work</span>
-                  <p>{product.reward}</p>
+                  <div>
+                    <span class="cell-label">How rewards work</span>
+                    <p>{product.reward}</p>
+                  </div>
+                  <a
+                    class="button button-small button-primary"
+                    href={site.affiliateUrl}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                  >
+                    {product.cta} <span aria-hidden="true">↗</span>
+                  </a>
                 </div>
               </details>
             ))

@@ -719,6 +719,10 @@ summary::-webkit-details-marker {
 }
 
 .product-detail {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
   max-width: 64rem;
   padding: 0 3.25rem 2.5rem max(11rem, 24%);
   color: var(--muted);
@@ -728,6 +732,14 @@ summary::-webkit-details-marker {
 .product-detail .cell-label {
   display: block;
   margin-bottom: 0.45rem;
+}
+
+.product-detail p {
+  max-width: 42rem;
+}
+
+.product-detail .button {
+  flex: 0 0 auto;
 }
 
 .scenario-disclaimer {
@@ -1253,6 +1265,8 @@ summary::-webkit-details-marker {
   }
 
   .product-detail {
+    align-items: start;
+    flex-direction: column;
     padding-left: 0;
   }
 
