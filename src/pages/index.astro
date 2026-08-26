@@ -32,27 +32,19 @@ const steps = [
 const risks = [
   {
     title: "Demand and traffic",
-    body: "Rewards linked to usage depend on real network demand. Planning estimates do not guarantee traffic.",
+    body: "For usage-linked AirNodes, stronger demand and more network activity can lead to better rewards. How rewards are calculated depends on your AirNode type.",
   },
   {
     title: "Activation and uptime",
-    body: "Rewards may not start until your AirNode is active. They can pause if the service, connection or customer location is unavailable.",
+    body: "Rewards may begin once your AirNode is active. Paused service or an unavailable connection can affect the rewards it earns.",
   },
   {
-    title: "Operating partners",
-    body: "World Mobile measures activity and manages rewards. Approved local partners may install and operate some AirNodes.",
+    title: "Hardware status",
+    body: "Keeping the equipment operational helps it continue providing service. Damage, maintenance, replacement or relocation can temporarily affect rewards.",
   },
   {
-    title: "Hardware and location",
-    body: "Physical equipment can fail, become damaged or need maintenance, replacement or a new location.",
-  },
-  {
-    title: "Regulation and terms",
-    body: "Local telecom rules, product terms, reward rates and availability can change.",
-  },
-  {
-    title: "Reselling and loss",
-    body: "You may not be able to resell an AirNode quickly or at all. You could lose some or all of the money you spend.",
+    title: "Terms and local requirements",
+    body: "Each AirNode operates under current product terms and local telecom requirements. These can shape availability and how rewards are calculated.",
   },
 ] as const;
 
@@ -368,12 +360,11 @@ const risks = [
         <div class="risk-heading">
           <div>
             <p class="section-index">05 / Before you buy</p>
-            <h2 id="risks-title">What could reduce or stop rewards?</h2>
+            <h2 id="risks-title">What shapes your rewards?</h2>
           </div>
           <p>
-            AirNodes are physical telecom equipment, not savings products. Rewards
-            depend on activation, real usage or service, uptime, local operations
-            and the current terms.
+            Strong performance starts with the right location, an active connection
+            and reliable equipment. Here are the factors that matter most.
           </p>
         </div>
         <div class="risk-list">
@@ -390,10 +381,6 @@ const risks = [
             ))
           }
         </div>
-        <p class="risk-bottom-line">
-          Read the current agreement and only commit capital you can afford to
-          leave invested for an uncertain time or lose.
-        </p>
       </div>
     </section>
 
