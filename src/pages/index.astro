@@ -10,57 +10,57 @@ const steps = [
   {
     number: "01",
     title: "Choose an AirNode",
-    body: "Compare its network role, approved market, operating model and current terms.",
+    body: "Compare what it does, where it is available, who operates it and the current terms.",
   },
   {
     number: "02",
     title: "Buy and sign",
-    body: "Complete World Mobile’s checkout and sign the current Operator agreement.",
+    body: "Complete your order with World Mobile and sign the current Operator agreement.",
   },
   {
     number: "03",
     title: "Deploy and activate",
-    body: "The equipment is installed and activated. Who handles each step depends on the model and agreement.",
+    body: "The AirNode is installed and connected. Who handles this depends on the model and agreement.",
   },
   {
     number: "04",
     title: "Track and claim",
-    body: "Monitor status, usage and eligible rewards through the AirNode platform dashboard.",
+    body: "Follow your AirNode, its usage and eligible rewards from the AirNode dashboard.",
   },
 ] as const;
 
 const risks = [
   {
     title: "Demand and traffic",
-    body: "Usage-based rewards depend on verified network demand. Planning benchmarks are not usage commitments.",
+    body: "Rewards linked to usage depend on real network demand. Planning estimates do not guarantee traffic.",
   },
   {
     title: "Activation and uptime",
-    body: "Rewards may not begin until activation and can pause when service, connectivity or a customer location is unavailable.",
+    body: "Rewards may not start until your AirNode is active. They can pause if the service, connection or customer location is unavailable.",
   },
   {
     title: "Operating partners",
-    body: "World Mobile and the AirNode platform govern measurement and payout; approved local partners may handle deployment and operations.",
+    body: "World Mobile measures activity and manages rewards. Approved local partners may install and operate some AirNodes.",
   },
   {
     title: "Hardware and location",
-    body: "Physical equipment can fail, be damaged, become obsolete or require relocation and maintenance.",
+    body: "Physical equipment can fail, become damaged or need maintenance, replacement or a new location.",
   },
   {
     title: "Regulation and terms",
-    body: "Telecom rules, product terms, reward rates and availability can change by country and over time.",
+    body: "Local telecom rules, product terms, reward rates and availability can change.",
   },
   {
-    title: "Liquidity and capital",
-    body: "Do not assume a resale market or instant exit. Capital may be locked for an uncertain period or lost.",
+    title: "Reselling and loss",
+    body: "You may not be able to resell an AirNode quickly or at all. You could lose some or all of the money you spend.",
   },
 ] as const;
 
 ---
 
 <Layout
-  title="Airnodes Club — Own telecom infrastructure"
-  description="A clear, independent guide to World Mobile AirNodes: what the equipment does, who operates it, how eligible rewards work and what to check before you buy."
+  title="Airnodes Club | Own telecom infrastructure"
+  description="A clear guide to World Mobile AirNodes. Learn what each model does, who operates it, how rewards work and what to check before you buy."
 >
   <header class="site-header">
     <nav class="shell nav" aria-label="Primary navigation">
@@ -89,7 +89,7 @@ const risks = [
         <h1 id="hero-title">Own the infrastructure that keeps people connected.</h1>
         <p class="hero-lede">
           Explore World Mobile AirNodes, understand how each model works, and see
-          rewards are earned.
+          how rewards are earned.
         </p>
         <div class="hero-actions">
           <a
@@ -129,9 +129,8 @@ const risks = [
           <h2 id="start-title">A different way to build a mobile network.</h2>
         </div>
         <p class="section-lede">
-          World Mobile combines telecom infrastructure with independent ownership
-          and local operations. More people can participate in building the
-          network—not only traditional telecom companies.
+          World Mobile combines telecom infrastructure with every day people
+          ownership and local operations. Anyone can participate in building the network.
         </p>
       </div>
 
@@ -141,8 +140,8 @@ const risks = [
           <div>
             <h3>The network</h3>
             <p>
-              World Mobile coordinates mobile and internet services, the AirNode
-              platform and operating partners across approved markets.
+              World Mobile brings together the network, AirNode platform and local
+              partners that deliver mobile and internet service.
             </p>
           </div>
         </article>
@@ -151,8 +150,8 @@ const risks = [
           <div>
             <h3>The physical infrastructure</h3>
             <p>
-              One AirNode may distribute capacity, connect a business, extend
-              coverage or support the network backbone. The role changes by model.
+              Each AirNode has a specific job. It can move data, connect a business,
+              extend coverage or support the wider network.
             </p>
           </div>
         </article>
@@ -161,8 +160,8 @@ const risks = [
           <div>
             <h3>The owner</h3>
             <p>
-              World Mobile calls an AirNode owner an Operator. The agreement says
-              who deploys the equipment, who runs it and how eligible rewards are calculated.
+              World Mobile calls an AirNode owner an Operator. Your agreement explains
+              who installs and runs it, and how eligible rewards are calculated.
             </p>
           </div>
         </article>
@@ -178,7 +177,7 @@ const risks = [
       <div class="shell">
         <div class="journey-heading">
           <p class="section-index">02 / How it works</p>
-          <h2 id="journey-title">From choosing to claiming—in four steps.</h2>
+          <h2 id="journey-title">From choosing to claiming in four steps.</h2>
         </div>
         <ol class="journey-list">
           {
@@ -194,12 +193,11 @@ const risks = [
         <div class="reward-logic">
           <p class="reward-logic-title">Rewards follow qualifying service.</p>
           <p class="reward-logic-copy">
-            Each AirNode plays a different role. Portal and Spark extend last-mile
-            connectivity, while EmberNode distributes capacity higher in the network.
-            Together, they move data where it is needed and help more people connect.
-            Rewards depend on the model: some follow eligible traffic, while others
-            follow active service. For traffic-linked models, more eligible data can
-            mean more rewards.
+            Each AirNode plays a different role. Portal and Spark connect people and
+            businesses. EmberNode moves capacity through the network. All of them help
+            data reach the places where it is needed. Rewards depend on the model and
+            its qualifying activity. More real use can mean more rewards, but earnings
+            are never guaranteed.
           </p>
         </div>
       </div>
@@ -210,11 +208,12 @@ const risks = [
         <div class="section-heading">
           <div>
             <p class="section-index">03 / The options</p>
-            <h2 id="airnodes-title">Choose by role—not headline return.</h2>
+            <h2 id="airnodes-title">Choose the AirNode that fits you.</h2>
           </div>
           <p class="section-lede">
-            “AirNode” is an umbrella, not one product. Compare the network role,
-            market, operating model and reward basis before comparing price.
+            AirNode is the name for several types of telecom equipment. Compare what
+            each model does, where it is available, who operates it and how it earns
+            rewards.
           </p>
         </div>
 
@@ -228,7 +227,7 @@ const risks = [
                     <span>{product.status}</span>
                   </div>
                   <div class="product-layer">
-                    <span class="cell-label">Role and market</span>
+                    <span class="cell-label">What it does and where</span>
                     <strong>{product.layer}</strong>
                   </div>
                   <div class="product-economics">
@@ -252,7 +251,7 @@ const risks = [
         <p class="ledger-note">
           Availability, price and terms can change. Information shown was reviewed
           <time datetime={site.reviewDate}>{site.reviewDateLabel}</time>. World Mobile’s
-          checkout and current agreement control.
+          checkout and current agreement are the final source of information.
         </p>
       </div>
     </section>
@@ -264,8 +263,8 @@ const risks = [
           <h2 id="rewards-title">Real activity first. Rewards second.</h2>
         </div>
         <p class="section-lede">
-          These examples explain two different reward models. They are gross
-          illustrations based on published terms—not forecasts, APY or guarantees.
+          These examples show two ways AirNodes can earn rewards. They use published
+          terms and are examples only. They are not forecasts or guarantees.
         </p>
       </div>
 
@@ -277,13 +276,13 @@ const risks = [
           </header>
           <dl>
             <div><dt>Starting price</dt><dd>US$165</dd></div>
-            <div><dt>Planning benchmark</dt><dd>~800 GB / month</dd></div>
+            <div><dt>Monthly data example</dt><dd>~800 GB / month</dd></div>
             <div><dt>Published rate</dt><dd>~US$0.004167 / GB</dd></div>
             <div class="scenario-result"><dt>Illustrative gross reward</dt><dd>~US$3.33 / month</dd></div>
           </dl>
           <p>
-            Actual throughput may be lower or higher. EmberNode does not connect
-            end users directly; it distributes capacity downstream in Pakistan.
+            Actual data use may be lower or higher. EmberNode does not connect people
+            directly. It moves capacity through the network in Pakistan.
           </p>
           <a href={sources.ember} target="_blank" rel="noopener noreferrer">Check the EmberNode source ↗</a>
         </article>
@@ -300,8 +299,8 @@ const risks = [
             <div class="scenario-result"><dt>Published monthly base</dt><dd>US$17.55 when active</dd></div>
           </dl>
           <p>
-            World Mobile publishes Frontier through scheduled drops. These figures
-            explain the current model; confirm live batch availability and terms.
+            Frontier is sold in scheduled releases. Check the current availability
+            and terms with World Mobile before you buy.
           </p>
           <a href={sources.frontier} target="_blank" rel="noopener noreferrer">Check the Frontier source ↗</a>
         </article>
@@ -309,20 +308,20 @@ const risks = [
 
       <p class="scenario-disclaimer">
         Gross examples exclude tax, fees, downtime, maintenance, connectivity,
-        currency movement, financing and other model-specific costs. Rewards may
-        be lower than shown—or zero.
+        currency movement, financing and other costs for each model. Rewards may
+        be lower than shown or zero.
       </p>
 
       <div class="ownership-note">
         <div>
           <p class="section-index">What ownership means</p>
-          <h3>What you own—and what you do not.</h3>
+          <h3>What you own and what you do not.</h3>
         </div>
         <p>
-          World Mobile frames the purchase as ownership of telecom infrastructure.
-          The agreement determines the legal title, hosting, operation, transfer
-          rights and obligations. You do not buy equity in World Mobile, spectrum,
-          land or a guaranteed income stream.
+          You are buying telecom infrastructure, not shares in World Mobile. Your
+          agreement explains what you own, where it is hosted, who operates it and
+          whether it can be transferred. You do not own spectrum or land, and income
+          is not guaranteed.
         </p>
       </div>
     </section>
@@ -335,9 +334,9 @@ const risks = [
             <h2 id="risks-title">What could reduce or stop rewards?</h2>
           </div>
           <p>
-            AirNodes are physical infrastructure, not savings products. Rewards
-            depend on activation, verified usage or service, uptime, local
-            operations and current terms.
+            AirNodes are physical telecom equipment, not savings products. Rewards
+            depend on activation, real usage or service, uptime, local operations
+            and the current terms.
           </p>
         </div>
         <div class="risk-list">
@@ -356,7 +355,7 @@ const risks = [
         </div>
         <p class="risk-bottom-line">
           Read the current agreement and only commit capital you can afford to
-          lock up or lose.
+          leave invested for an uncertain time or lose.
         </p>
       </div>
     </section>
