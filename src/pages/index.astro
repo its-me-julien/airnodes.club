@@ -4,7 +4,7 @@ import BrandMark from "../components/BrandMark.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import heroImage from "../assets/airnode-operator.png";
 import Layout from "../layouts/Layout.astro";
-import { products, site, sources } from "../config";
+import { products, site } from "../config";
 
 const steps = [
   {
@@ -268,56 +268,97 @@ const risks = [
       <div class="section-heading">
         <div>
           <p class="section-index">04 / Rewards</p>
-          <h2 id="rewards-title">Real activity first. Rewards second.</h2>
+          <h2 id="rewards-title">How each AirNode earns.</h2>
         </div>
         <p class="section-lede">
-          These examples show two ways AirNodes can earn rewards. They use published
-          terms and are examples only. They are not forecasts or guarantees.
+          AirNodes earn according to the service they provide. Compare how Spark,
+          EmberNode, Frontier and Portal generate rewards.
         </p>
       </div>
 
       <div class="scenario-grid">
         <article class="scenario">
           <header>
-            <span>Usage-linked example</span>
-            <h3>EmberNode</h3>
+            <h3>Spark</h3>
           </header>
           <dl>
-            <div><dt>Starting price</dt><dd>US$165</dd></div>
-            <div><dt>Monthly data example</dt><dd>~800 GB / month</dd></div>
-            <div><dt>Published rate</dt><dd>~US$0.004167 / GB</dd></div>
-            <div class="scenario-result"><dt>Illustrative gross reward</dt><dd>~US$3.33 / month</dd></div>
+            <div><dt>Service</dt><dd>Local Wi-Fi coverage</dd></div>
+            <div><dt>Reward model</dt><dd>Fixed monthly</dd></div>
+            <div class="scenario-result"><dt>Published reward</dt><dd>US$1.70 / month</dd></div>
           </dl>
-          <p>
-            Actual data use may be lower or higher. EmberNode does not connect people
-            directly. It moves capacity through the network in Pakistan.
-          </p>
-          <a href={sources.ember} target="_blank" rel="noopener noreferrer">Check the EmberNode source ↗</a>
+          <a
+            class="button button-small button-primary"
+            href={site.affiliateUrl}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+          >
+            Buy Spark <span aria-hidden="true">↗</span>
+          </a>
         </article>
 
         <article class="scenario">
           <header>
-            <span>Service-linked example</span>
-            <h3>Frontier Core</h3>
+            <h3>EmberNode</h3>
           </header>
           <dl>
-            <div><dt>Previously published price</dt><dd>US$585</dd></div>
-            <div><dt>Customer requirement</dt><dd>Active service</dd></div>
-            <div><dt>Published activation window</dt><dd>Up to 60 days</dd></div>
-            <div class="scenario-result"><dt>Published monthly base</dt><dd>US$17.55 when active</dd></div>
+            <div><dt>Service</dt><dd>Network data distribution</dd></div>
+            <div><dt>Reward model</dt><dd>Verified network traffic</dd></div>
+            <div><dt>Planning benchmark</dt><dd>~800 GB / month</dd></div>
+            <div class="scenario-result"><dt>Published illustration</dt><dd>~US$3.33 / month</dd></div>
           </dl>
-          <p>
-            Frontier is sold in scheduled releases. Check the current availability
-            and terms with World Mobile before you buy.
-          </p>
-          <a href={sources.frontier} target="_blank" rel="noopener noreferrer">Check the Frontier source ↗</a>
+          <a
+            class="button button-small button-primary"
+            href={site.affiliateUrl}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+          >
+            Buy EmberNode <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <article class="scenario">
+          <header>
+            <h3>Frontier</h3>
+          </header>
+          <dl>
+            <div><dt>Service</dt><dd>Business Wi-Fi</dd></div>
+            <div><dt>Reward starts</dt><dd>When customer service is active</dd></div>
+            <div class="scenario-result"><dt>Published monthly base</dt><dd>US$17.55 to US$58.50</dd></div>
+          </dl>
+          <a
+            class="button button-small button-primary"
+            href={site.affiliateUrl}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+          >
+            Buy Frontier <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <article class="scenario">
+          <header>
+            <h3>Portal</h3>
+          </header>
+          <dl>
+            <div><dt>Service</dt><dd>Wide-area coverage</dd></div>
+            <div><dt>Reward model</dt><dd>Subscriber and usage linked</dd></div>
+            <div class="scenario-result"><dt>Reported active deployments</dt><dd>US$250 to US$500 / month</dd></div>
+          </dl>
+          <a
+            class="button button-small button-primary"
+            href={site.affiliateUrl}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+          >
+            Buy Portal <span aria-hidden="true">↗</span>
+          </a>
         </article>
       </div>
 
       <p class="scenario-disclaimer">
-        Gross examples exclude tax, fees, downtime, maintenance, connectivity,
-        currency movement, financing and other costs for each model. Rewards may
-        be lower than shown or zero.
+        Reward figures reflect World Mobile’s published terms and current deployment
+        data. Actual rewards depend on the AirNode model, activation, network usage,
+        uptime, fees and current terms. Earnings can vary and may be zero.
       </p>
 
     </section>
