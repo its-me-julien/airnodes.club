@@ -34,45 +34,45 @@ export const sources = {
 
 export const products = [
   {
+    name: "Spark",
+    service: "Local Wi-Fi coverage",
+    location: "Pakistan",
+    price: "From US$62.99",
+    reward: "Fixed rewards of US$1.70 per month, accrued daily.",
+  },
+  {
     name: "EmberNode",
-    layer: "Pakistan distribution",
-    price: "Starting from US$165",
-    detail:
-      "A rugged fibre gateway that moves data from an internet provider into the local network. It does not connect people directly.",
+    service: "Network data distribution",
+    location: "Pakistan",
+    price: "From US$165",
+    reward: "Rewards follow verified traffic. Around 800 GB may earn about US$3.33 per month.",
   },
   {
     name: "Frontier",
-    layer: "Businesses in the Philippines",
+    service: "Business Wi-Fi",
+    location: "Philippines",
     price: "From US$585",
-    detail:
-      "Wi-Fi equipment that connects businesses in the Philippines. An approved local partner installs and operates it while the owner follows it remotely.",
-  },
-  {
-    name: "Spark",
-    layer: "Local Wi-Fi in Pakistan",
-    price: "From US$62.99",
-    detail:
-      "A compact Wi-Fi AirNode that works with nearby units to connect people in Pakistan.",
+    reward: "Fixed base rewards range from US$17.55 to US$58.50 per month after activation, depending on tier.",
   },
   {
     name: "Portal",
-    layer: "Wide-area coverage in the USA",
+    service: "Wide-area coverage",
+    location: "USA",
     price: "From US$9,000",
-    detail:
-      "High-capacity equipment designed to extend coverage in the United States.",
+    reward: "Rewards follow subscriber activity and network usage. World Mobile reports about US$250 to US$500 per month for active deployments.",
   },
   {
     name: "Titan",
-    layer: "Long-range coverage in the USA",
+    service: "Long-range Overwatch coverage",
+    location: "USA",
     price: "From US$100,000",
-    detail:
-      "World Mobile’s most powerful AirNode, designed for large deployments and the network backbone.",
+    reward: "Rewards follow subscriber use and downstream network traffic. Coverage can reach up to 28 km.",
   },
   {
     name: "Pulse",
-    layer: "Network energy",
+    service: "Energy infrastructure",
+    location: "Not announced",
     price: "Not announced",
-    detail:
-      "World Mobile describes Pulse as its first node for energy infrastructure. Full product details have not been announced.",
+    reward: "World Mobile’s first energy infrastructure node. More details are coming.",
   },
 ] as const;

@@ -641,7 +641,7 @@ summary::-webkit-details-marker {
 
 .product-row summary {
   display: grid;
-  grid-template-columns: minmax(13rem, 1.15fr) minmax(12rem, 0.95fr) minmax(9rem, 0.65fr) 2rem;
+  grid-template-columns: minmax(11rem, 1.1fr) minmax(11rem, 1fr) minmax(7rem, 0.65fr) minmax(8rem, 0.7fr) 2rem;
   align-items: center;
   gap: clamp(1rem, 3vw, 3rem);
   min-height: 8.5rem;
@@ -662,7 +662,8 @@ summary::-webkit-details-marker {
   transition: color 180ms ease, transform 180ms ease;
 }
 
-.product-layer,
+.product-service,
+.product-location,
 .product-economics {
   display: grid;
   gap: 0.4rem;
@@ -676,7 +677,8 @@ summary::-webkit-details-marker {
   text-transform: uppercase;
 }
 
-.product-layer strong,
+.product-service strong,
+.product-location strong,
 .product-economics strong {
   font-size: 0.95rem;
   font-weight: 680;
@@ -718,9 +720,14 @@ summary::-webkit-details-marker {
 
 .product-detail {
   max-width: 64rem;
-  padding: 0 3.25rem 2.5rem max(14rem, 26%);
+  padding: 0 3.25rem 2.5rem max(11rem, 24%);
   color: var(--muted);
   font-size: 0.94rem;
+}
+
+.product-detail .cell-label {
+  display: block;
+  margin-bottom: 0.45rem;
 }
 
 .scenario-disclaimer {
@@ -1004,7 +1011,7 @@ summary::-webkit-details-marker {
   }
 
   .product-row summary {
-    grid-template-columns: minmax(12rem, 1.2fr) minmax(11rem, 1fr) minmax(8rem, 0.8fr) 2rem;
+    grid-template-columns: minmax(10rem, 1.1fr) minmax(10rem, 1fr) minmax(6rem, 0.65fr) minmax(8rem, 0.75fr) 2rem;
   }
 
   .product-detail {
@@ -1076,12 +1083,33 @@ summary::-webkit-details-marker {
   }
 
   .product-row summary {
-    grid-template-columns: 1fr 1fr 2rem;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr 2rem;
     min-height: 7.5rem;
   }
 
-  .product-layer {
-    display: none;
+  .product-name {
+    grid-column: 1 / -2;
+    grid-row: 1;
+  }
+
+  .product-service {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .product-location {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .product-economics {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .product-toggle {
+    grid-column: 4;
+    grid-row: 1;
   }
 
   .product-detail {
@@ -1195,18 +1223,32 @@ summary::-webkit-details-marker {
   }
 
   .product-row summary {
-    grid-template-columns: 1fr 2rem;
+    grid-template-columns: 1fr 1fr 2rem;
     gap: 1rem;
     padding-block: 1.5rem;
   }
 
-  .product-economics {
-    grid-column: 1 / -1;
+  .product-name {
+    grid-column: 1 / 3;
+  }
+
+  .product-service {
+    grid-column: 1 / 3;
     grid-row: 2;
   }
 
-  .product-toggle {
+  .product-location {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .product-economics {
     grid-column: 2;
+    grid-row: 3;
+  }
+
+  .product-toggle {
+    grid-column: 3;
     grid-row: 1;
   }
 

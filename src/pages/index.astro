@@ -226,9 +226,13 @@ const risks = [
                   <div class="product-name">
                     <h3>{product.name}</h3>
                   </div>
-                  <div class="product-layer">
-                    <span class="cell-label">What it does and where</span>
-                    <strong>{product.layer}</strong>
+                  <div class="product-service">
+                    <span class="cell-label">Service provided</span>
+                    <strong>{product.service}</strong>
+                  </div>
+                  <div class="product-location">
+                    <span class="cell-label">Where</span>
+                    <strong>{product.location}</strong>
                   </div>
                   <div class="product-economics">
                     <span class="cell-label">Published price</span>
@@ -240,7 +244,8 @@ const risks = [
                   </span>
                 </summary>
                 <div class="product-detail">
-                  <p>{product.detail}</p>
+                  <span class="cell-label">How rewards work</span>
+                  <p>{product.reward}</p>
                 </div>
               </details>
             ))
