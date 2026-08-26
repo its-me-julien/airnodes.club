@@ -480,23 +480,24 @@ const risks = [
         </div>
         <div class="affiliate-copy">
           <p>
-            Use AirNode affiliate code <strong>{site.affiliateCode}</strong> when you
-            buy through World Mobile. The code is applied automatically when you
-            follow our referral link.
+            Use AirNode affiliate code <strong>{site.affiliateCode}</strong>. It is
+            applied automatically when you continue to World Mobile through our link.
           </p>
           <div class="affiliate-code" aria-label={`AirNode affiliate code ${site.affiliateCode}`}>
-            <span>AirNode affiliate code</span>
+            <div class="affiliate-code-meta">
+              <span>AirNode affiliate code</span>
+              <small>Applied automatically</small>
+            </div>
             <code>{site.affiliateCode}</code>
-            <small>Applied automatically</small>
+            <a
+              class="button button-primary affiliate-code-button"
+              href={site.affiliateUrl}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+            >
+              Buy AirNodes with code <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <a
-            class="button button-light"
-            href={site.affiliateUrl}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-          >
-            Buy AirNodes with code <span aria-hidden="true">↗</span>
-          </a>
           <p class="affiliate-disclosure">
             Airnodes Club is independent from World Mobile. We may receive a
             commission after a qualifying first order is completed through our

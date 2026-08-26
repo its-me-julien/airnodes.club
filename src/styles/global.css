@@ -1571,7 +1571,7 @@ summary::-webkit-details-marker {
 .affiliate-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: end;
+  align-items: start;
   gap: clamp(3rem, 8vw, 8rem);
 }
 
@@ -1591,7 +1591,7 @@ summary::-webkit-details-marker {
 .affiliate-copy {
   display: grid;
   justify-items: start;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .affiliate-copy p {
@@ -1602,30 +1602,44 @@ summary::-webkit-details-marker {
 
 .affiliate-code {
   display: grid;
-  width: min(100%, 28rem);
+  width: min(100%, 32rem);
   grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 0.4rem 1.5rem;
-  padding: 1.35rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  background: rgba(7, 23, 39, 0.13);
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #f7f9ff;
+  color: var(--ink);
 }
 
-.affiliate-code span,
-.affiliate-code small {
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.72rem;
+.affiliate-code-meta {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.affiliate-code-meta span {
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.affiliate-code-meta small {
+  color: var(--muted);
+  font-size: 0.7rem;
 }
 
 .affiliate-code code {
-  grid-row: 1 / span 2;
-  grid-column: 2;
-  color: #ffdf00;
+  color: var(--ink);
   font-family: inherit;
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 780;
   letter-spacing: 0.08em;
   line-height: 1;
+}
+
+.affiliate-code-button {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 0.25rem;
 }
 
 .affiliate-copy .affiliate-disclosure {
