@@ -1721,7 +1721,7 @@ summary::-webkit-details-marker {
 
 .network-state-heading {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.7fr);
+  grid-template-columns: 1fr;
   align-items: end;
   gap: clamp(2.5rem, 8vw, 8rem);
 }
@@ -1733,13 +1733,6 @@ summary::-webkit-details-marker {
   letter-spacing: -0.06em;
   line-height: 0.98;
   text-wrap: balance;
-}
-
-.network-state-heading > p {
-  max-width: 31rem;
-  color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.65;
 }
 
 .network-state-stats {
@@ -1800,12 +1793,6 @@ summary::-webkit-details-marker {
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.65;
-}
-
-.network-state-note {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  color: #687584;
-  font-size: 0.75rem;
 }
 
 .deployment-section {
