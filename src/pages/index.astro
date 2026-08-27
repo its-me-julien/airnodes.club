@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BrandMark from "../components/BrandMark.astro";
+import FigureContext from "../components/FigureContext.astro";
 import OperatorDashboard from "../components/OperatorDashboard.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import heroImage from "../assets/airnode-operator.png";
@@ -231,7 +232,7 @@ const risks = [
                     <strong>{product.price}</strong>
                   </div>
                   <div class="product-reward">
-                    <span class="cell-label">Reward example*</span>
+                    <span class="cell-label">Historic reward reference†</span>
                     <strong>{product.rewardExample}</strong>
                   </div>
                   <span class="product-toggle">
@@ -252,6 +253,12 @@ const risks = [
                     <span class="cell-label">Reward model</span>
                     <p>{product.rewardModel}</p>
                   </div>
+                  {"availability" in product && (
+                    <div>
+                      <span class="cell-label">Availability</span>
+                      <p>{product.availability}</p>
+                    </div>
+                  )}
                   <a
                     class="button button-small button-primary"
                     href={site.affiliateUrl}
@@ -268,10 +275,7 @@ const risks = [
             ))
           }
         </div>
-        <p class="scenario-disclaimer">
-          *Actual rewards depend on AirNode type, activation, network use, location and
-          other factors. Earnings can vary and may be zero.
-        </p>
+        <FigureContext />
       </div>
     </section>
 

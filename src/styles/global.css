@@ -882,7 +882,10 @@ summary::-webkit-details-marker {
 }
 
 .dashboard-preview-label {
-  display: grid;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
   gap: 0.35rem;
   margin-bottom: 1rem;
   color: var(--muted);
@@ -894,6 +897,10 @@ summary::-webkit-details-marker {
   font-weight: 720;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.dashboard-preview-label > p {
+  width: 100%;
 }
 
 .dashboard-demo-action {
@@ -1444,6 +1451,10 @@ summary::-webkit-details-marker {
   line-height: 1.55;
 }
 
+.planner-results > .figure-context {
+  margin-top: 1rem;
+}
+
 .dashboard-head {
   display: flex;
   align-items: flex-start;
@@ -1582,6 +1593,65 @@ summary::-webkit-details-marker {
   margin-top: 1.5rem;
   color: var(--muted);
   font-size: 0.8125rem;
+}
+
+.figure-context {
+  position: relative;
+  display: inline-block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.figure-context summary {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.24em;
+}
+
+.figure-context summary::marker {
+  content: "";
+}
+
+.figure-context sup {
+  margin-left: 0.08em;
+  color: var(--blue);
+  font-size: 0.72em;
+}
+
+.figure-context > p {
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  bottom: calc(100% + 0.65rem);
+  width: min(22rem, calc(100vw - 2.5rem));
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: var(--white);
+  box-shadow: 0 0.8rem 2rem rgba(8, 28, 52, 0.14);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.dashboard-preview-label .figure-context,
+.planner-results .figure-context {
+  color: inherit;
+}
+
+.dashboard-preview-label .figure-context > p {
+  right: auto;
+  left: 0;
+}
+
+.planner-results .figure-context > p {
+  right: 0;
 }
 
 .rewards-section {

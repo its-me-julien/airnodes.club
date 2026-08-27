@@ -1,0 +1,16 @@
+---
+interface Props {
+  kind?: "historical" | "illustrative";
+  label?: string;
+}
+
+const { kind = "historical", label = "About these figures" } = Astro.props;
+const copy = kind === "historical"
+  ? "These figures are historical references for the stated model and period, not a forecast. Rewards depend on verified network usage, activation and programme terms, and may vary, be lower or higher, or be zero."
+  : "This is an illustrative comparison, not a forecast. Rewards depend on verified network usage, activation and programme terms, and may vary, be lower or higher, or be zero.";
+---
+
+<details class="figure-context">
+  <summary>{label}<sup>†</sup></summary>
+  <p>{copy}</p>
+</details>

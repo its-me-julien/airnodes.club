@@ -1,4 +1,5 @@
 ---
+import FigureContext from "./FigureContext.astro";
 const months = ["Jun ’26", "Jul ’26", "Aug ’26"] as const;
 
 const illustrativeEconomics = {
@@ -48,6 +49,7 @@ const plannerData = { products: plannerProducts };
 
 <div class="dashboard-preview-label">
   <span>Illustrative operator dashboard</span>
+  <FigureContext kind="illustrative" label="About this view" />
   <p>Example data shows an operator’s first three months of performance, following an AirNode purchase four months earlier.</p>
 </div>
 
@@ -142,10 +144,11 @@ const plannerData = { products: plannerProducts };
       <aside class="planner-results" aria-label="Opportunity estimate">
         <dl>
           <div><dt>Total cost</dt><dd data-planner-cost>{formatMoney(plannerInitialCost)}</dd></div>
-          <div><dt>Est. monthly rewards</dt><dd data-planner-reward>{formatMoney(plannerInitialReward)}</dd></div>
-          <div><dt>Approx. annualised ROI*</dt><dd data-planner-roi>{plannerInitialRoi.toFixed(1)}%</dd></div>
+          <div><dt>Illustrative monthly reward scenario</dt><dd data-planner-reward>{formatMoney(plannerInitialReward)}</dd></div>
+          <div><dt>Illustrative 12-month reward-to-price ratio†</dt><dd data-planner-roi>{plannerInitialRoi.toFixed(1)}%</dd></div>
         </dl>
-        <p>*Calculated as estimated monthly rewards × 12 ÷ approximate upfront cost. It excludes referral purchase discounts, volume purchase discounts, operating costs, tax, downtime and variations in rewards.</p>
+        <FigureContext kind="illustrative" label="About this ratio" />
+        <p>Calculated from the illustrative figures shown above. It excludes referral purchase discounts, volume purchase discounts, operating costs, tax, downtime and variations in rewards.</p>
       </aside>
     </div>
   </section>
