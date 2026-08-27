@@ -12,29 +12,50 @@ interface Props {
   intro: string;
   facts: readonly { readonly label: string; readonly value: string }[];
   sections: readonly { readonly title: string; readonly body: string }[];
+  path?: readonly string[];
+  related?: readonly { readonly href: string; readonly label: string; readonly description: string }[];
+  ctaLabel?: string;
+  parent?: { href: string; label: string };
 }
 
-const { title, description, eyebrow, heading, intro, facts, sections } = Astro.props;
+const {
+  title,
+  description,
+  eyebrow,
+  heading,
+  intro,
+  facts,
+  sections,
+  path = [],
+  related = [],
+  ctaLabel = `Explore AirNodes with code ${site.affiliateCode}`,
+  parent,
+} = Astro.props;
 ---
 
 <Layout title={title} description={description}>
   <header class="site-header">
     <nav class="shell nav" aria-label="Primary navigation">
       <a class="brand" href="/" aria-label="Airnodes Club home"><BrandMark /></a>
-      <div class="nav-links"><a href="/airnodes/">AirNodes</a><a href="/deployment-regions/philippines/">Regions</a><a href="/airnode-affiliate-code/">Affiliate code</a></div>
+      <div class="nav-links"><a href="/airnodes/">AirNodes</a><a href="/#regions">Regions</a><a href="/airnode-affiliate-code/">Affiliate code</a></div>
       <a class="button button-small button-primary" href={site.affiliateUrl} target="_blank" rel="sponsored noopener noreferrer">Explore AirNodes <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
   <main id="main-content" class="guide-page">
     <section class="guide-hero">
       <div class="shell guide-hero-inner">
-        <div><p class="section-index">{eyebrow}</p><h1>{heading}</h1></div>
-        <div class="guide-intro"><p>{intro}</p><a class="button button-light" href={site.affiliateUrl} target="_blank" rel="sponsored noopener noreferrer">Explore with code {site.affiliateCode} <span aria-hidden="true">↗</span></a></div>
+        <div>
+          {parent && <nav class="guide-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href={parent.href}>{parent.label}</a></nav>}
+          <p class="section-index">{eyebrow}</p><h1>{heading}</h1>
+        </div>
+        <div class="guide-intro"><p>{intro}</p><a class="button button-light" href={site.affiliateUrl} target="_blank" rel="sponsored noopener noreferrer">{ctaLabel} <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
     <section class="section shell guide-content">
       <dl class="guide-facts">{facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
+      {path.length > 0 && <div class="guide-path" aria-label={`${heading} pathway`}>{path.map((item, index) => <><span>{item}</span>{index < path.length - 1 && <i aria-hidden="true"></i>}</>)}</div>}
       <div class="guide-sections">{sections.map((section, index) => <article><span>{String(index + 1).padStart(2, "0")}</span><div><h2>{section.title}</h2><p>{section.body}</p></div></article>)}</div>
+      {related.length > 0 && <section class="guide-related" aria-labelledby="related-title"><div><p class="section-index">Continue exploring</p><h2 id="related-title">Understand the wider network.</h2></div><div class="guide-related-links">{related.map((item) => <a href={item.href}><strong>{item.label}</strong><span>{item.description}</span><i aria-hidden="true">→</i></a>)}</div></section>}
       <aside class="guide-cta"><p>World Mobile AirNode affiliate code</p><strong>{site.affiliateCode}</strong><a class="button button-primary" href={site.affiliateUrl} target="_blank" rel="sponsored noopener noreferrer">Explore AirNodes with code {site.affiliateCode} <span aria-hidden="true">↗</span></a><small>Airnodes Club is independent from World Mobile. We may receive a commission after a qualifying first order through our referral link.</small></aside>
     </section>
   </main>
