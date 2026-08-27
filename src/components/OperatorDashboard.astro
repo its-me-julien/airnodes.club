@@ -5,17 +5,13 @@ const illustrativeEconomics = {
   spark: { unitCost: 63, monthlyReward: 1.7 },
   ember: { unitCost: 165, monthlyReward: 3.3 },
   frontier: {
-    unitCost: 585,
-    dashboardMonthlyReward: 57,
-    plannerRewardOptions: [
-      { id: "base", label: "Base example", monthlyReward: 17.55 },
-      { id: "upper", label: "Upper example", monthlyReward: 57 },
-    ],
+    unitCost: 1940,
+    monthlyReward: 58.5,
   },
 } as const;
 
 const airnodes = [
-  { id: "frontier", name: "#Frontier-b7c42", type: "Frontier", tone: "frontier", activeSince: "August 2026", rewards: [0, 0, illustrativeEconomics.frontier.dashboardMonthlyReward], dataGb: [null, null, null] },
+  { id: "frontier", name: "#Frontier-b7c42", type: "Frontier", tone: "frontier", activeSince: "June 2026", rewards: [illustrativeEconomics.frontier.monthlyReward, illustrativeEconomics.frontier.monthlyReward, illustrativeEconomics.frontier.monthlyReward], dataGb: [null, null, null] },
   { id: "ember", name: "#Ember-91fd3", type: "EmberNode", tone: "ember", activeSince: "June 2026", rewards: [illustrativeEconomics.ember.monthlyReward, illustrativeEconomics.ember.monthlyReward, illustrativeEconomics.ember.monthlyReward], dataGb: [900, 900, 900] },
   { id: "spark", name: "#Spark-a1aa1", type: "Spark", tone: "spark", activeSince: "June 2026", rewards: [illustrativeEconomics.spark.monthlyReward, illustrativeEconomics.spark.monthlyReward, illustrativeEconomics.spark.monthlyReward], dataGb: [200, 200, 200] },
 ] as const;
@@ -42,12 +38,12 @@ const axisValues = [70, 52.5, 35, 17.5, 0];
 const axisY = axisValues.map((_, index) => chartTop + (index * (chartBottom - chartTop)) / (axisValues.length - 1));
 const dashboardData = { months, airnodes: airnodes.map(({ id, type, rewards, dataGb }) => ({ id, type, rewards, dataGb })) };
 const plannerProducts = [
-  { id: "spark", name: "Spark", tone: "spark", unitCost: illustrativeEconomics.spark.unitCost, rewardOptions: [{ id: "standard", label: "Current example", monthlyReward: illustrativeEconomics.spark.monthlyReward }] },
-  { id: "ember", name: "EmberNode", tone: "ember", unitCost: illustrativeEconomics.ember.unitCost, rewardOptions: [{ id: "standard", label: "Current example", monthlyReward: illustrativeEconomics.ember.monthlyReward }] },
-  { id: "frontier", name: "Frontier", tone: "frontier", unitCost: illustrativeEconomics.frontier.unitCost, rewardOptions: illustrativeEconomics.frontier.plannerRewardOptions },
+  { id: "spark", name: "Spark", tone: "spark", unitCost: illustrativeEconomics.spark.unitCost, monthlyReward: illustrativeEconomics.spark.monthlyReward },
+  { id: "ember", name: "EmberNode", tone: "ember", unitCost: illustrativeEconomics.ember.unitCost, monthlyReward: illustrativeEconomics.ember.monthlyReward },
+  { id: "frontier", name: "Frontier Max", tone: "frontier", unitCost: illustrativeEconomics.frontier.unitCost, monthlyReward: illustrativeEconomics.frontier.monthlyReward },
 ] as const;
 const plannerInitialCost = sum(plannerProducts.map((product) => product.unitCost));
-const plannerInitialReward = sum(plannerProducts.map((product) => product.rewardOptions[0].monthlyReward));
+const plannerInitialReward = sum(plannerProducts.map((product) => product.monthlyReward));
 const plannerInitialRoi = (plannerInitialReward * 12 / plannerInitialCost) * 100;
 const plannerData = { products: plannerProducts };
 ---
@@ -63,7 +59,7 @@ const plannerData = { products: plannerProducts };
   <div class="dashboard-summary-grid">
     <section class="dashboard-panel dashboard-rewards-card" aria-labelledby="available-rewards-title">
       <header class="dashboard-panel-head"><h3 id="available-rewards-title">Pending rewards</h3><p>From August 2026 service · ready to claim</p></header>
-      <p class="pending-reward"><strong>{formatMoney(pendingRewards)}</strong></p>
+      <p class="pending-reward"><strong data-pending-rewards>{formatMoney(pendingRewards)}</strong></p>
       <button class="dashboard-demo-action" type="button" disabled>Claim rewards</button>
       <p class="dashboard-action-note">Illustrative action</p>
     </section>
@@ -79,22 +75,22 @@ const plannerData = { products: plannerProducts };
 
   <section class="dashboard-portfolio dashboard-panel" aria-labelledby="portfolio-title">
     <header class="dashboard-panel-head portfolio-head">
-      <div><p class="dashboard-eyebrow">Your infrastructure</p><h3 id="portfolio-title">AirNode portfolio</h3><p>Every summary above is calculated from these three AirNodes.</p></div>
-      <span>{airnodes.length} active AirNodes</span>
+      <div><p class="dashboard-eyebrow">Your infrastructure</p><h3 id="portfolio-title">AirNode portfolio</h3><p>Every summary above is calculated from this illustrative plan.</p></div>
+      <span data-active-airnodes>{airnodes.length} active AirNodes</span>
     </header>
     <div class="portfolio-mobile-list">
       {airnodes.map((node) => (
         <article data-node-row={node.id}>
           <div><strong>{node.name}</strong><span class={`portfolio-type portfolio-type-${node.tone}`}>{node.type}</span></div>
-          <p class="portfolio-active-since">Active since {node.activeSince}</p>
-          <dl><div><dt>Total earned</dt><dd>{formatMoney(sum(node.rewards))}</dd></div><div><dt>This month</dt><dd>{formatMoney(node.rewards.at(-1) ?? 0)}</dd></div></dl>
+          <p class="portfolio-active-since">Active since {node.activeSince} <span data-node-units={node.id}>· 1 unit</span></p>
+          <dl><div><dt>Total earned</dt><dd data-node-total={node.id}>{formatMoney(sum(node.rewards))}</dd></div><div><dt>This month</dt><dd data-node-monthly={node.id}>{formatMoney(node.rewards.at(-1) ?? 0)}</dd></div></dl>
         </article>
       ))}
     </div>
     <div class="portfolio-table-wrap">
       <table class="portfolio-table">
-        <thead><tr><th>AirNode</th><th>Type</th><th>Active since</th><th>Total earned</th><th>Est. this month</th></tr></thead>
-        <tbody>{airnodes.map((node) => <tr data-node-row={node.id}><th scope="row">{node.name}</th><td><span class={`portfolio-type portfolio-type-${node.tone}`}>{node.type}</span></td><td>{node.activeSince}</td><td class="portfolio-earned">{formatMoney(sum(node.rewards))}</td><td>{formatMoney(node.rewards.at(-1) ?? 0)}</td></tr>)}</tbody>
+        <thead><tr><th>AirNode</th><th>Type</th><th>Units</th><th>Active since</th><th>Total earned</th><th>Est. this month</th></tr></thead>
+        <tbody>{airnodes.map((node) => <tr data-node-row={node.id}><th scope="row">{node.name}</th><td><span class={`portfolio-type portfolio-type-${node.tone}`}>{node.type}</span></td><td data-node-units={node.id}>1 unit</td><td>{node.activeSince}</td><td class="portfolio-earned" data-node-total={node.id}>{formatMoney(sum(node.rewards))}</td><td data-node-monthly={node.id}>{formatMoney(node.rewards.at(-1) ?? 0)}</td></tr>)}</tbody>
       </table>
     </div>
   </section>
@@ -111,7 +107,7 @@ const plannerData = { products: plannerProducts };
       <svg viewBox="0 0 1180 292" role="img">
         <defs><linearGradient id="earnings-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#ffdf00" stop-opacity=".19" /><stop offset="100%" stop-color="#ffdf00" stop-opacity="0" /></linearGradient></defs>
         {axisY.map((y) => <line x1={chartLeft} y1={y} x2={chartRight} y2={y} class="chart-gridline" />)}
-        {axisValues.map((value, index) => <text x="0" y={axisY[index] + 5} class="chart-axis-value">{formatMoney(value)}</text>)}
+        {axisValues.map((value, index) => <text x="0" y={axisY[index] + 5} class="chart-axis-value" data-chart-axis>{formatMoney(value)}</text>)}
         <path d={areaPath} fill="url(#earnings-fill)" data-chart-area /><path d={linePath} class="chart-line" data-chart-line />
         {chartPoints.map((point) => <circle cx={point.x} cy={point.y} r="5" class="chart-point" data-chart-point />)}
         {chartPoints.map((point) => <text x={point.x} y="278" text-anchor="middle" class="chart-month">{point.month}</text>)}
@@ -128,7 +124,7 @@ const plannerData = { products: plannerProducts };
       <div>
         <p class="planner-status">Independent planning tool · Not part of the official World Mobile dashboard</p>
         <h3 id="opportunity-planner-title">Explore a possible AirNode mix.</h3>
-        <p>Adjust the units to see how approximate upfront cost and reward assumptions change together.</p>
+        <p>Adjust the units to update this illustrative dashboard, including its rewards, history and tracked data.</p>
       </div>
       <div class="planner-tools"><p class="planner-limit">1–10 units per AirNode</p><button type="button" data-planner-reset>Reset mix</button></div>
     </header>
@@ -142,16 +138,8 @@ const plannerData = { products: plannerProducts };
               <output for={`planner-${product.id}`} data-planner-units={product.id}>1 unit</output>
             </div>
             <input id={`planner-${product.id}`} name={product.id} type="range" min="1" max="10" value="1" step="1" data-planner-input={product.id} />
-            {product.rewardOptions.length > 1 && (
-              <label class="planner-scenario-label" for={`planner-${product.id}-scenario`}>
-                Frontier reward example
-                <select id={`planner-${product.id}-scenario`} data-planner-reward-scenario={product.id}>
-                  {product.rewardOptions.map((option) => <option value={option.id}>{option.label} · {formatMoney(option.monthlyReward)} / month</option>)}
-                </select>
-              </label>
-            )}
             <div class="planner-range-labels" aria-hidden="true"><span>1</span><span>10</span></div>
-            <p>Approx. {formatMoney(product.unitCost)} per unit · <span data-planner-unit-reward={product.id}>{formatMoney(product.rewardOptions[0].monthlyReward)}</span> / month per unit</p>
+            <p>Approx. {formatMoney(product.unitCost)} per unit · <span data-planner-unit-reward={product.id}>{formatMoney(product.monthlyReward)}</span> / month per unit</p>
           </div>
         ))}
       </div>
@@ -185,17 +173,32 @@ const plannerData = { products: plannerProducts };
     const chartSummary = dashboard.querySelector<HTMLElement>("[data-chart-summary]");
     const liveRegion = dashboard.querySelector<HTMLElement>("[data-dashboard-live]");
     const earningsTable = dashboard.querySelector<HTMLTableElement>("[data-earnings-table]");
-    const chartLeft = 74, chartRight = 1104, chartTop = 30, chartBottom = 230, chartMax = 70;
+    const pendingOutput = dashboard.querySelector<HTMLElement>("[data-pending-rewards]");
+    const totalEarningsOutput = dashboard.querySelector<HTMLElement>("[data-total-earnings]");
+    const totalDataOutput = dashboard.querySelector<HTMLElement>("[data-total-data]");
+    const activeAirnodesOutput = dashboard.querySelector<HTMLElement>("[data-active-airnodes]");
+    const chartLeft = 74, chartRight = 1104, chartTop = 30, chartBottom = 230;
+    let chartMax = 70;
     const xPositions = source.months.map((_, index) => chartLeft + (index * (chartRight - chartLeft)) / (source.months.length - 1));
     const yPosition = (value: number) => chartBottom - (value / chartMax) * (chartBottom - chartTop);
+    let quantities = new Map(source.airnodes.map((node) => [node.id, 1]));
+    let selectedId = "all";
+    const formatDashboardData = (value: number) => value >= 1000 ? `${(value / 1000).toFixed(2)} TB` : `${value.toLocaleString("en-US")} GB`;
+    const plannedNodes = () => source.airnodes.map((node) => {
+      const quantity = quantities.get(node.id) ?? 1;
+      return { ...node, rewards: node.rewards.map((reward) => reward * quantity), dataGb: node.dataGb.map((data) => data === null ? null : data * quantity) };
+    });
 
-    const selectNode = (selectedId: string) => {
-      const selectedNodes = selectedId === "all" ? source.airnodes : source.airnodes.filter((node) => node.id === selectedId);
+    const selectNode = (nextSelectedId: string) => {
+      const nodes = plannedNodes();
+      const selectedNodes = nextSelectedId === "all" ? nodes : nodes.filter((node) => node.id === nextSelectedId);
       if (selectedNodes.length === 0) return;
+      selectedId = nextSelectedId;
       const rewards = source.months.map((_, monthIndex) => selectedNodes.reduce((total, node) => total + node.rewards[monthIndex], 0));
       const total = rewards.reduce((sum, value) => sum + value, 0);
-      const selectionLabel = selectedId === "all" ? "All AirNodes" : selectedNodes[0].type;
-      const nodeLabel = selectedNodes.length === 1 ? "1 AirNode" : `${selectedNodes.length} AirNodes`;
+      const selectionLabel = nextSelectedId === "all" ? "All AirNodes" : selectedNodes[0].type;
+      const selectedUnits = selectedNodes.reduce((sum, node) => sum + (quantities.get(node.id) ?? 1), 0);
+      const nodeLabel = selectedUnits === 1 ? "1 AirNode" : `${selectedUnits} AirNodes`;
       const points = rewards.map((value, index) => ({ x: xPositions[index], y: yPosition(value) }));
       const linePath = points.map((point, index) => `${index === 0 ? "M" : "L"}${point.x} ${point.y}`).join(" ");
       const areaPath = `${linePath} L${chartRight} ${chartBottom} L${chartLeft} ${chartBottom} Z`;
@@ -205,8 +208,8 @@ const plannerData = { products: plannerProducts };
       chartArea?.setAttribute("d", areaPath);
       chartPoints.forEach((point, index) => { point.setAttribute("cx", String(points[index].x)); point.setAttribute("cy", String(points[index].y)); });
       mobileValues.forEach((element, index) => { element.textContent = formatDashboardMoney(rewards[index]); });
-      filters.forEach((filter) => filter.setAttribute("aria-pressed", String(filter.dataset.nodeFilter === selectedId)));
-      dashboard.querySelectorAll<HTMLElement>("[data-node-row]").forEach((row) => row.classList.toggle("is-selected", selectedId !== "all" && row.dataset.nodeRow === selectedId));
+      filters.forEach((filter) => filter.setAttribute("aria-pressed", String(filter.dataset.nodeFilter === nextSelectedId)));
+      dashboard.querySelectorAll<HTMLElement>("[data-node-row]").forEach((row) => row.classList.toggle("is-selected", nextSelectedId !== "all" && row.dataset.nodeRow === nextSelectedId));
 
       if (earningsTable) {
         const caption = earningsTable.querySelector("caption");
@@ -216,17 +219,43 @@ const plannerData = { products: plannerProducts };
       if (liveRegion) liveRegion.textContent = `${selectionLabel}: ${formatDashboardMoney(total)} total earnings over three months.`;
     };
 
-    filters.forEach((filter) => filter.addEventListener("click", () => selectNode(filter.dataset.nodeFilter ?? "all")));
+    const updateDashboard = () => {
+      const nodes = plannedNodes();
+      const rewards = source.months.map((_, monthIndex) => nodes.reduce((total, node) => total + node.rewards[monthIndex], 0));
+      const total = rewards.reduce((sum, value) => sum + value, 0);
+      const totalData = nodes.reduce((sum, node) => sum + node.dataGb.reduce<number>((nodeTotal, value) => nodeTotal + (value ?? 0), 0), 0);
+      const activeAirnodes = Array.from(quantities.values()).reduce((sum, quantity) => sum + quantity, 0);
+      chartMax = Math.max(70, Math.ceil(Math.max(...rewards) / 10) * 10);
+      if (pendingOutput) pendingOutput.textContent = formatDashboardMoney(rewards.at(-1) ?? 0);
+      if (totalEarningsOutput) totalEarningsOutput.textContent = formatDashboardMoney(total);
+      if (totalDataOutput) totalDataOutput.textContent = formatDashboardData(totalData);
+      if (activeAirnodesOutput) activeAirnodesOutput.textContent = `${activeAirnodes} active AirNodes`;
+      dashboard.querySelectorAll<HTMLElement>("[data-chart-axis]").forEach((element, index) => {
+        element.textContent = formatDashboardMoney(chartMax - (chartMax * index) / 4);
+      });
+      nodes.forEach((node) => {
+        const quantity = quantities.get(node.id) ?? 1;
+        const nodeTotal = node.rewards.reduce((sum, value) => sum + value, 0);
+        const nodeMonthly = node.rewards.at(-1) ?? 0;
+        dashboard.querySelectorAll<HTMLElement>(`[data-node-units="${node.id}"]`).forEach((element) => { element.textContent = `${quantity} ${quantity === 1 ? "unit" : "units"}`; });
+        dashboard.querySelectorAll<HTMLElement>(`[data-node-total="${node.id}"]`).forEach((element) => { element.textContent = formatDashboardMoney(nodeTotal); });
+        dashboard.querySelectorAll<HTMLElement>(`[data-node-monthly="${node.id}"]`).forEach((element) => { element.textContent = formatDashboardMoney(nodeMonthly); });
+      });
+      selectNode(selectedId);
+    };
+
+    filters.forEach((filter) => filter.addEventListener("click", () => {
+      selectedId = filter.dataset.nodeFilter ?? "all";
+      selectNode(selectedId);
+    }));
+    window.addEventListener("illustrative-plan-change", ((event: CustomEvent<Record<string, number>>) => {
+      quantities = new Map(Object.entries(event.detail));
+      updateDashboard();
+    }) as EventListener);
   });
 
-  type PlannerRewardOption = { id: string; monthlyReward: number };
-  type PlannerProduct = { id: string; unitCost: number; rewardOptions: PlannerRewardOption[] };
+  type PlannerProduct = { id: string; unitCost: number; monthlyReward: number };
   type PlannerSource = { products: PlannerProduct[] };
-  type PlannerScenarioInput = {
-    value: string;
-    selectedIndex: number;
-    addEventListener: (type: string, listener: () => void) => void;
-  };
 
   document.querySelectorAll<HTMLElement>("[data-opportunity-planner]").forEach((planner) => {
     const sourceElement = planner.querySelector<HTMLScriptElement>("[data-planner-source]");
@@ -236,36 +265,31 @@ const plannerData = { products: plannerProducts };
     const costOutput = planner.querySelector<HTMLElement>("[data-planner-cost]");
     const rewardOutput = planner.querySelector<HTMLElement>("[data-planner-reward]");
     const roiOutput = planner.querySelector<HTMLElement>("[data-planner-roi]");
-    const scenarioInputs = Array.from(planner.querySelectorAll("[data-planner-reward-scenario]")) as unknown as PlannerScenarioInput[];
     const resetButton = planner.querySelector<HTMLButtonElement>("[data-planner-reset]");
 
     const updatePlanner = () => {
       const units = new Map(Array.from(inputs, (input) => [input.dataset.plannerInput, Number(input.value)]));
       const totals = source.products.reduce((result, product) => {
         const quantity = units.get(product.id) ?? 1;
-        const scenarioControl = planner.querySelector(`[data-planner-reward-scenario="${product.id}"]`) as unknown as PlannerScenarioInput | null;
-        const scenario = scenarioControl?.value;
-        const rewardOption = product.rewardOptions.find((option) => option.id === scenario) ?? product.rewardOptions[0];
         const unitOutput = planner.querySelector<HTMLOutputElement>(`[data-planner-units="${product.id}"]`);
         const unitReward = planner.querySelector<HTMLElement>(`[data-planner-unit-reward="${product.id}"]`);
         if (unitOutput) unitOutput.textContent = `${quantity} ${quantity === 1 ? "unit" : "units"}`;
-        if (unitReward) unitReward.textContent = formatDashboardMoney(rewardOption.monthlyReward);
+        if (unitReward) unitReward.textContent = formatDashboardMoney(product.monthlyReward);
         return {
           cost: result.cost + quantity * product.unitCost,
-          reward: result.reward + quantity * rewardOption.monthlyReward,
+          reward: result.reward + quantity * product.monthlyReward,
         };
       }, { cost: 0, reward: 0 });
       const roi = (totals.reward * 12 / totals.cost) * 100;
       if (costOutput) costOutput.textContent = formatDashboardMoney(totals.cost);
       if (rewardOutput) rewardOutput.textContent = formatDashboardMoney(totals.reward);
       if (roiOutput) roiOutput.textContent = `${roi.toFixed(1)}%`;
+      window.dispatchEvent(new CustomEvent("illustrative-plan-change", { detail: Object.fromEntries(units) }));
     };
 
     inputs.forEach((input) => input.addEventListener("input", updatePlanner));
-    scenarioInputs.forEach((input) => input.addEventListener("change", updatePlanner));
     resetButton?.addEventListener("click", () => {
       inputs.forEach((input) => { input.value = "1"; });
-      scenarioInputs.forEach((input) => { input.selectedIndex = 0; });
       updatePlanner();
     });
   });
