@@ -2067,6 +2067,10 @@ summary::-webkit-details-marker {
   color: var(--white);
 }
 
+.guide-hero .section-index {
+  color: var(--white);
+}
+
 .guide-hero-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
