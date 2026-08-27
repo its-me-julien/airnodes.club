@@ -97,12 +97,15 @@ summary::-webkit-details-marker {
 
 .sr-only {
   position: absolute;
+  left: 0;
   width: 1px;
+  max-width: 1px;
   height: 1px;
   padding: 0;
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -852,6 +855,14 @@ summary::-webkit-details-marker {
   font-size: clamp(1.3rem, 2.5vw, 2rem);
 }
 
+.performance-note {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  color: #858585;
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
 .dashboard-panel.dashboard-portfolio {
   min-height: auto;
   margin-bottom: clamp(1rem, 2.5vw, 2rem);
@@ -901,13 +912,25 @@ summary::-webkit-details-marker {
 
 .dashboard-demo-action {
   display: grid;
+  width: 100%;
   min-height: 3.5rem;
   margin-top: 1.6rem;
   place-items: center;
+  border: 0;
   border-radius: 999px;
   background: #ffdf00;
   color: #151515;
+  font: inherit;
   font-weight: 700;
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.dashboard-action-note {
+  margin-top: 0.65rem;
+  color: #858585;
+  font-size: 0.72rem;
+  text-align: center;
 }
 
 .portfolio-scroll-hint {
@@ -916,7 +939,7 @@ summary::-webkit-details-marker {
 
 .portfolio-table {
   width: 100%;
-  min-width: 62rem;
+  min-width: 52rem;
   border-collapse: collapse;
   text-align: left;
 }
@@ -946,16 +969,6 @@ summary::-webkit-details-marker {
   font-size: 0.84rem;
 }
 
-.portfolio-table .portfolio-location {
-  max-width: 14rem;
-}
-
-.portfolio-location code {
-  color: #aaa;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.8rem;
-}
-
 .portfolio-table .portfolio-earned {
   color: #fff;
   font-size: 0.95rem;
@@ -983,6 +996,20 @@ summary::-webkit-details-marker {
 .portfolio-type-frontier {
   background: rgba(238, 102, 121, 0.14);
   color: #f17c8d;
+}
+
+[data-node-row] {
+  transition: background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.portfolio-table tr.is-selected {
+  background: rgba(255, 223, 0, 0.055);
+  box-shadow: inset 3px 0 #ffdf00;
+}
+
+.portfolio-active-since {
+  color: #999;
+  font-size: 0.78rem;
 }
 
 .portfolio-open {
@@ -1249,6 +1276,195 @@ summary::-webkit-details-marker {
   box-shadow: 0 2rem 5rem rgba(8, 28, 52, 0.14);
 }
 
+.opportunity-planner {
+  margin-top: clamp(1rem, 2.5vw, 2rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border-top: 4px solid var(--blue);
+  background: #edf3ff;
+  color: var(--ink);
+}
+
+.opportunity-planner-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.planner-status {
+  margin-bottom: 1rem;
+  color: var(--blue-dark);
+  font-size: 0.72rem;
+  font-weight: 720;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.opportunity-planner-head h3 {
+  max-width: 18ch;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.opportunity-planner-head > div > p:last-child {
+  max-width: 37rem;
+  margin-top: 0.9rem;
+  color: var(--muted);
+}
+
+.planner-limit {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.planner-tools {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.planner-tools button {
+  min-height: 2.3rem;
+  padding-inline: 0.85rem;
+  border: 1px solid rgba(8, 28, 52, 0.25);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.planner-tools button:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.planner-tools button:focus-visible,
+.planner-scenario-label select:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.opportunity-planner-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.65fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  margin-top: clamp(2rem, 5vw, 3.75rem);
+}
+
+.planner-controls {
+  border-top: 1px solid rgba(8, 28, 52, 0.18);
+}
+
+.planner-control {
+  padding-block: 1.25rem;
+  border-bottom: 1px solid rgba(8, 28, 52, 0.18);
+}
+
+.planner-control-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.planner-control label {
+  font-size: 1rem;
+  font-weight: 720;
+}
+
+.planner-control output {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 720;
+}
+
+.planner-control input {
+  width: 100%;
+  height: 1.4rem;
+  margin-top: 0.8rem;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+.planner-range-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -0.25rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.planner-scenario-label {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.planner-scenario-label select {
+  min-height: 2.45rem;
+  padding-inline: 0.7rem 2rem;
+  border: 1px solid rgba(8, 28, 52, 0.22);
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+}
+
+.planner-control p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.planner-results {
+  align-self: stretch;
+  padding-left: clamp(1.5rem, 4vw, 3.5rem);
+  border-left: 1px solid rgba(8, 28, 52, 0.18);
+}
+
+.planner-results dl {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.planner-results dl > div {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.planner-results dt {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.planner-results dd {
+  color: var(--ink);
+  font-size: clamp(1.65rem, 3vw, 2.4rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 740;
+  letter-spacing: -0.055em;
+}
+
+.planner-results dl > div:last-child dd {
+  color: var(--blue);
+}
+
+.planner-results > p {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
 .dashboard-head {
   display: flex;
   align-items: flex-start;
@@ -1283,25 +1499,43 @@ summary::-webkit-details-marker {
 
 .dashboard-periods {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.45rem;
   padding-top: 0.35rem;
 }
 
-.dashboard-periods span,
-.dashboard-periods strong {
+.dashboard-periods button {
   display: grid;
-  width: 2.85rem;
+  min-width: 3.4rem;
   height: 2.35rem;
+  padding-inline: 0.85rem;
   place-items: center;
   border: 1px solid #303030;
   border-radius: 999px;
+  background: transparent;
+  color: #a4a4a4;
+  cursor: pointer;
+  font: inherit;
   font-size: 0.78rem;
   font-weight: 650;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.dashboard-periods strong {
-  border-color: #f4f4f4;
-  background: #f4f4f4;
+.dashboard-periods button:hover {
+  border-color: #737373;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.dashboard-periods button:focus-visible {
+  outline: 2px solid #ffdf00;
+  outline-offset: 3px;
+}
+
+.dashboard-periods button[aria-pressed="true"] {
+  border-color: #ffdf00;
+  background: #ffdf00;
   color: #181818;
 }
 
@@ -1340,8 +1574,13 @@ summary::-webkit-details-marker {
   animation: chart-draw 1.1s ease-out both;
 }
 
+.chart-line.is-updating {
+  animation: chart-draw 520ms ease-out both;
+}
+
 .chart-point {
   fill: #ffdf00;
+  transition: cx 360ms ease, cy 360ms ease;
 }
 
 .dashboard-note {
@@ -1602,6 +1841,70 @@ summary::-webkit-details-marker {
 .region-facts dd {
   font-size: 0.88rem;
   font-weight: 650;
+}
+
+.region-why {
+  border-bottom: 1px solid rgba(8, 28, 52, 0.14);
+}
+
+.region-why summary {
+  display: grid;
+  min-height: 4.25rem;
+  grid-template-columns: 9rem 1fr 1.2rem;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.region-why summary::-webkit-details-marker {
+  display: none;
+}
+
+.region-why summary span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.region-why summary strong {
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.region-why summary i {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  justify-self: end;
+}
+
+.region-why summary i::before,
+.region-why summary i::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.8rem;
+  height: 1px;
+  background: var(--blue);
+  content: "";
+  transform: translate(-50%, -50%);
+  transition: transform 180ms ease;
+}
+
+.region-why summary i::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.region-why[open] summary i::after {
+  transform: translate(-50%, -50%);
+}
+
+.region-why p {
+  max-width: 44rem;
+  padding: 0 2.2rem 1.5rem 10rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .deployment-statement {
@@ -1984,6 +2287,18 @@ summary::-webkit-details-marker {
     grid-template-columns: 1fr;
   }
 
+  .opportunity-planner-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .planner-results {
+    padding-top: 2rem;
+    padding-left: 0;
+    border-top: 1px solid rgba(8, 28, 52, 0.18);
+    border-left: 0;
+  }
+
   .dashboard-summary-grid {
     grid-template-columns: 1fr;
   }
@@ -2149,6 +2464,23 @@ summary::-webkit-details-marker {
     padding: 1.35rem;
   }
 
+  .opportunity-planner {
+    padding: 1.35rem;
+  }
+
+  .opportunity-planner-head {
+    display: block;
+  }
+
+  .planner-limit {
+    display: block;
+  }
+
+  .planner-tools {
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
   .dashboard-panel {
     padding: 1.35rem;
   }
@@ -2191,6 +2523,13 @@ summary::-webkit-details-marker {
     border-top: 1px solid #333;
   }
 
+  .portfolio-mobile-list article.is-selected {
+    margin-left: -0.75rem;
+    padding-left: 0.75rem;
+    background: rgba(255, 223, 0, 0.055);
+    box-shadow: inset 3px 0 #ffdf00;
+  }
+
   .portfolio-mobile-list article > div,
   .portfolio-mobile-list dl,
   .portfolio-mobile-list dl > div {
@@ -2198,11 +2537,6 @@ summary::-webkit-details-marker {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-  }
-
-  .portfolio-mobile-list code {
-    color: #999;
-    font-size: 0.78rem;
   }
 
   .portfolio-mobile-list dl {
@@ -2264,13 +2598,14 @@ summary::-webkit-details-marker {
   }
 
   .dashboard-periods {
+    justify-content: flex-start;
     margin-top: 1.5rem;
   }
 
-  .dashboard-periods span,
-  .dashboard-periods strong {
-    width: 2.6rem;
+  .dashboard-periods button {
+    min-width: auto;
     height: 2.2rem;
+    padding-inline: 0.75rem;
   }
 
   .dashboard-chart {
@@ -2445,6 +2780,29 @@ summary::-webkit-details-marker {
   .region-facts > div {
     grid-template-columns: 1fr;
     gap: 0.25rem;
+  }
+
+  .region-why summary {
+    grid-template-columns: 1fr 1.2rem;
+    gap: 0.35rem 1rem;
+    padding-block: 1rem;
+  }
+
+  .region-why summary span {
+    grid-column: 1;
+  }
+
+  .region-why summary strong {
+    grid-column: 1;
+  }
+
+  .region-why summary i {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  .region-why p {
+    padding: 0 2rem 1.5rem 0;
   }
 
   .footer-info {
