@@ -11,18 +11,16 @@ const illustrativeEconomics = {
 } as const;
 
 const airnodes = [
-  { id: "frontier", name: "#Frontier-b7c42", type: "Frontier", tone: "frontier", activeSince: "June 2026", rewards: [illustrativeEconomics.frontier.monthlyReward, illustrativeEconomics.frontier.monthlyReward, illustrativeEconomics.frontier.monthlyReward], dataGb: [null, null, null] },
-  { id: "ember", name: "#Ember-91fd3", type: "EmberNode", tone: "ember", activeSince: "June 2026", rewards: [illustrativeEconomics.ember.monthlyReward, illustrativeEconomics.ember.monthlyReward, illustrativeEconomics.ember.monthlyReward], dataGb: [900, 900, 900] },
-  { id: "spark", name: "#Spark-a1aa1", type: "Spark", tone: "spark", activeSince: "June 2026", rewards: [illustrativeEconomics.spark.monthlyReward, illustrativeEconomics.spark.monthlyReward, illustrativeEconomics.spark.monthlyReward], dataGb: [200, 200, 200] },
+  { id: "frontier", name: "#Frontier-b7c42", type: "Frontier", tone: "frontier", activeSince: "June 2026", rewards: [illustrativeEconomics.frontier.monthlyReward, illustrativeEconomics.frontier.monthlyReward, illustrativeEconomics.frontier.monthlyReward] },
+  { id: "ember", name: "#Ember-91fd3", type: "EmberNode", tone: "ember", activeSince: "June 2026", rewards: [illustrativeEconomics.ember.monthlyReward, illustrativeEconomics.ember.monthlyReward, illustrativeEconomics.ember.monthlyReward] },
+  { id: "spark", name: "#Spark-a1aa1", type: "Spark", tone: "spark", activeSince: "June 2026", rewards: [illustrativeEconomics.spark.monthlyReward, illustrativeEconomics.spark.monthlyReward, illustrativeEconomics.spark.monthlyReward] },
 ] as const;
 
 const sum = (values: readonly number[]) => values.reduce((total, value) => total + value, 0);
 const formatMoney = (value: number) => `$${value.toFixed(2)}`;
-const formatData = (value: number) => value >= 1000 ? `${(value / 1000).toFixed(2)} TB` : `${value.toLocaleString("en-US")} GB`;
 const allRewards = months.map((_, monthIndex) => sum(airnodes.map((node) => node.rewards[monthIndex])));
 const totalRewards = sum(allRewards);
 const pendingRewards = allRewards.at(-1) ?? 0;
-const totalDataGb = sum(airnodes.flatMap((node) => node.dataGb.map((value) => value ?? 0)));
 
 const chartLeft = 74;
 const chartRight = 1104;
@@ -36,7 +34,7 @@ const linePath = chartPoints.map((point, index) => `${index === 0 ? "M" : "L"}${
 const areaPath = `${linePath} L${chartRight} ${chartBottom} L${chartLeft} ${chartBottom} Z`;
 const axisValues = [70, 52.5, 35, 17.5, 0];
 const axisY = axisValues.map((_, index) => chartTop + (index * (chartBottom - chartTop)) / (axisValues.length - 1));
-const dashboardData = { months, airnodes: airnodes.map(({ id, type, rewards, dataGb }) => ({ id, type, rewards, dataGb })) };
+const dashboardData = { months, airnodes: airnodes.map(({ id, type, rewards }) => ({ id, type, rewards })) };
 const plannerProducts = [
   { id: "spark", name: "Spark", tone: "spark", unitCost: illustrativeEconomics.spark.unitCost, monthlyReward: illustrativeEconomics.spark.monthlyReward },
   { id: "ember", name: "EmberNode", tone: "ember", unitCost: illustrativeEconomics.ember.unitCost, monthlyReward: illustrativeEconomics.ember.monthlyReward },
@@ -61,21 +59,18 @@ const plannerData = { products: plannerProducts };
       <header class="dashboard-panel-head"><h3 id="available-rewards-title">Pending rewards</h3><p>From August 2026 service · ready to claim</p></header>
       <p class="pending-reward"><strong data-pending-rewards>{formatMoney(pendingRewards)}</strong></p>
       <button class="dashboard-demo-action" type="button" disabled>Claim rewards</button>
-      <p class="dashboard-action-note">Illustrative action</p>
     </section>
     <section class="dashboard-panel dashboard-performance-card" aria-labelledby="performance-overview-title">
       <header class="dashboard-panel-head"><h3 id="performance-overview-title">Performance overview</h3><p>Rewards and network activity for the selected AirNodes</p></header>
       <dl class="performance-stats">
         <div><dt>Total earnings</dt><dd data-total-earnings>{formatMoney(totalRewards)}</dd></div>
-        <div><dt>Total data transferred</dt><dd data-total-data>{formatData(totalDataGb)}</dd></div>
       </dl>
-      <p class="performance-note">This example tracks EmberNode and Spark transfer; Frontier transfer is not tracked.</p>
     </section>
   </div>
 
   <section class="dashboard-portfolio dashboard-panel" aria-labelledby="portfolio-title">
     <header class="dashboard-panel-head portfolio-head">
-      <div><p class="dashboard-eyebrow">Your infrastructure</p><h3 id="portfolio-title">AirNode portfolio</h3><p>Every summary above is calculated from this illustrative plan.</p></div>
+      <div><p class="dashboard-eyebrow">Your infrastructure</p><h3 id="portfolio-title">AirNode portfolio</h3></div>
       <span data-active-airnodes>{airnodes.length} active AirNodes</span>
     </header>
     <div class="portfolio-mobile-list">
@@ -122,9 +117,9 @@ const plannerData = { products: plannerProducts };
     <script is:inline type="application/json" data-planner-source set:html={JSON.stringify(plannerData)}></script>
     <header class="opportunity-planner-head">
       <div>
-        <p class="planner-status">Independent planning tool · Not part of the official World Mobile dashboard</p>
+        <p class="planner-status">Illustrative planning tool</p>
         <h3 id="opportunity-planner-title">Explore a possible AirNode mix.</h3>
-        <p>Adjust the units to update this illustrative dashboard, including its rewards, history and tracked data.</p>
+        <p>Adjust the units to update this illustrative dashboard, including its rewards, history and portfolio.</p>
       </div>
       <div class="planner-tools"><p class="planner-limit">1–10 units per AirNode</p><button type="button" data-planner-reset>Reset mix</button></div>
     </header>
@@ -150,14 +145,14 @@ const plannerData = { products: plannerProducts };
           <div><dt>Est. monthly rewards</dt><dd data-planner-reward>{formatMoney(plannerInitialReward)}</dd></div>
           <div><dt>Approx. annualised ROI*</dt><dd data-planner-roi>{plannerInitialRoi.toFixed(1)}%</dd></div>
         </dl>
-        <p>*Calculated as estimated monthly rewards × 12 ÷ approximate upfront cost. It excludes operating costs, tax, downtime and variations in rewards.</p>
+        <p>*Calculated as estimated monthly rewards × 12 ÷ approximate upfront cost. It excludes purchase discounts, operating costs, tax, downtime and variations in rewards.</p>
       </aside>
     </div>
   </section>
 </div>
 
 <script>
-  type DashboardNode = { id: string; type: string; rewards: number[]; dataGb: Array<number | null> };
+  type DashboardNode = { id: string; type: string; rewards: number[] };
   type DashboardSource = { months: string[]; airnodes: DashboardNode[] };
   const formatDashboardMoney = (value: number) => `$${value.toFixed(2)}`;
 
@@ -175,7 +170,6 @@ const plannerData = { products: plannerProducts };
     const earningsTable = dashboard.querySelector<HTMLTableElement>("[data-earnings-table]");
     const pendingOutput = dashboard.querySelector<HTMLElement>("[data-pending-rewards]");
     const totalEarningsOutput = dashboard.querySelector<HTMLElement>("[data-total-earnings]");
-    const totalDataOutput = dashboard.querySelector<HTMLElement>("[data-total-data]");
     const activeAirnodesOutput = dashboard.querySelector<HTMLElement>("[data-active-airnodes]");
     const chartLeft = 74, chartRight = 1104, chartTop = 30, chartBottom = 230;
     let chartMax = 70;
@@ -183,10 +177,9 @@ const plannerData = { products: plannerProducts };
     const yPosition = (value: number) => chartBottom - (value / chartMax) * (chartBottom - chartTop);
     let quantities = new Map(source.airnodes.map((node) => [node.id, 1]));
     let selectedId = "all";
-    const formatDashboardData = (value: number) => value >= 1000 ? `${(value / 1000).toFixed(2)} TB` : `${value.toLocaleString("en-US")} GB`;
     const plannedNodes = () => source.airnodes.map((node) => {
       const quantity = quantities.get(node.id) ?? 1;
-      return { ...node, rewards: node.rewards.map((reward) => reward * quantity), dataGb: node.dataGb.map((data) => data === null ? null : data * quantity) };
+      return { ...node, rewards: node.rewards.map((reward) => reward * quantity) };
     });
 
     const selectNode = (nextSelectedId: string) => {
@@ -223,12 +216,10 @@ const plannerData = { products: plannerProducts };
       const nodes = plannedNodes();
       const rewards = source.months.map((_, monthIndex) => nodes.reduce((total, node) => total + node.rewards[monthIndex], 0));
       const total = rewards.reduce((sum, value) => sum + value, 0);
-      const totalData = nodes.reduce((sum, node) => sum + node.dataGb.reduce<number>((nodeTotal, value) => nodeTotal + (value ?? 0), 0), 0);
       const activeAirnodes = Array.from(quantities.values()).reduce((sum, quantity) => sum + quantity, 0);
       chartMax = Math.max(70, Math.ceil(Math.max(...rewards) / 10) * 10);
       if (pendingOutput) pendingOutput.textContent = formatDashboardMoney(rewards.at(-1) ?? 0);
       if (totalEarningsOutput) totalEarningsOutput.textContent = formatDashboardMoney(total);
-      if (totalDataOutput) totalDataOutput.textContent = formatDashboardData(totalData);
       if (activeAirnodesOutput) activeAirnodesOutput.textContent = `${activeAirnodes} active AirNodes`;
       dashboard.querySelectorAll<HTMLElement>("[data-chart-axis]").forEach((element, index) => {
         element.textContent = formatDashboardMoney(chartMax - (chartMax * index) / 4);
