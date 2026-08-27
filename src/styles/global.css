@@ -1714,6 +1714,100 @@ summary::-webkit-details-marker {
   color: var(--white);
 }
 
+.network-state-section {
+  padding-block: var(--section-space);
+  background: #f7f9fc;
+}
+
+.network-state-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.7fr);
+  align-items: end;
+  gap: clamp(2.5rem, 8vw, 8rem);
+}
+
+.network-state-heading h2 {
+  max-width: 12ch;
+  font-size: clamp(3rem, 5.4vw, 5.4rem);
+  font-weight: 720;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.network-state-heading > p {
+  max-width: 31rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.network-state-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: clamp(3rem, 6vw, 5.5rem);
+}
+
+.network-state-stats div {
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(7, 23, 39, 0.18);
+}
+
+.network-state-stats dt {
+  color: var(--blue);
+  font-size: clamp(2.25rem, 4vw, 4.3rem);
+  font-weight: 740;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.network-state-stats dd {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.network-state-detail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 7vw, 7rem);
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid rgba(7, 23, 39, 0.18);
+}
+
+.network-state-label {
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 720;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.network-state-detail h3 {
+  max-width: 19ch;
+  margin-top: 0.85rem;
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+}
+
+.network-state-detail article > p:last-child {
+  max-width: 34rem;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.network-state-note {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  color: #687584;
+  font-size: 0.75rem;
+}
+
 .deployment-section {
   background: #eef3ff;
 }
@@ -2257,7 +2351,8 @@ summary::-webkit-details-marker {
 
   .section-heading,
   .risk-heading,
-  .journey-heading {
+  .journey-heading,
+  .network-state-heading {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -2379,7 +2474,8 @@ summary::-webkit-details-marker {
   }
 
   .scenario-grid,
-  .affiliate-inner {
+  .affiliate-inner,
+  .network-state-detail {
     grid-template-columns: 1fr;
   }
 
@@ -2418,6 +2514,11 @@ summary::-webkit-details-marker {
 @media (max-width: 600px) {
   :root {
     --section-space: 4.5rem;
+  }
+
+  .network-state-stats {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .brand-lockup {
