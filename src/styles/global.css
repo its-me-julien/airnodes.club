@@ -1625,7 +1625,7 @@ summary::-webkit-details-marker {
 .figure-context > p {
   position: absolute;
   z-index: 20;
-  right: 0;
+  left: 50%;
   bottom: calc(100% + 0.65rem);
   width: min(22rem, calc(100vw - 2.5rem));
   padding: 0.85rem 0.95rem;
@@ -1638,6 +1638,7 @@ summary::-webkit-details-marker {
   font-weight: 500;
   line-height: 1.5;
   text-transform: none;
+  transform: translateX(-50%);
 }
 
 .dashboard-preview-label .figure-context,
@@ -1648,10 +1649,13 @@ summary::-webkit-details-marker {
 .dashboard-preview-label .figure-context > p {
   right: auto;
   left: 0;
+  transform: none;
 }
 
 .planner-results .figure-context > p {
   right: 0;
+  left: auto;
+  transform: none;
 }
 
 .rewards-section {
